@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figma vs Confluence — Design Checklist</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; background: #F2F2F4; color: #3D3558; line-height: 1.5; }
+  a { text-decoration: none; color: inherit; }
+
+  /* HEADER */
+  .page-header { background: linear-gradient(135deg, #1E1D2E 0%, #2D2B3D 100%); color: #fff; padding: 32px 40px 28px; }
+  .page-header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; letter-spacing: -.2px; }
+  .page-header p { font-size: 13px; opacity: .85; }
+  .meta-row { display: flex; gap: 28px; margin-top: 16px; font-size: 12px; opacity: .8; flex-wrap: wrap; }
+  .meta-row span strong { opacity: 1; }
+
+  /* WHAT'S NEW */
+  .whats-new { margin: 24px 40px 0; background: #fff; border-radius: 12px; border: 1.5px solid #C8C4EE; overflow: hidden; box-shadow: 0 2px 8px rgba(100,90,180,.07); }
+  .wn-header { background: linear-gradient(90deg, #ECEAFF, #F6F4FF); padding: 12px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #DAD7F5; flex-wrap: wrap; }
+  .wn-header h3 { font-size: 12px; font-weight: 700; color: #5B55A0; text-transform: uppercase; letter-spacing: .6px; }
+  .wn-date { margin-left: auto; font-size: 11px; color: #9B96CC; font-weight: 600; }
+  .wn-also { font-size: 11.5px; color: #7A6020; background: #FFF8E8; border: 1px solid #F0D990; border-radius: 20px; padding: 2px 10px; }
+  .wn-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .wn-item { padding: 16px 20px; border-right: 1px solid #EEEAFF; }
+  .wn-item:last-child { border-right: none; }
+  .wn-title { font-weight: 700; font-size: 13px; color: #5B55A0; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+  .wn-title a { color: #5B55A0; }
+  .wn-title a:hover { text-decoration: underline; }
+  .wn-badge { font-size: 10px; background: #E4F5EC; color: #2D7A50; border-radius: 10px; padding: 2px 8px; font-weight: 700; }
+  .wn-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .wn-list li { font-size: 12.5px; color: #5E5880; display: flex; gap: 6px; }
+  .wn-list li::before { content: "→"; color: #A09BCC; flex-shrink: 0; }
+
+  /* KPI */
+  .kpi-strip { display: flex; gap: 12px; padding: 20px 40px; flex-wrap: wrap; }
+  .kpi { background: #fff; border-radius: 10px; padding: 12px 20px; min-width: 130px; text-align: center; border: 1.5px solid #E2DFF5; box-shadow: 0 1px 4px rgba(100,90,180,.06); }
+  .kpi .num { font-size: 26px; font-weight: 700; color: #7B78C8; }
+  .kpi .lbl { font-size: 11px; color: #9B96CC; margin-top: 2px; text-transform: uppercase; letter-spacing: .5px; }
+
+  /* TOC */
+  .toc-bar { position: sticky; top: 0; z-index: 100; background: rgba(242,242,244,.96); backdrop-filter: blur(8px); border-bottom: 1px solid #DDDAF5; padding: 10px 40px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .toc-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: #9B96CC; white-space: nowrap; margin-right: 2px; }
+  .toc-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 11px; border-radius: 20px; font-size: 11.5px; font-weight: 600; border: 1.5px solid #CCC8EE; background: #fff; color: #6B68B0; cursor: pointer; text-decoration: none; transition: all .15s; white-space: nowrap; }
+  .toc-btn:hover { background: #EAE8FF; border-color: #A09BD8; color: #4B48A0; }
+  .toc-btn.has-update { border-color: #A8D5BA; background: #F0FBF4; color: #2D7A50; }
+  .toc-btn.no-req { border-color: #F4B8B5; background: #FEF3F2; color: #B85450; }
+  .toc-divider { width: 1px; height: 18px; background: #DDDAF5; margin: 0 4px; flex-shrink: 0; }
+  .filter-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 11px; border-radius: 20px; font-size: 11px; font-weight: 600; border: 1.5px solid #DDDAF5; background: transparent; color: #9B96CC; cursor: pointer; transition: all .15s; }
+  .filter-btn:hover { background: #E8E6FF; border-color: #A09BD8; color: #5B55A0; }
+  .filter-btn.active { background: #7B78C8; border-color: #7B78C8; color: #fff; }
+
+  /* FEATURE CARD */
+  .feature-card { background: #fff; margin: 20px 40px; border-radius: 12px; border: 1.5px solid #E2DFF5; overflow: hidden; box-shadow: 0 2px 8px rgba(100,90,180,.06); transition: box-shadow .2s; scroll-margin-top: 56px; }
+  .feature-card:hover { box-shadow: 0 4px 18px rgba(100,90,180,.11); }
+  .feature-card.hidden { display: none; }
+  .feature-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 18px 24px 14px; border-bottom: 1.5px solid #F0EFFB; gap: 16px; flex-wrap: wrap; }
+  .feature-title-block { flex: 1 1 300px; }
+  .feature-title { font-size: 17px; font-weight: 700; color: #3D3558; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 6px; transition: color .15s; }
+  .feature-title:hover { color: #7B78C8; }
+  .feature-title .ext { font-size: 13px; opacity: .5; }
+  .link-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .link-pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; text-decoration: none; transition: all .15s; }
+  .link-pill svg { width: 11px; height: 11px; flex-shrink: 0; }
+  .link-pill.figma { background: #ECEAFF; color: #5B55A0; border: 1.5px solid #C8C4EE; }
+  .link-pill.figma:hover { background: #DDD8FF; border-color: #9B96CC; transform: translateY(-1px); }
+  .link-pill.confluence { background: #FFF8E8; color: #7A6020; border: 1.5px solid #F0D990; }
+  .link-pill.confluence:hover { background: #FFF0C0; border-color: #CCAA40; transform: translateY(-1px); }
+  .link-pill.no-conf { background: #FEF0EE; color: #B85450; border: 1.5px solid #F4B8B5; cursor: default; }
+
+  /* BADGES */
+  .badge-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .badge.green  { background: #E4F5EC; color: #2D7A50; }
+  .badge.yellow { background: #FFF4D6; color: #7A6020; }
+  .badge.red    { background: #FEF0EE; color: #B85450; }
+  .badge.grey   { background: #F0EFFA; color: #6B68B0; }
+  .badge.blue   { background: #E8E6FF; color: #5B55A0; }
+
+  /* CHANGE BANNER */
+  .change-banner { background: linear-gradient(90deg, #ECEAFF, #F5F3FF); border-left: 4px solid #8B8FD4; padding: 12px 20px; margin: 14px 24px 0; border-radius: 0 8px 8px 0; font-size: 12.5px; color: #5E5880; }
+  .change-banner .change-date { font-weight: 700; color: #5B55A0; }
+  .change-banner ul { margin-top: 6px; padding-left: 18px; line-height: 1.8; }
+
+  /* MISMATCH */
+  .mismatch { background: #FFF8E8; border: 1.5px solid #F0D990; border-radius: 8px; padding: 9px 16px; margin: 12px 24px 0; font-size: 12px; color: #7A6020; }
+  .mismatch strong { color: #3D3558; }
+
+  /* PROGRESS SECTION */
+  .progress-section { margin: 14px 24px 0; padding: 12px 16px; background: #F7F7F9; border-radius: 10px; border: 1px solid #E8E5F5; }
+  .progress-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .prog-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: #9B96CC; white-space: nowrap; }
+  .prog-count { font-size: 13px; font-weight: 700; color: #3D3558; }
+  .prog-count span { color: #9B96CC; font-weight: 400; font-size: 12px; }
+  .prog-pct { font-size: 12px; font-weight: 700; color: #6B68B0; margin-left: 4px; }
+  .figma-age { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 600; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .figma-age.age-green  { background: #E4F5EC; color: #2D7A50; }
+  .figma-age.age-yellow { background: #FFF4D6; color: #7A6020; }
+  .figma-age.age-red    { background: #FEF0EE; color: #B85450; }
+  .figma-age.age-grey   { background: #F0EFFA; color: #8A84AA; }
+  .prog-track { height: 8px; background: #E8E5F5; border-radius: 99px; overflow: hidden; position: relative; }
+  .prog-fill { height: 100%; border-radius: 99px; transition: width .4s ease; }
+  .prog-fill.pct-green  { background: linear-gradient(90deg, #6DBF8B, #52A876); }
+  .prog-fill.pct-yellow { background: linear-gradient(90deg, #E8C46A, #D4A845); }
+  .prog-fill.pct-red    { background: linear-gradient(90deg, #E8806D, #D46755); }
+  .prog-na { font-size: 12px; color: #9B96CC; font-style: italic; }
+
+  /* CARD BODY */
+  .card-body { display: grid; grid-template-columns: 1fr 1fr; }
+  .col { padding: 18px 24px; }
+  .col:first-child { border-right: 1.5px solid #F0EFFB; }
+  .col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: #9B96CC; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .col-title .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .dot.green  { background: #6DBF8B; }
+  .dot.red    { background: #E8806D; }
+  .dot.yellow { background: #E8C46A; }
+  .dot.purple { background: #9B7ED4; }
+
+  /* CHECKLIST */
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .check-list li { display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; font-size: 13px; color: #3D3558; background: #F7F7F9; border-radius: 7px; padding: 7px 10px; }
+  .check-list li .icon { flex-shrink: 0; margin-top: 1px; font-size: 14px; }
+  .check-list li .note { font-size: 11px; color: #9B96CC; display: block; margin-top: 2px; }
+
+  /* EXTRA LIST */
+  .extra-list { margin-top: 8px; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .extra-list li { font-size: 12px; color: #7B66CC; display: flex; align-items: flex-start; gap: 6px; padding: 5px 10px; background: #F5F2FF; border-radius: 7px; line-height: 1.4; }
+  .extra-list li::before { content: "🔍"; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
+
+  /* OUT OF SCOPE LIST */
+  .oos-list { margin-top: 8px; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .oos-list li { font-size: 12px; color: #8A84AA; display: flex; align-items: flex-start; gap: 6px; padding: 5px 10px; background: #F5F5FA; border-radius: 7px; line-height: 1.4; text-decoration: line-through; }
+  .oos-list li::before { content: "🚫"; font-size: 11px; flex-shrink: 0; margin-top: 1px; text-decoration: none; display: inline-block; }
+
+  /* SUMMARY TABLE */
+  .summary-wrap { margin: 20px 40px 24px; background: #fff; border-radius: 12px; border: 1.5px solid #E2DFF5; overflow: hidden; box-shadow: 0 2px 8px rgba(100,90,180,.06); }
+  .table-head { background: linear-gradient(135deg, #8B8FD4, #6B6FAF); color: #fff; padding: 14px 24px; font-weight: 700; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  thead tr { background: #F5F4FD; }
+  th { padding: 10px 14px; text-align: left; border-bottom: 1.5px solid #E2DFF5; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: #9B96CC; }
+  td { padding: 10px 14px; border-bottom: 1px solid #F0EFFB; color: #3D3558; vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #F7F7F9; }
+  td a { color: #7B78C8; font-weight: 600; }
+  td a:hover { text-decoration: underline; }
+
+  /* MINI PROGRESS IN TABLE */
+  .mini-prog { display: flex; align-items: center; gap: 6px; }
+  .mini-track { width: 60px; height: 6px; background: #E8E5F5; border-radius: 99px; overflow: hidden; flex-shrink: 0; }
+  .mini-fill { height: 100%; border-radius: 99px; }
+  .mini-fill.pct-green  { background: #6DBF8B; }
+  .mini-fill.pct-yellow { background: #E8C46A; }
+  .mini-fill.pct-red    { background: #E8806D; }
+  .mini-label { font-size: 11px; color: #6B68B0; font-weight: 600; white-space: nowrap; }
+
+  /* JIRA STATUS + DUE DATE */
+  .jira-status { display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 10px; font-size: 10.5px; font-weight: 700; white-space: nowrap; }
+  .jira-status.in-progress    { background: #FFF4D6; color: #7A6020; }
+  .jira-status.ready-for-dev  { background: #E4F5EC; color: #2D7A50; }
+  .jira-status.needs-refine   { background: #FEF0EE; color: #B85450; }
+  .due-overdue  { color: #B85450; font-weight: 700; font-size: 11.5px; white-space: nowrap; }
+  .due-upcoming { color: #7A6020; font-weight: 600; font-size: 11.5px; white-space: nowrap; }
+  .due-none     { color: #9B96CC; font-style: italic; font-size: 11.5px; }
+
+  /* DS AUDIT SECTION */
+  .ds-audit-wrap { margin: 20px 40px 24px; background: #fff; border-radius: 12px; border: 1.5px solid #E2DFF5; overflow: hidden; box-shadow: 0 2px 8px rgba(100,90,180,.06); }
+  .ds-audit-head { background: linear-gradient(135deg, #2E2B4A 0%, #3D3A5E 100%); color: #fff; padding: 16px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .ds-audit-head h2 { font-size: 14px; font-weight: 700; flex: 1; }
+  .ds-audit-meta { font-size: 11px; opacity: .7; }
+  .ds-audit-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
+  .ds-library-strip { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .ds-lib-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; border: 1.5px solid; }
+  .ds-lib-badge.ok    { background: #E4F5EC; color: #2D7A50; border-color: #A8D5BA; }
+  .ds-lib-badge.warn  { background: #FFF4D6; color: #7A6020; border-color: #EDD07A; }
+  .ds-lib-badge.off   { background: #F4F4F6; color: #888; border-color: #D0D0D8; }
+  .ds-lib-label { font-size: 11px; color: #9B96CC; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+  .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .audit-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .audit-items { display: flex; flex-direction: column; gap: 8px; }
+  .audit-item { border-radius: 8px; padding: 10px 14px; border: 1.5px solid; }
+  .audit-item.sev-red    { background: #FEF6F5; border-color: #F4C4C0; }
+  .audit-item.sev-yellow { background: #FFFAF0; border-color: #F0D990; }
+  .audit-item.sev-grey   { background: #F7F7F9; border-color: #E0DFF0; }
+  .audit-item-title { font-size: 12.5px; font-weight: 700; color: #3D3558; margin-bottom: 3px; display: flex; align-items: center; gap: 6px; }
+  .audit-item-desc  { font-size: 11.5px; color: #5E5880; line-height: 1.5; }
+  .audit-item-count { font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 10px; background: rgba(0,0,0,.06); color: inherit; }
+  .ds-note { font-size: 12px; color: #9B96CC; font-style: italic; padding: 8px 12px; background: #F7F7F9; border-radius: 8px; }
+  /* PER-FEATURE AUDIT CARDS */
+  .feat-audit-card { border: 1.5px solid #E2DFF5; border-radius: 10px; overflow: hidden; background: #fff; }
+  .feat-audit-header { display: flex; align-items: center; gap: 10px; padding: 11px 16px; background: #F7F7F9; border-bottom: 1px solid #EEEDF8; flex-wrap: wrap; }
+  .feat-audit-name { font-size: 13px; font-weight: 700; color: #3D3558; flex: 1; }
+  .feat-audit-ratio { font-size: 11px; color: #9B96CC; margin-left: auto; }
+  .audit-score { font-size: 10.5px; font-weight: 700; padding: 2px 10px; border-radius: 10px; border: 1.5px solid; white-space: nowrap; }
+  .audit-score.score-good { background: #E4F5EC; color: #2D7A50; border-color: #A8D5BA; }
+  .audit-score.score-med  { background: #FFF4D6; color: #7A6020; border-color: #EDD07A; }
+  .audit-score.score-bad  { background: #FEF0EE; color: #B85450; border-color: #F4C4C0; }
+  .feat-audit-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 14px 16px; }
+  .feat-audit-col { display: flex; flex-direction: column; gap: 8px; }
+  .feat-audit-col-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+  .feat-audit-col-title.red    { color: #B85450; }
+  .feat-audit-col-title.yellow { color: #7A6020; }
+  .feat-audit-col-title.green  { color: #2D7A50; }
+  @media(max-width: 760px) { .ds-audit-wrap { margin: 12px 16px; } .audit-grid { grid-template-columns: 1fr; } .feat-audit-body { grid-template-columns: 1fr; } }
+
+  /* IN-CARD DS AUDIT */
+  .card-ds-audit { border-top: 1.5px solid #EEEDF8; }
+  .card-ds-audit summary { display: flex; align-items: center; gap: 10px; padding: 10px 24px; cursor: pointer; list-style: none; user-select: none; background: #F7F7F9; flex-wrap: wrap; }
+  .card-ds-audit summary::-webkit-details-marker { display: none; }
+  .card-ds-audit summary::after { content: '▾'; font-size: 11px; color: #9B96CC; margin-left: auto; }
+  .card-ds-audit[open] summary::after { content: '▴'; }
+  .cda-title { font-size: 11.5px; font-weight: 700; color: #5B55A0; }
+  .cda-counts { font-size: 11px; color: #9B96CC; }
+  .cda-body { padding: 14px 24px 18px; display: flex; flex-direction: column; gap: 6px; background: #fff; }
+  .cda-issue { display: flex; align-items: baseline; gap: 8px; font-size: 12px; padding: 7px 12px; border-radius: 7px; line-height: 1.45; }
+  .cda-issue.red    { background: #FEF6F5; border-left: 3px solid #E8806D; color: #3D3558; }
+  .cda-issue.yellow { background: #FFFAF0; border-left: 3px solid #E8C46A; color: #3D3558; }
+  .cda-issue.green  { background: #F0FBF4; border-left: 3px solid #6DBF8B; color: #3D3558; }
+  .cda-issue .cda-badge { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 8px; white-space: nowrap; flex-shrink: 0; }
+  .cda-issue.red    .cda-badge { background: #F4C4C0; color: #B85450; }
+  .cda-issue.yellow .cda-badge { background: #EDD07A; color: #7A6020; }
+  .cda-issue code { font-size: 11px; background: rgba(0,0,0,.06); padding: 1px 5px; border-radius: 4px; }
+  .cda-na { padding: 10px 24px 12px; font-size: 12px; color: #9B96CC; font-style: italic; background: #F7F7F9; }
+
+  /* FOOTER */
+  .page-footer { text-align: center; padding: 24px; color: #B0ABCC; font-size: 12px; }
+
+  @media(max-width: 760px) {
+    .feature-card, .whats-new, .summary-wrap { margin: 12px 16px; }
+    .card-body, .wn-body { grid-template-columns: 1fr; }
+    .col:first-child { border-right: none; border-bottom: 1.5px solid #F0EFFB; }
+    .wn-item { border-right: none; border-bottom: 1px solid #EEEAFF; }
+    .toc-bar, .kpi-strip, .page-header { padding-left: 16px; padding-right: 16px; }
+    .progress-row { gap: 8px; }
+    .figma-age { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>Figma vs Confluence — Design Checklist</h1>
+  <p>Per-feature review: what's done, what's missing, what's extra, and when things last changed.</p>
+  <div class="meta-row">
+    <span>Updated: <strong>April 24, 2026</strong></span>
+    <span>Features with Figma: <strong>7</strong></span>
+    <span>Features with Confluence: <strong>6</strong></span>
+    <span>Features with both: <strong>6</strong></span>
+  </div>
+</div>
+
+<!-- WHAT'S NEW -->
+<div class="whats-new">
+  <div class="wn-header">
+    <span>🆕</span>
+    <h3>What Changed Today</h3>
+    <span class="wn-also">📄 Also new: File Vault now has a Confluence page — "Publicly Available Files" (v1, Apr 24)</span>
+    <span class="wn-date">Apr 24, 2026 · 3 Confluence updates · Figma files unchanged</span>
+  </div>
+  <div class="wn-body">
+    <div class="wn-item">
+      <div class="wn-title">
+        <a href="#feat-2">User Management</a>
+        <span class="wn-badge">Conf v12</span>
+      </div>
+      <ul class="wn-list">
+        <li>"Design vs Requirements (Apr 24'26)" section added — gaps formally documented</li>
+        <li>v1.2 scope narrowed: extended actions now apply to <strong>new registrants only</strong></li>
+        <li>Change Team + Assign OU removed from v1.2 actions</li>
+        <li>Permissions section added to spec</li>
+        <li>Confirmed "neglect for now": Customers column, AOR field, Bypass verification</li>
+      </ul>
+    </div>
+    <div class="wn-item">
+      <div class="wn-title">
+        <a href="#feat-3">Rule Management</a>
+        <span class="wn-badge">Conf v39</span>
+      </div>
+      <ul class="wn-list">
+        <li>New <strong>Alert Email Template</strong> section: Immediate Alert + Daily Digest defined</li>
+        <li>Error states expanded to <strong>7 categorized groups</strong></li>
+        <li>Unsubscribe flow refined — entry points + confirmation copy specified</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- KPI -->
+<div class="kpi-strip">
+  <div class="kpi"><div class="num">7</div><div class="lbl">Figma files</div></div>
+  <div class="kpi"><div class="num">6</div><div class="lbl">Confluence pages</div></div>
+  <div class="kpi"><div class="num" style="color:#E8806D">1</div><div class="lbl">No requirements</div></div>
+  <div class="kpi"><div class="num" style="color:#E8806D">3</div><div class="lbl">Updated Apr 24</div></div>
+  <div class="kpi"><div class="num" style="color:#E8806D">6</div><div class="lbl">Have gaps vs reqs</div></div>
+</div>
+
+<!-- TOC -->
+<div class="toc-bar">
+  <span class="toc-label">Jump to</span>
+  <a href="#feat-1" class="toc-btn">1 · VRM Dashboard</a>
+  <a href="#feat-2" class="toc-btn has-update">2 · User Management 🆕</a>
+  <a href="#feat-3" class="toc-btn has-update">3 · Rule Management 🆕</a>
+  <a href="#feat-4" class="toc-btn no-req">4 · Notification Settings</a>
+  <a href="#feat-5" class="toc-btn">5 · Own Account</a>
+  <a href="#feat-6" class="toc-btn">6 · Exchange Hub</a>
+  <a href="#feat-7" class="toc-btn has-update">7 · File Vault 🆕</a>
+  <div class="toc-divider"></div>
+  <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+  <button class="filter-btn" onclick="filterCards('updated',this)">🆕 Updated today</button>
+  <button class="filter-btn" onclick="filterCards('no-req',this)">⚠️ No requirements</button>
+</div>
+
+<!-- ═══ 1. VRM DASHBOARD ═══ -->
+<div id="feat-1" class="feature-card" data-tags="has-gaps">
+  <div class="feature-header">
+    <div class="feature-title-block">
+      <a href="https://www.figma.com/design/P0AlK7ILpd8oouZN3xDTRg/Reporting---Dashboards?node-id=1316-3818" target="_blank" class="feature-title">
+        1 · VRM Observation Dashboard v1.0 <span class="ext">↗</span>
+      </a>
+      <div class="link-row">
+        <a href="https://www.figma.com/design/P0AlK7ILpd8oouZN3xDTRg/Reporting---Dashboards?node-id=1316-3818" class="link-pill figma" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — March 2, 2026
+        </a>
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" class="link-pill confluence" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Confluence v15 · Apr 16
+        </a>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge green">✅ All 7 widgets designed</span>
+      <span class="badge yellow">⚠️ Interactions incomplete</span>
+    </div>
+  </div>
+  <div class="mismatch">
+    <strong>⚠️ Node ID mismatch:</strong> Feature table links to <code>1155-4605</code> (page cover), not actual design. Use Confluence PRD node <code>1316-3818</code> for reviews.
+  </div>
+  <div class="change-banner">
+    <span class="change-date">Latest Figma: March 2, 2026</span> — Frame "Dashboard- 30 Day Filter- 030226". Confluence v15 (Apr 16) — hover states, drill-down UX, and export open questions added.
+    <ul><li>Confluence open question: Reporting Center CSV/PDF export — handled by frontend or Reporting Center?</li></ul>
+  </div>
+  <div class="progress-section">
+    <div class="progress-row">
+      <span class="prog-label">Figma coverage</span>
+      <span class="prog-count">10 of 16 <span>requirements covered</span><span class="prog-pct">62%</span></span>
+      <span class="figma-age age-yellow">🕐 53 days since last Figma update</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill pct-yellow" style="width:62%"></div></div>
+  </div>
+  <div class="card-body">
+    <div class="col">
+      <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
+      <ul class="check-list">
+        <li><span class="icon">✅</span><span>Vendors with KEVs widget (number + trend sparkline)</span></li>
+        <li><span class="icon">✅</span><span>Priority Open Observations widget (number + sparkline)</span></li>
+        <li><span class="icon">✅</span><span>Weekly Flow — New vs Resolved (line chart, 4-week view)</span></li>
+        <li><span class="icon">✅</span><span>Observation Status Distribution (distribution bar)</span></li>
+        <li><span class="icon">✅</span><span>Observations by Type (horizontal bar chart)</span></li>
+        <li><span class="icon">✅</span><span>Portfolio Risk Snapshot (table: Portfolio / High / Flagged %)</span></li>
+        <li><span class="icon">✅</span><span>Resolved Observations Breakdown (stacked bar)</span></li>
+        <li><span class="icon">✅</span><span>Export Page button (top right)</span></li>
+        <li><span class="icon">✅</span><span>Fixed 30-day time scope</span></li>
+        <li><span class="icon">✅</span><span>"···" overflow menu per widget</span></li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
+      <ul class="check-list">
+        <li><span class="icon">❌</span><span>Drill-down — click widget → Findings page pre-filtered<span class="note">No drill-down UI designed yet.</span></span></li>
+        <li><span class="icon">❌</span><span>Widget-level CSV export dropdown<span class="note">"···" menu shown but its open state not designed.</span></span></li>
+        <li><span class="icon">❌</span><span>Hover states / tooltips for chart elements<span class="note">Open question — EChart-provided or custom?</span></span></li>
+        <li><span class="icon">❌</span><span>Widget legend interaction (click/hover to filter)<span class="note">Open question: "Will ALL widgets show a legend?"</span></span></li>
+        <li><span class="icon">❌</span><span>Empty state / loading state per widget</span></li>
+        <li><span class="icon">❌</span><span>"Flagged Open vs Resolved" — name differs from "Weekly Flow"<span class="note">Confluence and design use different names; scope may differ.</span></span></li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
+      <ul class="extra-list">
+        <li>"30 Day Change" frame — delta/comparison variant not in spec</li>
+        <li>"Available Chart Types" documentation frame — design spec only</li>
+        <li>"Specifications" and "Grid Examples" — dev handoff only</li>
+        <li>EChart Documentation page — library reference only</li>
+      </ul>
+    </div>
+  </div>
+  <details class="card-ds-audit">
+    <summary class="cda-header">
+      <span class="cda-title">🧩 DS Compliance</span>
+      <span class="audit-score score-med">~60%</span>
+      <span class="cda-counts">3 critical · 2 warnings</span>
+    </summary>
+    <div class="cda-body">
+      <div class="cda-issue red"><span class="cda-badge">×7 frames</span><span><code>Dashboard Widget</code> — identical wrapper (header→content) repeated 7 times as plain frames. Should be a reusable component — any visual change requires 7 manual edits.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×3 frames</span><span><code>_Card / Header</code> — underscore prefix = detached/local pattern. Same stat card (title + mini-chart) in 3 places. Candidate for DS <strong>Card / Stat</strong> component.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">frame</span><span>Sidebar <code>search</code> — custom frame (icon + text + shortcut). DS has <strong>Input / Basic</strong> — should replace this assembly.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">frames</span><span>Portfolio Risk Snapshot table — raw <code>Column → Column Label → Value</code> frames. DS <strong>Data Table / Cell</strong> (updated Apr 1 '26) should be used.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">vectors</span><span>Charts (bar, line, donut) — drawn as raw vectors + boolean-operations, no DS chart wrapper. Flag for when DS adds chart patterns.</span></div>
+      <div class="cda-issue green"><span>✅ Correctly using DS:</span><span style="color:#5E5880"> nav items, sidebar header, account menu, breadcrumb, Select, Badge, header content — all instances.</span></div>
+    </div>
+  </details>
+</div>
+
+<!-- ═══ 2. USER MANAGEMENT ═══ -->
+<div id="feat-2" class="feature-card" data-tags="updated has-gaps">
+  <div class="feature-header">
+    <div class="feature-title-block">
+      <a href="https://www.figma.com/design/5pHv3VXYefvEeA54fMRgm7/User-Management?node-id=234-27452" target="_blank" class="feature-title">
+        2 · User Management Foundation <span class="ext">↗</span>
+      </a>
+      <div class="link-row">
+        <a href="https://www.figma.com/design/5pHv3VXYefvEeA54fMRgm7/User-Management?node-id=234-27452" class="link-pill figma" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — High Fidelity
+        </a>
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/User+Management" class="link-pill confluence" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Confluence v12 · Apr 24 🆕
+        </a>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge green">✅ v1 table &amp; role assignment</span>
+      <span class="badge red">❌ v1.2 actions missing</span>
+      <span class="badge blue">🔔 Conf updated Apr 24</span>
+    </div>
+  </div>
+  <div class="change-banner">
+    <span class="change-date">Confluence updated Apr 24, 2026 (v12)</span> — "Design vs Requirements (Apr 24'26)" section added. v1.2 scope narrowed: extended actions apply to <strong>new registrants only</strong>; Change Team + Assign OU removed; Permissions section added. Figma unchanged.
+    <ul>
+      <li>SSC migrated users = read-only by design; all v1.2 actions target new registrants only</li>
+      <li>Three Figma items confirmed "neglect for now": Customers column, AOR field, Bypass verification</li>
+      <li>Permissions section now defines role-based access rules</li>
+    </ul>
+  </div>
+  <div class="progress-section">
+    <div class="progress-row">
+      <span class="prog-label">Figma coverage</span>
+      <span class="prog-count">7 of 20 <span>requirements covered</span><span class="prog-pct">35%</span></span>
+      <span class="figma-age age-grey">🕐 No date on Figma frames</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill pct-red" style="width:35%"></div></div>
+  </div>
+  <div class="card-body">
+    <div class="col">
+      <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
+      <ul class="check-list">
+        <li><span class="icon">✅</span><span>User table: User Name, Organization, Type, Title, Access, MFA columns</span></li>
+        <li><span class="icon">✅</span><span>Search bar and Filter button</span></li>
+        <li><span class="icon">✅</span><span>Columns toggle + Actions button</span></li>
+        <li><span class="icon">✅</span><span>Context menu ("···") per row — role assignment pattern</span></li>
+        <li><span class="icon">✅</span><span>Two user personas: Alice (SSC Guest) and Kim (Admin)</span></li>
+        <li><span class="icon">✅</span><span>Access Roles sub-nav in sidebar</span></li>
+        <li><span class="icon">✅</span><span>Notification Management sub-nav</span></li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
+      <ul class="check-list">
+        <li><span class="icon">❌</span><span>Invite User flow (form + confirmation)<span class="note">v1.2 — new registrants only. No modal designed.</span></span></li>
+        <li><span class="icon">❌</span><span>Import Users via CSV<span class="note">v1.2 — new registrants only.</span></span></li>
+        <li><span class="icon">❌</span><span>Suspend / Reactivate / Delete modals<span class="note">v1.2 — new registrants only (Apr 24 scope update).</span></span></li>
+        <li><span class="icon">❌</span><span>User details side panel (invite status, last login, MFA status, org unit…)</span></li>
+        <li><span class="icon">❌</span><span>Suspended row visual state (greyed / strikethrough)</span></li>
+        <li><span class="icon">❌</span><span>Pending Verification row visual state</span></li>
+        <li><span class="icon">❌</span><span>Empty state (no results from filter)</span></li>
+        <li><span class="icon">❌</span><span>Error states (duplicate email, cannot delete last admin…)</span></li>
+        <li><span class="icon">❌</span><span>MFA enforcement toggle (v1.2)</span></li>
+        <li><span class="icon">❌</span><span>SSO provider display per user row</span></li>
+        <li><span class="icon">❌</span><span>Pagination</span></li>
+        <li><span class="icon">❌</span><span>Force Password Reset action</span></li>
+        <li><span class="icon">❌</span><span>Permissions section design<span class="note">New req added Apr 24 — not yet in Figma.</span></span></li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
+      <ul class="extra-list">
+        <li>"Customers" column — confirmed "neglect for now" (Apr 24)</li>
+        <li>AOR (Area of Responsibility) field — confirmed "neglect for now" (Apr 24)</li>
+        <li>Bypass verification — confirmed "neglect for now" (Apr 24)</li>
+        <li>MFA column in table — marked "nice to have" in spec</li>
+        <li>Email Template sub-nav — belongs to Notifications, not User Management</li>
+      </ul>
+    </div>
+  </div>
+  <details class="card-ds-audit">
+    <summary class="cda-header">
+      <span class="cda-title">🧩 DS Compliance</span>
+      <span class="audit-score score-med">~59%</span>
+      <span class="cda-counts">4 critical · 2 warnings · 205 frames / 298 instances</span>
+    </summary>
+    <div class="cda-body">
+      <div class="cda-issue red"><span class="cda-badge">×29 frames</span><span><code>Data Table/ Cell</code> — DS has this component (updated Apr 1 '26) but 29 table cells are custom frames ignoring it.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×20 each</span><span><code>Avatar</code> + <code>.avatar-wrapper</code> — user avatars built as raw frames. DS likely has an Avatar component — should be instances.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×13 frames</span><span><code>column-wrapper</code> — table column structure as frames instead of DS table column components.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×4 frames</span><span><code>Sidebar / SidebarGroup</code> — outer sidebar shell not componentized despite inner elements using DS instances correctly.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×2 frames</span><span><code>Icon Button</code> — built as frame; DS has icon button component.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×2 each</span><span><code>search</code> + <code>title &amp; search</code> — custom search header bars; should use DS Search / Input pattern.</span></div>
+      <div class="cda-issue green"><span>✅ Correctly using DS:</span><span style="color:#5E5880"> sidebar media asset, sidebar labels, input/basic for forms, buttons, modals — good overall use of DS interaction components.</span></div>
+    </div>
+  </details>
+</div>
+
+<!-- ═══ 3. RULE MANAGEMENT ═══ -->
+<div id="feat-3" class="feature-card" data-tags="updated has-gaps">
+  <div class="feature-header">
+    <div class="feature-title-block">
+      <a href="https://www.figma.com/design/ywoToiS3c2qAWFqsvua2Za/Rules---Automations?node-id=304-36065" target="_blank" class="feature-title">
+        3 · Rule Management <span class="ext">↗</span>
+      </a>
+      <div class="link-row">
+        <a href="https://www.figma.com/design/ywoToiS3c2qAWFqsvua2Za/Rules---Automations?node-id=304-36065" class="link-pill figma" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — Mar 24, 2026
+        </a>
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" class="link-pill confluence" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Confluence v39 · Apr 24 🆕
+        </a>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge green">✅ Core CRUD screens</span>
+      <span class="badge yellow">⚠️ Advanced logic not designed</span>
+      <span class="badge grey">v39 — very active</span>
+      <span class="badge blue">🔔 Conf updated Apr 24</span>
+    </div>
+  </div>
+  <div class="mismatch">
+    <strong>⚠️ Node ID mismatch:</strong> Feature table links to <code>188-2</code> (the "High Fidelity" page root). Correct design frame: <code>304-36065</code> — "Rules and Automations- March 24 2026".
+  </div>
+  <div class="change-banner">
+    <span class="change-date">Confluence updated Apr 24, 2026 (v39)</span> — New Alert Email Template section added; Error States expanded to 7 categories; Unsubscribe flow refined. Figma last updated March 24 — now <strong>31 days behind</strong> Confluence.
+    <ul>
+      <li>New req: <strong>Immediate Alert</strong> (Critical findings) + <strong>Daily Digest</strong> (High priority) email templates — each needs a distinct layout</li>
+      <li>Error states now in 7 groups: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery</li>
+      <li>Unsubscribe flow: entry points (email footer + user profile) and confirmation copy now specified</li>
+    </ul>
+  </div>
+  <div class="progress-section">
+    <div class="progress-row">
+      <span class="prog-label">Figma coverage</span>
+      <span class="prog-count">9 of 22 <span>requirements covered</span><span class="prog-pct">41%</span></span>
+      <span class="figma-age age-yellow">🕐 31 days since last Figma update</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill pct-yellow" style="width:41%"></div></div>
+  </div>
+  <div class="card-body">
+    <div class="col">
+      <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
+      <ul class="check-list">
+        <li><span class="icon">✅</span><span>Rules library list view (table with name, status, metadata)</span></li>
+        <li><span class="icon">✅</span><span>Create New Rule: Name, Description, Priority, Category, Status, Tags</span></li>
+        <li><span class="icon">✅</span><span>Rule Conditions (If This): Subject / Operator / Value + "Select Another"</span></li>
+        <li><span class="icon">✅</span><span>Action Conditions (Then This): Action Type / Recipients / Email Template</span></li>
+        <li><span class="icon">✅</span><span>Edit Existing Rule screen</span></li>
+        <li><span class="icon">✅</span><span>Detail Sheet panel</span></li>
+        <li><span class="icon">✅</span><span>Menu Options (context menu per rule)</span></li>
+        <li><span class="icon">✅</span><span>Sheet Examples</span></li>
+        <li><span class="icon">✅</span><span>Active / Inactive status field visible</span></li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
+      <ul class="check-list">
+        <li><span class="icon">❌</span><span>Alert Email Template design — Immediate Alert + Daily Digest layouts<span class="note">New req Apr 24 — both templates need distinct visual design. Not in Figma yet.</span></span></li>
+        <li><span class="icon">❌</span><span>Nested conditions UI (up to 10 logic levels)<span class="note">Design shows flat single-level only.</span></span></li>
+        <li><span class="icon">❌</span><span>Action trigger frequency toggle (Event-based vs Digest)</span></li>
+        <li><span class="icon">❌</span><span>Duplicate rule detection / conflict warning</span></li>
+        <li><span class="icon">❌</span><span>Dry Run / simulate mode</span></li>
+        <li><span class="icon">❌</span><span>Audit log view (execution history, rule change history)</span></li>
+        <li><span class="icon">❌</span><span>Unsubscribe — entry points: email footer + user profile; confirmation text<span class="note">Refined Apr 24 with specific entry points and copy requirements.</span></span></li>
+        <li><span class="icon">❌</span><span>Filter, sort, search in library (by owner, last triggered, status…)</span></li>
+        <li><span class="icon">❌</span><span>Copy/Clone rule action</span></li>
+        <li><span class="icon">❌</span><span>"Convert table filter → rule" shortcut (Observations integration)</span></li>
+        <li><span class="icon">❌</span><span>Run schedule — scheduled/recurring rules</span></li>
+        <li><span class="icon">❌</span><span>Error / validation states — 7 categorized groups<span class="note">Expanded Apr 24: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery.</span></span></li>
+        <li><span class="icon">❌</span><span>Empty state for rules library (first visit)</span></li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
+      <ul class="extra-list">
+        <li>Priority field on rule builder — not in Confluence spec</li>
+        <li>Category field — not in Confluence spec</li>
+        <li>Tags field — not in Confluence spec</li>
+        <li>Reporting / Contact Manager items in sidebar — scope bleed</li>
+      </ul>
+    </div>
+  </div>
+  <details class="card-ds-audit">
+    <summary class="cda-header">
+      <span class="cda-title">🧩 DS Compliance</span>
+      <span class="audit-score score-med">~58%</span>
+      <span class="cda-counts">4 critical · 3 warnings · 472 frames / 657 instances</span>
+    </summary>
+    <div class="cda-body">
+      <div class="cda-issue red"><span class="cda-badge">×46 frames</span><span><code>_SelectItem</code> — underscore = detached. Dropdown items built as custom frames instead of DS Select / Dropdown Item components. Most repeated issue in this file.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×21 each</span><span><code>Select dropdown</code> + <code>SelectMenu Group</code> — entire dropdown menus as frames. Should be DS Select component instances throughout.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×12 frames</span><span><code>_SelectTrigger</code> — custom trigger buttons for selects (underscore = detached). Should use DS Select trigger.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×7 frames</span><span><code>Badge</code> — DS has Badge component but these 7 badges are custom frames, not instances.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×4 each</span><span><code>Condition Card</code> + <code>Action Row</code> — rule builder patterns repeated as plain frames. Should be at minimum local components.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×7 frames</span><span><code>Multi-Select</code> — custom multi-select pattern; check if DS has a multi-select variant before extending further.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×6 frames</span><span><code>Data Table / Column Template / Default</code> — DS column template components not used.</span></div>
+    </div>
+  </details>
+</div>
+
+<!-- ═══ 4. NOTIFICATION SETTINGS ═══ -->
+<div id="feat-4" class="feature-card" data-tags="no-req">
+  <div class="feature-header">
+    <div class="feature-title-block">
+      <a href="https://www.figma.com/design/NXAy5lIsRr65ceyFZgfPIh/Settings?node-id=731-29823" target="_blank" class="feature-title">
+        4 · Notification Settings <span class="ext">↗</span>
+      </a>
+      <div class="link-row">
+        <a href="https://www.figma.com/design/NXAy5lIsRr65ceyFZgfPIh/Settings?node-id=731-29823" class="link-pill figma" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — WIP page (active)
+        </a>
+        <span class="link-pill no-conf">⚠️ No Confluence page</span>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge red">❌ No requirements doc</span>
+      <span class="badge yellow">⚠️ Linked node is in v0 (old)</span>
+    </div>
+  </div>
+  <div class="mismatch">
+    <strong>⚠️ Linked node is outdated:</strong> Node <code>731-29823</code> lives on the <strong>v0 page</strong> — an older iteration. Active designs are on the <strong>WIP page</strong>. Update the feature table link.
+  </div>
+  <div class="change-banner">
+    <span class="change-date">Latest Figma: WIP page</span> — 5+ sections: Notification Management, Email Configuration, Email Templates, Webhooks, User Access, Teams. No date stamp in frame names.
+    <ul>
+      <li>WIP: Empty state, Create notification flow, Overview list, Filter/delete, Edit existing</li>
+      <li>WIP Email Config: Brand &amp; Communications section (logo upload, sender email/name)</li>
+    </ul>
+  </div>
+  <div class="progress-section">
+    <div class="progress-row">
+      <span class="prog-label">Figma coverage</span>
+      <span class="prog-na">— No requirements doc to measure against</span>
+      <span class="figma-age age-grey">🕐 No date on Figma frames</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="col">
+      <div class="col-title"><span class="dot green"></span>Done in Figma (visual audit only — no requirements)</div>
+      <ul class="check-list">
+        <li><span class="icon">✅</span><span>Notification Management: empty state, create flow, overview, filter/delete, edit</span></li>
+        <li><span class="icon">✅</span><span>Email Configuration: logo upload, sender email, sender name</span></li>
+        <li><span class="icon">✅</span><span>Email Templates section</span></li>
+        <li><span class="icon">✅</span><span>Webhooks section</span></li>
+        <li><span class="icon">✅</span><span>User Access and Teams sections (in WIP)</span></li>
+        <li><span class="icon">✅</span><span>Empty/first-visit state for notifications</span></li>
+        <li><span class="icon">✅</span><span>Notification create/edit form</span></li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-title"><span class="dot yellow"></span>Can't verify — no Confluence page</div>
+      <ul class="check-list">
+        <li><span class="icon">⚠️</span><span>No PRD exists for this feature<span class="note">Cannot determine what's in-scope vs extra. Confluence page marked "to-do".</span></span></li>
+        <li><span class="icon">⚠️</span><span>Linked node (731-29823) is in old v0, not current WIP<span class="note">Action needed: update feature table link to WIP page sections.</span></span></li>
+        <li><span class="icon">⚠️</span><span>Scope unclear — User Access and Teams may belong to User Management</span></li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma — scope unclear without requirements</div>
+      <ul class="extra-list">
+        <li>User Access section (may be User Management scope)</li>
+        <li>Teams section (may be User Management scope)</li>
+        <li>Webhooks section (may be Integration scope)</li>
+      </ul>
+    </div>
+  </div>
+  <details class="card-ds-audit">
+    <summary class="cda-header">
+      <span class="cda-title">🧩 DS Compliance</span>
+      <span class="audit-score score-good">~90%</span>
+      <span class="cda-counts">best in class · 2 minor warnings</span>
+    </summary>
+    <div class="cda-body">
+      <div class="cda-issue yellow"><span class="cda-badge">frame</span><span><code>Card</code> / <code>Card Content</code> — settings group card built as raw frames. DS may have a Card / Settings Group component — worth checking before adding more sections.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">frames</span><span><code>Input / Basic</code> layout wrappers — outer frames named "Input / Basic" that contain actual DS input instances. Confusing naming; actual DS inputs are used correctly inside, but the label+input row wrapper is a custom frame.</span></div>
+      <div class="cda-issue green"><span>✅ Benchmark file:</span><span style="color:#5E5880"> sidebar, global header, page top-section, empty/onboarding state, setting group title, file uploader, separator, buttons, side panel — all DS instances. Use this file as the structural template for others.</span></div>
+    </div>
+  </details>
+</div>
+
+<!-- ═══ 5. OWN ACCOUNT ═══ -->
+<div id="feat-5" class="feature-card" data-tags="has-gaps">
+  <div class="feature-header">
+    <div class="feature-title-block">
+      <a href="https://www.figma.com/design/Sc0FzsKFFNfY9maSYoA2Fl/User-Settings?node-id=109-24187" target="_blank" class="feature-title">
+        5 · Own Account Management <span class="ext">↗</span>
+      </a>
+      <div class="link-row">
+        <a href="https://www.figma.com/design/Sc0FzsKFFNfY9maSYoA2Fl/User-Settings?node-id=109-24187" class="link-pill figma" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — High Fidelity
+        </a>
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5856100353/User+Account+Settings" class="link-pill confluence" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Confluence v6 · Mar 30
+        </a>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge green">✅ Main settings screen</span>
+      <span class="badge red">❌ Flows &amp; error states missing</span>
+    </div>
+  </div>
+  <div class="change-banner">
+    <span class="change-date">Latest Figma: no date in frame names</span> — "High Fidelity" page: Full Page Options, Suggested Redlines, User Options, User Settings, User Settings-Option Active, Mobile Example. Confluence v6 last updated Mar 30.
+    <ul><li>Main settings page is designed but all interaction flows (password change, MFA setup, account deletion) are missing</li></ul>
+  </div>
+  <div class="progress-section">
+    <div class="progress-row">
+      <span class="prog-label">Figma coverage</span>
+      <span class="prog-count">9 of 19 <span>requirements covered</span><span class="prog-pct">47%</span></span>
+      <span class="figma-age age-grey">🕐 No date on Figma frames</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill pct-yellow" style="width:47%"></div></div>
+  </div>
+  <div class="card-body">
+    <div class="col">
+      <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
+      <ul class="check-list">
+        <li><span class="icon">✅</span><span>Personal: Full Name (editable), User Avatar</span></li>
+        <li><span class="icon">✅</span><span>Contact: Email Address (read-only), Phone Number</span></li>
+        <li><span class="icon">✅</span><span>Security: Password field visible</span></li>
+        <li><span class="icon">✅</span><span>Two-Factor Authentication — shown as "Coming Soon"</span></li>
+        <li><span class="icon">✅</span><span>Organization: Organization, Team/Department, Position/Role (read-only)</span></li>
+        <li><span class="icon">✅</span><span>Preferences section (below fold)</span></li>
+        <li><span class="icon">✅</span><span>User Settings - Option Active state (expanded field)</span></li>
+        <li><span class="icon">✅</span><span>Mobile example frame</span></li>
+        <li><span class="icon">✅</span><span>Suggested Redlines (dev handoff notes)</span></li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
+      <ul class="check-list">
+        <li><span class="icon">❌</span><span>Password change flow (current → new → confirmation)<span class="note">Requires current password; sends confirmation email. No modal designed.</span></span></li>
+        <li><span class="icon">❌</span><span>Avatar upload flow (file picker, preview, remove)</span></li>
+        <li><span class="icon">❌</span><span>MFA setup flow (TOTP or email OTP) — "Coming Soon" only</span></li>
+        <li><span class="icon">❌</span><span>Account deletion flow (type email to confirm + admin approval)</span></li>
+        <li><span class="icon">❌</span><span>Role field with lock indicator (read-only)</span></li>
+        <li><span class="icon">❌</span><span>SSO provider display ("Google / Microsoft / Not connected")</span></li>
+        <li><span class="icon">❌</span><span>Last login timestamp</span></li>
+        <li><span class="icon">❌</span><span>Error states: wrong password, invalid file format, MFA code errors</span></li>
+        <li><span class="icon">❌</span><span>SSC users flow (read-only, redirect to Pv1)</span></li>
+        <li><span class="icon">❌</span><span>AOR (Area of Responsibility) field</span></li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
+      <ul class="extra-list">
+        <li>"Preferences" section — not in Confluence v6</li>
+        <li>"Full Page Options" and "User Options" — design exploration frames</li>
+      </ul>
+    </div>
+  </div>
+  <details class="card-ds-audit">
+    <summary class="cda-header">
+      <span class="cda-title">🧩 DS Compliance</span>
+      <span class="audit-score score-bad">~28%</span>
+      <span class="cda-counts">6 critical · 3 warnings · 910 frames / 358 instances · needs most attention</span>
+    </summary>
+    <div class="cda-body">
+      <div class="cda-issue red"><span class="cda-badge">×111 frames</span><span><code>Info Line</code> — most repeated element in all 7 files. A label+value display row appearing 111 times as a plain frame. Highest priority for componentization — every visual change needs 111 manual edits.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×101 each</span><span><code>Label</code> + <code>Value</code> — raw text container frames for every field. Should be part of the <code>Info Line</code> component or a DS form field pattern.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×68 frames</span><span><code>Text Switch Wrapper</code> — toggle/switch rows as custom frames. DS has a Toggle / Switch component — wrappers should use it.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×33 + ×29</span><span><code>Editable Section</code> + <code>Editable Fields</code> — core editing pattern repeated extensively as frames. Should be a component with locked/editing state variants.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×33 frames</span><span><code>Input</code> — custom input frames. DS <strong>Input / Basic</strong> should replace these throughout.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×31 each</span><span><code>CTAs</code> + <code>Remove</code> — action button groups and remove buttons as raw frames. DS Button component should be used.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×20 frames</span><span><code>Full Name- Open</code> — state-specific frame; with a proper component this becomes a variant/state, not a separate frame repeated 20 times.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×15 frames</span><span><code>Organization Input</code> — org-scoped input pattern; should be a DS Input variant or wrapper component.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×2 frames</span><span><code>Setting Cards</code> — should use DS Card or align with Settings file Card pattern.</span></div>
+    </div>
+  </details>
+</div>
+
+<!-- ═══ 6. EXCHANGE HUB ═══ -->
+<div id="feat-6" class="feature-card" data-tags="has-gaps">
+  <div class="feature-header">
+    <div class="feature-title-block">
+      <a href="https://www.figma.com/design/jsRMUziPQEEcjfR8WByjkU/Exchange-Hub" target="_blank" class="feature-title">
+        6 · Exchange Hub Foundation <span class="ext">↗</span>
+      </a>
+      <div class="link-row">
+        <a href="https://www.figma.com/design/jsRMUziPQEEcjfR8WByjkU/Exchange-Hub" class="link-pill figma" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — Jan 26, 2026
+        </a>
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5489229889" class="link-pill confluence" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Confluence v10 · Apr 1
+        </a>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge green">✅ Core thread UI designed</span>
+      <span class="badge red">❌ 5 XD-187 items pending</span>
+      <span class="badge yellow">⚠️ Conf 89 days newer</span>
+    </div>
+  </div>
+  <div class="change-banner">
+    <span class="change-date">Latest Figma: January 26, 2026 (page "012625")</span> — Titan styling rebuild, Thread Actions, Search, Archived messages. Confluence v10 (Apr 1) contains ABAC access table, delivery status spec, Topic Link/ID requirement — all missing from Figma.
+    <ul><li>Open Jira XD-187 "Design updates for Exchange Hub" — 5 specific tasks, 2 partially done</li></ul>
+  </div>
+  <div class="progress-section">
+    <div class="progress-row">
+      <span class="prog-label">Figma coverage</span>
+      <span class="prog-count">12 of 17 <span>fully covered · 3 partial</span><span class="prog-pct">79%</span></span>
+      <span class="figma-age age-red">🕐 88 days since last Figma update</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill pct-green" style="width:79%"></div></div>
+  </div>
+  <div class="card-body">
+    <div class="col">
+      <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
+      <ul class="check-list">
+        <li><span class="icon">✅</span><span>Thread list: Active and Archived tabs, Inbound/Outbound filter</span></li>
+        <li><span class="icon">✅</span><span>Thread detail: conversation view with message timeline</span></li>
+        <li><span class="icon">✅</span><span>Thread header with org name + thread permalink URL</span></li>
+        <li><span class="icon">✅</span><span>Thread Actions panel: Included Users, Related Assets, Connected Issues, Export Thread</span></li>
+        <li><span class="icon">✅</span><span>Archived Messages table view (Company, Issues, Inquiry Type, Severity, Dates)</span></li>
+        <li><span class="icon">✅</span><span>Search &amp; Results screens</span></li>
+        <li><span class="icon">✅</span><span>Filter states (org, contact, asset, issue, inquiry type, threat level…)</span></li>
+        <li><span class="icon">✅</span><span>Archived Thread Detail Sheet (side panel)</span></li>
+        <li><span class="icon">✅</span><span>Export confirmation toast</span></li>
+        <li><span class="icon">✅</span><span>MessageType icon component spec (14px icons)</span></li>
+        <li><span class="icon">✅</span><span>Failed message state (red-bordered Mailer Daemon row)</span></li>
+        <li><span class="icon">✅</span><span>"Findings", "Assessment", "Questionnaire" inquiry types labeled</span></li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-title"><span class="dot red"></span>XD-187 open items</div>
+      <ul class="check-list">
+        <li><span class="icon">🟡</span><span>Thread Link/ID in thread list (partial)<span class="note">URL in thread detail header ✅, NOT in thread list items ❌.</span></span></li>
+        <li><span class="icon">🟡</span><span>Unread message counter — text only (partial)<span class="note">"2,345 Messages, 1 unread" ✅. Tab badge ❌. Per-message indicator ❌.</span></span></li>
+        <li><span class="icon">❌</span><span>Topic (Thread) name under company name in thread list</span></li>
+        <li><span class="icon">🟡</span><span>Inquiry type icons — 14px designed (partial)<span class="note">Icons at 14px exist. Larger size + Security events icon not done.</span></span></li>
+        <li><span class="icon">❌</span><span>Delivery status icons per message (WhatsApp-style)<span class="note">10-state icon table not designed. Still uses thread-level red border.</span></span></li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
+      <ul class="extra-list">
+        <li>"SCOR" tag in Archived Thread header — not in Confluence spec vocabulary</li>
+        <li>Export Thread action — spec lists archive/delete, not explicit export</li>
+        <li>Hover tooltip shows email From/To/CC/Subject — not in spec</li>
+      </ul>
+    </div>
+  </div>
+  <details class="card-ds-audit">
+    <summary class="cda-header">
+      <span class="cda-title">🧩 DS Compliance</span>
+      <span class="audit-score score-med">N/A</span>
+      <span class="cda-counts">Figma link is file-level — no specific screen node selected</span>
+    </summary>
+    <div class="cda-body">
+      <div class="cda-issue yellow"><span class="cda-badge">action needed</span><span>Update the Figma link in the checklist to a specific screen node to enable component audit. The current link points to the file root without selecting a frame.</span></div>
+    </div>
+  </details>
+</div>
+
+<!-- ═══ 7. FILE VAULT ═══ -->
+<div id="feat-7" class="feature-card" data-tags="updated has-gaps">
+  <div class="feature-header">
+    <div class="feature-title-block">
+      <a href="https://www.figma.com/design/3PsfTGHFd5O0QfbKC0u8z7/File-Vault---Document-Access?node-id=4853-17850" target="_blank" class="feature-title">
+        7 · File Vault: Publicly Available Evidences <span class="ext">↗</span>
+      </a>
+      <div class="link-row">
+        <a href="https://www.figma.com/design/3PsfTGHFd5O0QfbKC0u8z7/File-Vault---Document-Access?node-id=4853-17850" class="link-pill figma" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — Jan 26, 2026
+        </a>
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5960499220/Publicly+Available+Files" class="link-pill confluence" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Confluence v1 · Apr 24 🆕
+        </a>
+      </div>
+    </div>
+    <div class="badge-row">
+      <span class="badge green">✅ 10 sections designed</span>
+      <span class="badge blue">🔔 Conf created Apr 24</span>
+      <span class="badge yellow">⚠️ Permission flows missing</span>
+    </div>
+  </div>
+  <div class="change-banner">
+    <span class="change-date">Confluence created Apr 24, 2026 (v1) — "Publicly Available Files"</span> — 11 functional requirements around auto-sharing: when a vendor attaches a file to an Observation, view-only access is auto-granted to <strong>all monitoring orgs</strong> without manual permission management. Figma covers the upload/vault UI but not the permission/audit layer.
+    <ul>
+      <li>Core rule: File → Parent Observation → all monitoring orgs automatically get Viewer access (ignores license/ABAC)</li>
+      <li>Requires: audit trail, access revocation states, no-lateral-access enforcement, file versioning (active only)</li>
+      <li>Not in scope: granular permissions, file access expiration, email/in-app notifications on file changes</li>
+    </ul>
+  </div>
+  <div class="progress-section">
+    <div class="progress-row">
+      <span class="prog-label">Figma coverage</span>
+      <span class="prog-count">4 of 11 <span>fully covered · 3 partial</span><span class="prog-pct">50%</span></span>
+      <span class="figma-age age-red">🕐 88 days since last Figma update</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill pct-yellow" style="width:50%"></div></div>
+  </div>
+  <div class="card-body">
+    <div class="col">
+      <div class="col-title"><span class="dot green"></span>Done in Figma (vs Confluence requirements)</div>
+      <ul class="check-list">
+        <li><span class="icon">✅</span><span>Uploading Files — action that triggers auto-sharing (Req 1, 6 Bulk)</span></li>
+        <li><span class="icon">✅</span><span>Shared Documents — shows inherited visibility state (Req 3)</span></li>
+        <li><span class="icon">✅</span><span>Security boundary — File Vault scoped to specific files only, no lateral browse (Req 7)</span></li>
+        <li><span class="icon">✅</span><span>File Versioning — File Details panel shows active version only (Req 11)</span></li>
+        <li><span class="icon">🟡</span><span>Upload flow — present but no auto-permission confirmation toast/state shown (Req 4 partial)</span></li>
+        <li><span class="icon">🟡</span><span>Restoring Deleted Files — covers vendor-side deletion but not org access revocation (Req 10 partial)</span></li>
+        <li><span class="icon">🟡</span><span>Actions &amp; Dialogs — permission toasts exist but don't show org-level auto-grant (Req 1 partial)</span></li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
+      <ul class="check-list">
+        <li><span class="icon">❌</span><span>Auto-permission confirmation state — visual feedback that all monitoring orgs received Viewer access on upload (Req 1, 4)</span></li>
+        <li><span class="icon">❌</span><span>Audit Trail UI — log showing which orgs were granted access + timestamps (Req 8)<span class="note">Required: automatically log each auto-share event.</span></span></li>
+        <li><span class="icon">❌</span><span>License &amp; ABAC bypass state — no UI indicating paywall-bypass is active (Req 5)</span></li>
+        <li><span class="icon">❌</span><span>Parent Observation → child records link visualization — trigger logic UI (Req 2, 9)</span></li>
+        <li><span class="icon">❌</span><span>Access revocation state — what a monitoring org sees when file is removed from observation (Req 10)<span class="note">Broken attachment link on observation; org immediately loses access.</span></span></li>
+        <li><span class="icon">❌</span><span>File restoration edge case — policy for re-granting access after restore from trash (Req 10 TBD)</span></li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
+      <ul class="extra-list">
+        <li>Malware scanning (Section 03) — not mentioned in Confluence spec</li>
+        <li>Folder Density variants (Section 05) — design exploration only</li>
+        <li>Applied Filters (Section 07) — implied but not specified</li>
+        <li>Search &amp; Results (Section 08) — implied but not specified</li>
+        <li>Categorization UI — noted as "helpful but not required" in changelog</li>
+      </ul>
+      <div class="col-title" style="margin-top:16px"><span class="dot yellow"></span>Explicitly out of scope (Confluence spec)</div>
+      <ul class="oos-list">
+        <li>Granular permissions — deferred</li>
+        <li>File access expiration — deferred</li>
+        <li>Time-based access expiration — deferred</li>
+        <li>Email/in-app notifications on file add/remove/update — deferred</li>
+      </ul>
+    </div>
+  </div>
+  <details class="card-ds-audit">
+    <summary class="cda-header">
+      <span class="cda-title">🧩 DS Compliance</span>
+      <span class="audit-score score-med">~58%</span>
+      <span class="cda-counts">3 critical · 3 warnings · 894 frames / 1,213 instances</span>
+    </summary>
+    <div class="cda-body">
+      <div class="cda-issue red"><span class="cda-badge">×144 frames</span><span><code>Data Table/ Cell</code> — highest volume issue across all 7 files. DS has <strong>Data Table / Cell</strong> (updated Apr 1 '26) but 144 cells are custom frames across 18 screens.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×36 frames</span><span><code>Data Table / Column Template / Default</code> — DS column template components not used. Should be instances.</span></div>
+      <div class="cda-issue red"><span class="cda-badge">×22 + ×44</span><span><code>Data Table</code> + <code>column-wrapper</code> — entire table structure assembled from frames. DS table components should be used as the foundation.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×18 each</span><span><code>.sheet-header</code> + <code>.footer</code> — sheet/drawer headers and footers built as frames across 18 screens. Consistent pattern, good candidate for DS Sheet Header component.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×4 each</span><span><code>search-action</code> + <code>search&amp;filter</code> — custom search + filter toolbar. DS Input / Search should be used; filter pattern may need a DS component proposal.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">×4 each</span><span><code>Data Table / Table Tools</code> + <code>Column Settings Menu</code> — table toolbar and column settings as frames. Check if DS has canonical versions.</span></div>
+      <div class="cda-issue green"><span>✅ Good overall ratio:</span><span style="color:#5E5880"> 1,213 instances. Navigation, sidebar, buttons, breadcrumbs, and interactive elements correctly use DS. Data table layer is the main gap.</span></div>
+    </div>
+  </details>
+</div>
+
+<!-- SUMMARY TABLE -->
+<div class="summary-wrap">
+  <div class="table-head">Quick Reference — All Features</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Feature status</th>
+        <th>Due date</th>
+        <th>UI task</th>
+        <th>Figma date</th>
+        <th>Figma age</th>
+        <th>Confluence</th>
+        <th>Progress</th>
+        <th>Core screens</th>
+        <th>Flows / errors</th>
+        <th>Node ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#feat-1">VRM Dashboard</a></td>
+        <td><span class="jira-status in-progress">🔄 In Progress</span></td>
+        <td><span class="due-overdue">⚠️ Feb 20, 2026</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-123" target="_blank">XD-123 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
+        <td>Mar 2, 2026</td>
+        <td style="color:#7A6020;font-weight:600">53 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" target="_blank">v15 Apr 16 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:62%"></div></div><span class="mini-label">10/16 · 62%</span></div></td>
+        <td>✅ All 7 widgets</td>
+        <td>❌ Drill-down, CSV</td>
+        <td>⚠️ Cover node</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-2">User Management</a></td>
+        <td><span class="jira-status ready-for-dev">✅ Ready for Dev</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-81" target="_blank">XD-81 ↗</a> <span class="jira-status ready-for-dev">Ready for Dev</span></td>
+        <td>No date</td>
+        <td style="color:#8A84AA">—</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/User+Management" target="_blank" style="color:#2D7A50">v12 Apr 24 🆕 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:35%"></div></div><span class="mini-label">7/20 · 35%</span></div></td>
+        <td>✅ v1 table &amp; role</td>
+        <td>❌ All v1.2 flows</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-3">Rule Management</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-upcoming">May 9, 2026</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-104" target="_blank">XD-104 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>Mar 24, 2026</td>
+        <td style="color:#7A6020;font-weight:600">31 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" target="_blank" style="color:#2D7A50">v39 Apr 24 🆕 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:41%"></div></div><span class="mini-label">9/22 · 41%</span></div></td>
+        <td>✅ 6 screens</td>
+        <td>❌ Nesting, dry run, emails</td>
+        <td>⚠️ Page node</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-4">Notification Settings</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-126" target="_blank">XD-126 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>No date</td>
+        <td style="color:#8A84AA">—</td>
+        <td style="color:#B85450;font-weight:600">None</td>
+        <td><span style="color:#9B96CC;font-size:11px;font-style:italic">No requirements</span></td>
+        <td>✅ WIP screens</td>
+        <td>⚠️ Can't verify</td>
+        <td>⚠️ v0 (old)</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-5">Own Account</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-190" target="_blank">XD-190 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>No date</td>
+        <td style="color:#8A84AA">—</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5856100353/User+Account+Settings" target="_blank">v6 Mar 30 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:47%"></div></div><span class="mini-label">9/19 · 47%</span></div></td>
+        <td>✅ Main settings</td>
+        <td>❌ Password / MFA / Delete</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-6">Exchange Hub</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-187" target="_blank">XD-187 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>Jan 26, 2026</td>
+        <td style="color:#B85450;font-weight:600">88 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5489229889" target="_blank">v10 Apr 1 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-green" style="width:79%"></div></div><span class="mini-label">12/17 · 79%</span></div></td>
+        <td>✅ Full thread UI</td>
+        <td>🟡 5 XD-187 partial</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-7">File Vault</a></td>
+        <td><span class="jira-status in-progress">🔄 In Progress</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-149" target="_blank">XD-149 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
+        <td>Jan 26, 2026</td>
+        <td style="color:#B85450;font-weight:600">88 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5960499220/Publicly+Available+Files" target="_blank" style="color:#2D7A50">v1 Apr 24 🆕 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:50%"></div></div><span class="mini-label">4/11 · 50%</span></div></td>
+        <td>✅ 10 sections</td>
+        <td>❌ Permission / audit flows</td>
+        <td>✅</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="page-footer">Updated April 24, 2026 · 7 Figma files · 6 Confluence pages · Data from Figma MCP + Atlassian MCP</div>
+
+<script>
+  function filterCards(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.feature-card').forEach(card => {
+      const tags = card.dataset.tags || '';
+      if (type === 'all') card.classList.remove('hidden');
+      else if (type === 'updated') card.classList.toggle('hidden', !tags.includes('updated'));
+      else if (type === 'no-req') card.classList.toggle('hidden', !tags.includes('no-req'));
+    });
+  }
+</script>
+</body>
+</html>
