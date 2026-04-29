@@ -606,15 +606,15 @@
 <div id="feat-4" class="feature-card has-update" data-tags="has-gaps">
   <div class="feature-header">
     <div class="feature-title-block">
-      <a href="https://www.figma.com/design/NXAy5lIsRr65ceyFZgfPIh/Settings?node-id=731-29823" target="_blank" class="feature-title">
+      <a href="https://www.figma.com/design/NXAy5lIsRr65ceyFZgfPIh/Settings?node-id=103-30480&m=dev" target="_blank" class="feature-title">
         4 · Notification Settings <span class="ext">↗</span>
       </a>
       <div class="link-row">
-        <a href="https://www.figma.com/design/NXAy5lIsRr65ceyFZgfPIh/Settings?node-id=731-29823" class="link-pill figma" target="_blank">
+        <a href="https://www.figma.com/design/NXAy5lIsRr65ceyFZgfPIh/Settings?node-id=103-30480&m=dev" class="link-pill figma" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          Figma — WIP page (active)
+          Figma — WIP · Email Configuration
         </a>
-        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5970591801" class="link-pill conf" target="_blank">
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5970591801/Notification+Settings+Foundation" class="link-pill conf" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           v6 · Apr 29 🆕
         </a>
@@ -622,56 +622,53 @@
       </div>
     </div>
     <div class="badge-row">
-      <span class="badge yellow">⚠️ Linked Figma node is in v0 (old)</span>
       <span class="badge blue">🆕 Conf added Apr 29</span>
     </div>
   </div>
-  <div class="mismatch">
-    <strong>⚠️ Linked node is outdated:</strong> Node <code>731-29823</code> lives on the <strong>v0 page</strong>. Active designs are on the <strong>WIP page</strong> — update the feature table link.
-  </div>
   <div class="change-banner">
-    <span class="change-date">🆕 Confluence v6 · Apr 29, 2026</span> — First requirements doc for Notification Settings. Phase 1 in scope: Notification Management (mute per source), Email Configuration (logo, sender name, audit), Email Templates (list + preview). Webhooks, in-app, integrations deferred.
+    <span class="change-date">🆕 Confluence v6 · Apr 29, 2026</span> — First requirements doc. Phase 1 in scope: Notification Management (mute per source), Email Configuration (logo, sender name, audit log), Email Templates (list + preview). Webhooks, in-app, integrations — Phase 2.
   </div>
   <div class="progress-section">
     <div class="progress-row">
       <span class="prog-label">Figma coverage</span>
-      <span class="prog-count">4 of 15 <span>requirements covered</span><span class="prog-pct">27%</span></span>
+      <span class="prog-count">5 of 16 <span>requirements covered</span><span class="prog-pct">31%</span></span>
       <span class="figma-age age-grey">🕐 No date on Figma frames</span>
     </div>
     <div class="progress-bar-wrap">
-      <div class="progress-bar" style="width:27%"></div>
+      <div class="progress-bar" style="width:31%"></div>
     </div>
   </div>
   <div class="card-body">
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>Email Configuration — logo upload UI</span></li>
-        <li><span class="icon">✅</span><span>Email Configuration — sender display name field</span></li>
-        <li><span class="icon">✅</span><span>Email Templates — section visible (list view)</span></li>
-        <li><span class="icon">✅</span><span>Webhooks — section present</span></li>
+        <li><span class="icon">✅</span><span>Email Configuration page — layout and page structure</span></li>
+        <li><span class="icon">✅</span><span>Onboarding banner — "Brand &amp; Control Your Communications" with "Got it!" + "Learn more" + dismiss (✕)</span></li>
+        <li><span class="icon">✅</span><span>Logo upload — drag-and-drop zone (.jpg/.png, up to 2MB, 1024×1024px)</span></li>
+        <li><span class="icon">✅</span><span>Email address — fixed domain field (read-only / disabled)</span></li>
+        <li><span class="icon">✅</span><span>Sender Name — editable input ("Jane Doe at Acme Rocket Company")</span></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Missing vs requirements</div>
       <ul class="check-list">
-        <li><span class="icon">❌</span><span>Notification Management — mute per source (org-level + personal toggle)<span class="note">Core Phase 1 feature not designed. Figma shows notification rule creation, not source muting.</span></span></li>
-        <li><span class="icon">❌</span><span>Org-level mute active state — personal toggle disabled with tooltip ("Muted for your org")</span></li>
+        <li><span class="icon">❌</span><span>Notification Management page — mute per source (org-level + personal toggle)<span class="note">Core Phase 1 feature. Only nav item exists in sidebar — no page designed.</span></span></li>
+        <li><span class="icon">❌</span><span>Org-level mute active state — personal toggle disabled with tooltip ("Muted for your org by an admin")</span></li>
+        <li><span class="icon">❌</span><span>Save / submit action for Email Configuration form</span></li>
         <li><span class="icon">❌</span><span>Logo delete / replace state</span></li>
         <li><span class="icon">❌</span><span>Logo preview state after successful upload</span></li>
-        <li><span class="icon">❌</span><span>Org logo inherited state — "Using org logo" vs "Custom email logo" labels</span></li>
+        <li><span class="icon">❌</span><span>Org logo inherited state — "Using org logo" vs "Custom email logo" labels + Reset to org logo action</span></li>
         <li><span class="icon">❌</span><span>Error state for invalid logo (wrong type or oversized)</span></li>
-        <li><span class="icon">❌</span><span>Save / submit action for Email Configuration form</span></li>
         <li><span class="icon">❌</span><span>Audit log surface (logo + sender name change history)</span></li>
-        <li><span class="icon">❌</span><span>Email Templates — preview page with org logo applied</span></li>
-        <li><span class="icon">❌</span><span>Email Templates — enable / disable toggle</span></li>
-        <li><span class="icon">❌</span><span>Webhooks — "coming soon" placeholder state (explicit Phase 1 out-of-scope UI)</span></li>
+        <li><span class="icon">❌</span><span>Email Templates page — list with preview (org logo applied)</span></li>
+        <li><span class="icon">❌</span><span>Email Templates — enable / disable toggle per template</span></li>
+        <li><span class="icon">❌</span><span>Webhooks — "coming soon" placeholder state</span></li>
       </ul>
-      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements (Phase 1)</div>
+      <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but out of scope (Phase 1)</div>
       <ul class="extra-list">
         <li>User Access section — may belong to User Management scope</li>
         <li>Teams section — may belong to User Management scope</li>
-        <li>Notification create/edit flow — spec describes source muting, not rule creation</li>
+        <li>Notification create/edit flow — spec describes muting per source, not rule creation</li>
       </ul>
     </div>
   </div>
@@ -682,9 +679,9 @@
       <span class="cda-counts">best in class · 2 minor warnings</span>
     </summary>
     <div class="cda-body">
-      <div class="cda-issue yellow"><span class="cda-badge">frame</span><span><code>Card</code> / <code>Card Content</code> — settings group card built as raw frames. DS may have a Card / Settings Group component — worth checking before adding more sections.</span></div>
-      <div class="cda-issue yellow"><span class="cda-badge">frames</span><span><code>Input / Basic</code> layout wrappers — outer frames named "Input / Basic" that contain actual DS input instances. Confusing naming; actual DS inputs are used correctly inside, but the label+input row wrapper is a custom frame.</span></div>
-      <div class="cda-issue green"><span>✅ Benchmark file:</span><span style="color:#5E5880"> sidebar, global header, page top-section, empty/onboarding state, setting group title, file uploader, separator, buttons, side panel — all DS instances. Use this file as the structural template for others.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">frame</span><span><code>Card</code> / <code>Card Content</code> — settings group card as raw frames. DS may have a Card / Settings Group component.</span></div>
+      <div class="cda-issue yellow"><span class="cda-badge">frames</span><span><code>Input / Basic</code> wrappers — outer label+input row is a custom frame; actual DS inputs are used correctly inside.</span></div>
+      <div class="cda-issue green"><span>✅ Benchmark file:</span><span style="color:#5E5880"> sidebar, header, top-section, empty state, file uploader, buttons, onboarding banner — all DS instances. Use as structural template.</span></div>
     </div>
   </details>
 </div>
