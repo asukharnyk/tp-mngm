@@ -54,13 +54,13 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Inter','Sego
 .sstrip-inline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:4px}
 /* DIGEST ITEMS */
 .wd-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;margin-bottom:4px}
-.wd-item{position:relative;background:#fff;border:1px solid #E8EAED;border-radius:8px;padding:10px 12px 8px;font-size:12px;color:#4B5563;line-height:1.4}
-.wd-top{display:flex;align-items:center;flex-wrap:wrap;gap:2px}
-.wd-team{font-size:10px;font-weight:500;background:#F3F4F6;color:#6B7280;padding:1px 6px;border-radius:8px;margin-left:4px}
-.wd-pct{font-size:10px;font-weight:600;color:#6B7280;margin-left:4px}
-.wd-alerts{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.wd-item{display:flex;flex-direction:column;background:#fff;border:1px solid #E8EAED;border-radius:8px;padding:10px 12px 8px;font-size:12px;color:#4B5563;line-height:1.4}
+.wd-top{display:flex;align-items:center;gap:2px;flex-wrap:nowrap;overflow:hidden}
+.wd-team{font-size:10px;font-weight:500;background:#F3F4F6;color:#6B7280;padding:1px 6px;border-radius:8px;margin-left:4px;white-space:nowrap;flex-shrink:0}
+.wd-pct{font-size:10px;font-weight:600;color:#6B7280;margin-left:4px;white-space:nowrap;flex-shrink:0}
+.wd-alert-row{min-height:20px;display:flex;gap:4px;flex-wrap:wrap;align-items:center;margin-top:3px}
 .pa-badge{font-size:10px;font-weight:500;padding:1px 6px;border-radius:10px;border:1px solid transparent;white-space:nowrap}
-.wd-phases{display:flex;gap:0;flex-wrap:nowrap;overflow:hidden}
+.wd-phases{display:flex;gap:0;flex-wrap:nowrap;overflow:hidden;min-height:14px}
 .pmi{display:flex;align-items:center;gap:2px;font-size:10px;flex:1;min-width:0}
 .pmi-ic{font-size:9px;line-height:1;flex-shrink:0}
 .pmi-bar{flex:1;min-width:16px;height:4px;background:#E5E7EB;border-radius:2px;overflow:hidden;display:inline-block;vertical-align:middle}
@@ -68,7 +68,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Inter','Sego
 .pmi-lbl{color:#9CA3AF;font-size:9px;white-space:nowrap;flex-shrink:0}
 .wd-fname{cursor:pointer;color:#1F2937}
 .wd-fname:hover{color:#4F46E5;text-decoration:underline}
-.wd-due{display:block;text-align:right;font-size:10px;color:#9CA3AF;margin-top:4px}
+.wd-due{display:block;text-align:right;font-size:10px;color:#9CA3AF;margin-top:auto;padding-top:4px}
 .wd-due-late{color:#DC2626}
 .wd-tl{position:relative;height:6px;background:#F3F4F6;border-radius:3px;margin:4px 0 6px;overflow:visible}
 .wd-tl-fill{position:absolute;top:0;height:100%;border-radius:3px}
@@ -405,67 +405,78 @@ details.epic-exp .einner{padding:10px 12px}
   </summary>
   <div class="digest-body">
     <div class="wd-items"><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-122')">Org Foundation</strong><span class="wd-team">TP B</span><span class="wd-pct">90%</span><span class="wd-alerts"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-122')">Org Foundation</strong><span class="wd-team">TP B</span><span class="wd-pct">90%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:26.7%;width:13.3%;background:#C4B5FD40;border-left:2px solid #C4B5FD"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">🔍</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#7C6FBF"></span></span><span class="pmi-lbl">2/2</span></span><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#4A7AB5"></span></span><span class="pmi-lbl">3/3</span></span><span class="pmi"><span class="pmi-ic">🧪</span><span class="pmi-bar"><span class="pmi-fill" style="width:50%;background:#0891B2"></span></span><span class="pmi-lbl">1/2</span></span></div>
   <span class="wd-due wd-due-late">📅 Apr 15, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">Testing & prod readiness — due S27</div></details>
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-286')">ABAC Foundation</strong><span class="wd-team">TP B</span><span class="wd-pct">85%</span><span class="wd-alerts"><span class="pa-badge" style="background:#FB923C20;color:#FB923C;border-color:#FB923C40">⚠️ Overdue</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S28</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-286')">ABAC Foundation</strong><span class="wd-team">TP B</span><span class="wd-pct">85%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#FB923C20;color:#FB923C;border-color:#FB923C40">⚠️ Overdue</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S28</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:0.0%;width:40.0%;background:#FCA5A540;border-left:2px solid #FCA5A5"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">🔍</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#7C6FBF"></span></span><span class="pmi-lbl">1/1</span></span><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:66%;background:#4A7AB5"></span></span><span class="pmi-lbl">2/3</span></span><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#3B82F6"></span></span><span class="pmi-lbl">1/1</span></span><span class="pmi"><span class="pmi-ic">🧪</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#0891B2"></span></span><span class="pmi-lbl">0/1</span></span></div>
   <span class="wd-due wd-due-late">📅 Apr 15, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">Ory Keto implementation; prod readiness queued</div></details>
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-114')">Exchange Hub</strong><span class="wd-team">TP B</span><span class="wd-pct">75%</span><span class="wd-alerts"><span class="pa-badge" style="background:#FBBF2420;color:#FBBF24;border-color:#FBBF2440">⚠️ At risk</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-114')">Exchange Hub</strong><span class="wd-team">TP B</span><span class="wd-pct">75%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#FBBF2420;color:#FBBF24;border-color:#FBBF2440">⚠️ At risk</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:20.0%;width:20.0%;background:#FCD34D40;border-left:2px solid #FCD34D"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">🔍</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#7C6FBF"></span></span><span class="pmi-lbl">1/1</span></span><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:62%;background:#4A7AB5"></span></span><span class="pmi-lbl">5/8</span></span><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#3B82F6"></span></span><span class="pmi-lbl">2/2</span></span><span class="pmi"><span class="pmi-ic">🧪</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#0891B2"></span></span><span class="pmi-lbl">0/1</span></span><span class="pmi"><span class="pmi-ic">🚀</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#16A34A"></span></span><span class="pmi-lbl">1/1</span></span></div>
   <span class="wd-due ">📅 Apr 29, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">CRUD API finalization; testing & readiness</div></details>
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-111')">File Vault</strong><span class="wd-team">TP B</span><span class="wd-pct">65%</span><span class="wd-alerts"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-111')">File Vault</strong><span class="wd-team">TP B</span><span class="wd-pct">65%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:-26.7%;width:80.0%;background:#C4B5FD40;border-left:2px solid #C4B5FD"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:100%;background:#3B82F6"></span></span><span class="pmi-lbl">7/7</span></span><span class="pmi"><span class="pmi-ic">🧪</span><span class="pmi-bar"><span class="pmi-fill" style="width:50%;background:#0891B2"></span></span><span class="pmi-lbl">1/2</span></span><span class="pmi"><span class="pmi-ic">🚀</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#16A34A"></span></span><span class="pmi-lbl">0/1</span></span></div>
   <span class="wd-due wd-due-late">📅 May 13, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">Public beta ongoing</div></details>
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-287')">Risk Dashboard</strong><span class="wd-team">TP A</span><span class="wd-pct">55%</span><span class="wd-alerts"><span class="pa-badge" style="background:#FB923C20;color:#FB923C;border-color:#FB923C40">⚠️ Overdue</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-287')">Risk Dashboard</strong><span class="wd-team">TP A</span><span class="wd-pct">55%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#FB923C20;color:#FB923C;border-color:#FB923C40">⚠️ Overdue</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:0.0%;width:46.7%;background:#FCA5A540;border-left:2px solid #FCA5A5"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">🔍</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#7C6FBF"></span></span><span class="pmi-lbl">0/1</span></span><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#4A7AB5"></span></span><span class="pmi-lbl">0/5</span></span><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#3B82F6"></span></span><span class="pmi-lbl">0/3</span></span></div>
   <span class="wd-due wd-due-late">📅 Mar 31, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">Backend stabilization; API implementation</div></details>
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-119')">Rules Management</strong><span class="wd-team">TP A</span><span class="wd-pct">30%</span><span class="wd-alerts"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-119')">Rules Management</strong><span class="wd-team">TP A</span><span class="wd-pct">30%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:26.7%;width:60.0%;background:#C4B5FD40;border-left:2px solid #C4B5FD"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">🔍</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#7C6FBF"></span></span><span class="pmi-lbl">0/1</span></span><span class="pmi"><span class="pmi-ic">🎨</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#EC4899"></span></span><span class="pmi-lbl">0/1</span></span><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#4A7AB5"></span></span><span class="pmi-lbl">0/2</span></span><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#3B82F6"></span></span><span class="pmi-lbl">0/1</span></span></div>
   <span class="wd-due wd-due-late">📅 Jun 30, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">Service config setup; design iteration</div></details>
 </div><div class="wd-item">
   <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-289')">Account Settings</strong><span class="wd-team">TP B</span><span class="wd-pct">25%</span></div>
+  <div class="wd-alert-row"></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:0.0%;width:86.7%;background:#7DD3FC40;border-left:2px solid #7DD3FC"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#3B82F6"></span></span><span class="pmi-lbl">0/1</span></span></div>
   <span class="wd-due ">📅 Jun 24, 2026</span>
   
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-113')">Notifications</strong><span class="wd-team">TP B</span><span class="wd-pct">20%</span><span class="wd-alerts"><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-113')">Notifications</strong><span class="wd-team">TP B</span><span class="wd-pct">20%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:33.3%;width:20.0%;background:#7DD3FC40;border-left:2px solid #7DD3FC"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"></div>
   <span class="wd-due ">📅 May 13, 2026</span>
   
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-306')">File Vault</strong><span class="wd-team">TP B</span><span class="wd-pct">20%</span><span class="wd-alerts"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S29</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-306')">File Vault</strong><span class="wd-team">TP B</span><span class="wd-pct">20%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S29</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:26.7%;width:46.7%;background:#C4B5FD40;border-left:2px solid #C4B5FD"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">🔍</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#7C6FBF"></span></span><span class="pmi-lbl">0/1</span></span><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#4A7AB5"></span></span><span class="pmi-lbl">0/3</span></span><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#3B82F6"></span></span><span class="pmi-lbl">0/1</span></span></div>
   <span class="wd-due wd-due-late">📅 Jun 24, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">TDR review in progress</div></details>
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-504')">User Management</strong><span class="wd-team">TP A</span><span class="wd-pct">15%</span><span class="wd-alerts"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-504')">User Management</strong><span class="wd-team">TP A</span><span class="wd-pct">15%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:33.3%;width:40.0%;background:#C4B5FD40;border-left:2px solid #C4B5FD"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#4A7AB5"></span></span><span class="pmi-lbl">0/1</span></span><span class="pmi"><span class="pmi-ic">💻</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#3B82F6"></span></span><span class="pmi-lbl">0/4</span></span><span class="pmi"><span class="pmi-ic">🧪</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#0891B2"></span></span><span class="pmi-lbl">0/1</span></span><span class="pmi"><span class="pmi-ic">🚀</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#16A34A"></span></span><span class="pmi-lbl">0/1</span></span></div>
   <span class="wd-due wd-due-late">📅 Jun 24, 2026</span>
   <details class="wd-tw-exp"><summary class="wd-tw-sum">This sprint ▾</summary><div class="wd-tw-body">Actions epic started S27</div></details>
 </div><div class="wd-item">
-  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-97')">ABAC Permissions</strong><span class="wd-team">TP B</span><span class="wd-pct">10%</span><span class="wd-alerts"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></span></div>
+  <div class="wd-top"><strong class="wd-fname" onclick="openPanel('PRODF-97')">ABAC Permissions</strong><span class="wd-team">TP B</span><span class="wd-pct">10%</span></div>
+  <div class="wd-alert-row"><span class="pa-badge" style="background:#D9770620;color:#D97706;border-color:#D9770640">⚠️ Blocked</span><span class="pa-badge" style="background:#EFF6FF;color:#2563EB;border-color:#BFDBFE">🧪 Test S27</span></div>
   <div class="wd-tl"><div class="wd-tl-fill" style="left:33.3%;width:26.7%;background:#C4B5FD40;border-left:2px solid #C4B5FD"></div><div class="wd-tl-now" style="left:36.7%"></div></div>
   <div class="wd-phases"><span class="pmi"><span class="pmi-ic">⚙️</span><span class="pmi-bar"><span class="pmi-fill" style="width:0%;background:#4A7AB5"></span></span><span class="pmi-lbl">0/4</span></span></div>
   <span class="wd-due wd-due-late">📅 May 27, 2026</span>
