@@ -69,6 +69,10 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Inter','Sego
 .ra-link:hover{text-decoration:underline}
 .ra-st{font-size:10px;font-weight:500;background:#F3F4F6;color:#4B5563;padding:1px 6px;border-radius:8px;margin:0 3px;vertical-align:middle}
 .ra-meta{font-size:10px;color:#9CA3AF;margin-left:4px}
+/* INLINE INFO ROW */
+.row-detail{padding:1px 12px 5px 38px;display:flex;flex-direction:column;gap:2px}
+.rd-update{font-size:11px;color:#4B5563;line-height:1.4}
+.rd-focus{font-size:10px;color:#9CA3AF;font-family:monospace;line-height:1.35}
 /* ALWAYS-VISIBLE PROGRESS BAR */
 .row-prog-always{height:2px;margin:0;overflow:hidden;background:#ECEEF0}
 .row-prog-always-fill{height:100%;transition:width .3s}
@@ -334,19 +338,6 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="ds-toggle-btn">Hide ▴</span>
   </summary>
   <div class="digest-body"><div style="margin-top:10px"><div class="ra-title">⚡ Recommended Actions</div><div class="ra-list"><div class="ra-item" style="background:#FFF7ED;border-left:3px solid #FB923C"><span class="ra-icon">⏰</span><div class="ra-body"><strong>Risk Dashboard</strong> <span class="ra-st">In Development</span> <span class="ra-meta">TP A</span><br>Ran past planned sprint end — stakeholder update & replan needed <a href="https://zitenote.atlassian.net/browse/PRODF-287" target="_blank" class="ra-link">Jira ↗</a> <a href="https://zitenote.atlassian.net/wiki/x/PwCKXwE" target="_blank" class="ra-link">Confluence ↗</a></div></div><div class="ra-item" style="background:#F8FAFC;border-left:3px solid #94A3B8"><span class="ra-icon">🔎</span><div class="ra-body"><strong>Risk Dashboard</strong> <span class="ra-st">In Development</span> <span class="ra-meta">TP A</span><br>Scope coverage: No QA / testing epics planned — open drawer for details <a href="https://zitenote.atlassian.net/browse/PRODF-287" target="_blank" class="ra-link">Jira ↗</a> <a href="https://zitenote.atlassian.net/wiki/x/PwCKXwE" target="_blank" class="ra-link">Confluence ↗</a></div></div><div class="ra-item" style="background:#F8FAFC;border-left:3px solid #94A3B8"><span class="ra-icon">🔎</span><div class="ra-body"><strong>Contact Manager</strong> <span class="ra-st">In Development</span> <span class="ra-meta">TP A</span><br>Scope coverage: No QA / testing epics planned — open drawer for details <a href="https://zitenote.atlassian.net/browse/PRODF-366" target="_blank" class="ra-link">Jira ↗</a></div></div><div class="ra-item" style="background:#F8FAFC;border-left:3px solid #94A3B8"><span class="ra-icon">🔎</span><div class="ra-body"><strong>Rules Management</strong> <span class="ra-st">Scoping</span> <span class="ra-meta">TP A</span><br>Scope coverage: No QA / testing epics planned — open drawer for details <a href="https://zitenote.atlassian.net/browse/PRODF-119" target="_blank" class="ra-link">Jira ↗</a></div></div><div class="ra-item" style="background:#EFF6FF;border-left:3px solid #60A5FA"><span class="ra-icon">🧪</span><div class="ra-body"><strong>User Management</strong> <span class="ra-st">Backlog</span> <span class="ra-meta">TP A</span><br>Testing phase begins S27 — prepare test plan & assign QA capacity <a href="https://zitenote.atlassian.net/browse/PRODF-504" target="_blank" class="ra-link">Jira ↗</a> <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931" target="_blank" class="ra-link">Confluence ↗</a></div></div><div class="ra-item" style="background:#F8FAFC;border-left:3px solid #94A3B8"><span class="ra-icon">🔎</span><div class="ra-body"><strong>User Management</strong> <span class="ra-st">Backlog</span> <span class="ra-meta">TP A</span><br>Scope coverage: All active epics are closing this sprint but 5 sprints remain — no future work planned — open drawer for details <a href="https://zitenote.atlassian.net/browse/PRODF-504" target="_blank" class="ra-link">Jira ↗</a> <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931" target="_blank" class="ra-link">Confluence ↗</a></div></div><div class="ra-item" style="background:#FFF7ED;border-left:3px solid #FB923C"><span class="ra-icon">⏰</span><div class="ra-body"><strong>ABAC Foundation</strong> <span class="ra-st">Internal Testing</span> <span class="ra-meta">TP B</span><br>Ran past planned sprint end — stakeholder update & replan needed <a href="https://zitenote.atlassian.net/browse/PRODF-286" target="_blank" class="ra-link">Jira ↗</a> <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/4894425091" target="_blank" class="ra-link">Confluence ↗</a></div></div><div class="ra-item" style="background:#EFF6FF;border-left:3px solid #60A5FA"><span class="ra-icon">🧪</span><div class="ra-body"><strong>ABAC Foundation</strong> <span class="ra-st">Internal Testing</span> <span class="ra-meta">TP B</span><br>Testing phase begins S28 — prepare test plan & assign QA capacity <a href="https://zitenote.atlassian.net/browse/PRODF-286" target="_blank" class="ra-link">Jira ↗</a> <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/4894425091" target="_blank" class="ra-link">Confluence ↗</a></div></div></div></div></div>
-</details><details class="digest-details" open>
-  <summary class="digest-summary">
-    <span class="ds-chevron">&#8250;</span>
-    <span class="ds-title">📋 Feature Updates — S27</span>
-    <span class="ds-pills">
-      <span class="ds-pill">🔄 13 active</span>
-      <span class="ds-pill">Avg 54%</span>
-    </span>
-    <span class="ds-toggle-btn">Hide ▴</span>
-  </summary>
-  <div class="digest-body">
-    <div class="wd-items"><div class="wd-item"><span class="wd-icon">⚡</span><div><strong>Risk Dashboard</strong> <span class="wd-team">TP A</span> <span class="hdot hdot-overdue" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-overdue">Overdue</span> <span class="wd-pct">55%</span><br><span class="wd-biz">PV2-3343 backend stabilization; PV2-3249 API implementation</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:55%;background:#FCA5A5"></div></div></div></div><div class="wd-item"><span class="wd-icon">⚡</span><div><strong>Rules Management</strong> <span class="wd-team">TP A</span> <span class="hdot hdot-blocked" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-blocked">Blocked</span> <span class="wd-pct">30%</span><br><span class="wd-biz">PV2-3213 service config setup; PV2-3017 design iteration</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:30%;background:#C4B5FD"></div></div></div></div><div class="wd-item"><span class="wd-icon">⚡</span><div><strong>User Management</strong> <span class="wd-team">TP A</span> <span class="hdot hdot-blocked" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-blocked">Blocked</span> <span class="wd-pct">15%</span><br><span class="wd-biz">PV2-3374 Actions epic started S27</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:15%;background:#C4B5FD"></div></div></div></div><div class="wd-item"><span class="wd-icon">🚀</span><div><strong>ABAC Foundation</strong> <span class="wd-team">TP B</span> <span class="hdot hdot-overdue" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-overdue">Overdue</span> <span class="wd-pct">85%</span><br><span class="wd-biz">PV2-2357 Ory Keto; PV2-2263 prod readiness queued</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:85%;background:#FCA5A5"></div></div></div></div><div class="wd-item"><span class="wd-icon">🚀</span><div><strong>Org Foundation</strong> <span class="wd-team">TP B</span> <span class="hdot hdot-blocked" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-blocked">Blocked</span> <span class="wd-pct">90%</span><br><span class="wd-biz">PV2-2242 testing & prod readiness — due S27</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:90%;background:#C4B5FD"></div></div></div></div><div class="wd-item"><span class="wd-icon">⚡</span><div><strong>File Vault</strong> <span class="wd-team">TP B</span> <span class="hdot hdot-blocked" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-blocked">Blocked</span> <span class="wd-pct">65%</span><br><span class="wd-biz">PV2-3024 public beta ongoing</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:65%;background:#C4B5FD"></div></div></div></div><div class="wd-item"><span class="wd-icon">⚡</span><div><strong>Exchange Hub</strong> <span class="wd-team">TP B</span> <span class="hdot hdot-risk" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-risk">At Risk</span> <span class="wd-pct">75%</span><br><span class="wd-biz">PV2-1840 CRUD API finalization; PV2-1844 testing & readiness</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:75%;background:#FCD34D"></div></div></div></div><div class="wd-item"><span class="wd-icon">⚡</span><div><strong>VRM — File Vault</strong> <span class="wd-team">TP B</span> <span class="hdot hdot-blocked" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-blocked">Blocked</span> <span class="wd-pct">70%</span><br><span class="wd-biz">PV2-2833 document selection workflow</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:70%;background:#C4B5FD"></div></div></div></div><div class="wd-item"><span class="wd-icon">⚡</span><div><strong>File Vault</strong> <span class="wd-team">TP B</span> <span class="hdot hdot-blocked" style="display:inline-block;margin:0 2px 0 4px"></span><span class="hlbl hlbl-blocked">Blocked</span> <span class="wd-pct">20%</span><br><span class="wd-biz">PV2-2226 TDR review in progress</span><div style="height:3px;background:#E5E7EB;border-radius:2px;margin-top:4px;overflow:hidden"><div style="height:100%;width:20%;background:#C4B5FD"></div></div></div></div></div>
-  </div>
 </details><details class="digest-details">
   <summary class="digest-summary">
     <span class="ds-chevron">&#8250;</span>
@@ -407,6 +398,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#1D4ED8;background:#DBEAFE">PB1</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-157" target="_blank" class="lchip" title="Jira: PRODF-157">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5468946539" target="_blank" class="lchip" title="Contact Manager">📄</a></span>
     <span class="rkey" onclick="openPanel('PRODF-157')">PRODF-157</span>
   </div>
+  <div class="row-detail"><span class="rd-update">90% complete — latest design update merged; wrapping up final polish this sprint</span><span class="rd-focus">⚡ PV2-2920 latest design update shipped</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:90%;background:#A78BFA"></div></div>
   <div class="rtimeline" id="tl-PRODF-157" style="display:none">
     <div class="rtl-left">
@@ -475,6 +467,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">⏰ 22d overdue</span><a href="https://zitenote.atlassian.net/browse/PRODF-287" target="_blank" class="lchip" title="Jira: PRODF-287">🔗</a><a href="https://zitenote.atlassian.net/wiki/x/PwCKXwE" target="_blank" class="lchip" title="Risk Dashboard">📄</a><a href="https://www.figma.com/design/P0AlK7ILpd8oouZN3xDTRg/Reporting---Dashboards" target="_blank" class="lchip" title="Figma">🎨</a></span>
     <span class="rkey" onclick="openPanel('PRODF-287')">PRODF-287</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Backend stabilization & ClickHouse optimization underway; API implementation progressing — currently overdue on original ETA</span><span class="rd-focus">⚡ PV2-3343 backend stabilization; PV2-3249 API implementation</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:55%;background:#FB923C"></div></div>
   <div class="rtimeline" id="tl-PRODF-287" style="display:none">
     <div class="rtl-left">
@@ -533,6 +526,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">📅 9w left</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-119" target="_blank" class="lchip" title="Jira: PRODF-119">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-119')">PRODF-119</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Design and service config epics actively in progress; frontend scope still being defined in parallel</span><span class="rd-focus">⚡ PV2-3213 service config setup; PV2-3017 design iteration</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:30%;background:#A78BFA"></div></div>
   <div class="rtimeline" id="tl-PRODF-119" style="display:none">
     <div class="rtl-left">
@@ -601,6 +595,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#92400E;background:#FDE68A">TPRM P2</span><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-504" target="_blank" class="lchip" title="Jira: PRODF-504">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931" target="_blank" class="lchip" title="UM Extended Actions">📄</a></span>
     <span class="rkey" onclick="openPanel('PRODF-504')">PRODF-504</span>
   </div>
+  <div class="row-detail"><span class="rd-update">7 epics kicked off; Actions epic started this sprint — 15% overall progress, early dev phase</span><span class="rd-focus">⚡ PV2-3374 Actions epic started S27</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:15%;background:#A78BFA"></div></div>
   <div class="rtimeline" id="tl-PRODF-504" style="display:none">
     <div class="rtl-left">
@@ -669,6 +664,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-366" target="_blank" class="lchip" title="Jira: PRODF-366">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-366')">PRODF-366</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Auto-discovery epic kicked off this sprint; ZoomInfo sync epics shipped last sprint</span><span class="rd-focus">⚡ PV2-2925 auto-discovery kickoff</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:70%;background:#FBBF24"></div></div>
   <div class="rtimeline" id="tl-PRODF-366" style="display:none">
     <div class="rtl-left">
@@ -717,6 +713,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#B45309;background:#FEF3C7">TPRM</span><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-290" target="_blank" class="lchip" title="Jira: PRODF-290">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/4747198504" target="_blank" class="lchip" title="Multi-Tenancy">📄</a></span>
     <span class="rkey" onclick="openPanel('PRODF-290')">PRODF-290</span>
   </div>
+  
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:100%;background:#94A3B8"></div></div>
   <div class="rtimeline" id="tl-PRODF-290" style="display:none">
     <div class="rtl-left">
@@ -775,6 +772,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#1D4ED8;background:#DBEAFE">PB1</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-386" target="_blank" class="lchip" title="Jira: PRODF-386">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-386')">PRODF-386</span>
   </div>
+  
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:100%;background:#94A3B8"></div></div>
   <div class="rtimeline" id="tl-PRODF-386" style="display:none">
     <div class="rtl-left">
@@ -833,6 +831,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#1D4ED8;background:#DBEAFE">PB1</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-305" target="_blank" class="lchip" title="Jira: PRODF-305">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-305')">PRODF-305</span>
   </div>
+  
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:100%;background:#94A3B8"></div></div>
   <div class="rtimeline" id="tl-PRODF-305" style="display:none">
     <div class="rtl-left">
@@ -901,6 +900,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#1D4ED8;background:#DBEAFE">PB1</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-288" target="_blank" class="lchip" title="Jira: PRODF-288">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-288')">PRODF-288</span>
   </div>
+  
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:100%;background:#94A3B8"></div></div>
   <div class="rtimeline" id="tl-PRODF-288" style="display:none">
     <div class="rtl-left">
@@ -974,6 +974,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#B45309;background:#FEF3C7">TPRM</span><span class="lmini" style="color:#1D4ED8;background:#DBEAFE">PB1</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">⏰ 7d overdue</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-122" target="_blank" class="lchip" title="Jira: PRODF-122">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5426970625" target="_blank" class="lchip" title="Org Structure">📄</a></span>
     <span class="rkey" onclick="openPanel('PRODF-122')">PRODF-122</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Final testing and prod readiness epic due this sprint — nearly at the finish line</span><span class="rd-focus">⚡ PV2-2242 testing & prod readiness — due S27</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:90%;background:#FB923C"></div></div>
   <div class="rtimeline" id="tl-PRODF-122" style="display:none">
     <div class="rtl-left">
@@ -1032,6 +1033,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#B45309;background:#FEF3C7">TPRM</span><span class="lmini" style="color:#92400E;background:#FDE68A">TPRM P2</span><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="etag">⏰ 7d overdue</span><a href="https://zitenote.atlassian.net/browse/PRODF-286" target="_blank" class="lchip" title="Jira: PRODF-286">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/4894425091" target="_blank" class="lchip" title="ABAC Access Control">📄</a></span>
     <span class="rkey" onclick="openPanel('PRODF-286')">PRODF-286</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Ory Keto implementation in progress; production readiness test queued for next sprint</span><span class="rd-focus">⚡ PV2-2357 Ory Keto; PV2-2263 prod readiness queued</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:85%;background:#FB923C"></div></div>
   <div class="rtimeline" id="tl-PRODF-286" style="display:none">
     <div class="rtl-left">
@@ -1100,6 +1102,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#1D4ED8;background:#DBEAFE">PB1</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">⏰ 55d overdue</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-127" target="_blank" class="lchip" title="Jira: PRODF-127">🔗</a><a href="https://www.figma.com/design/3PsfTGHFd5O0QfbKC0u8z7/File-Vault---Document-Access" target="_blank" class="lchip" title="Figma">🎨</a></span>
     <span class="rkey" onclick="openPanel('PRODF-127')">PRODF-127</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Document selection workflow active this sprint; integrating File Vault into VRM flows</span><span class="rd-focus">⚡ PV2-2833 document selection workflow</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:70%;background:#FB923C"></div></div>
   <div class="rtimeline" id="tl-PRODF-127" style="display:none">
     <div class="rtl-left">
@@ -1138,6 +1141,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#0369A1;background:#E0F2FE">Priv Beta</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-111" target="_blank" class="lchip" title="Jira: PRODF-111">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/TECH/pages/4944134145" target="_blank" class="lchip" title="FileVault">📄</a><a href="https://www.figma.com/design/3PsfTGHFd5O0QfbKC0u8z7/File-Vault---Document-Access" target="_blank" class="lchip" title="Figma">🎨</a></span>
     <span class="rkey" onclick="openPanel('PRODF-111')">PRODF-111</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Public beta running with early customers; UAT on hold pending PV2-44 blocker resolution</span><span class="rd-focus">⚡ PV2-3024 public beta ongoing</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:65%;background:#A78BFA"></div></div>
   <div class="rtimeline" id="tl-PRODF-111" style="display:none">
     <div class="rtl-left">
@@ -1196,6 +1200,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#1D4ED8;background:#DBEAFE">PB1</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-306" target="_blank" class="lchip" title="Jira: PRODF-306">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-306')">PRODF-306</span>
   </div>
+  <div class="row-detail"><span class="rd-update">TDR epic under review; 4 remaining implementation epics awaiting refinement before dev can start</span><span class="rd-focus">⚡ PV2-2226 TDR review in progress</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:20%;background:#A78BFA"></div></div>
   <div class="rtimeline" id="tl-PRODF-306" style="display:none">
     <div class="rtl-left">
@@ -1254,6 +1259,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">📅 5w left</span><span class="rblk">🚫</span><a href="https://zitenote.atlassian.net/browse/PRODF-97" target="_blank" class="lchip" title="Jira: PRODF-97">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-97')">PRODF-97</span>
   </div>
+  <div class="row-detail"><span class="rd-update">4 service epics in needs-refinement; unblocked only after ABAC Foundation ships (this sprint)</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:10%;background:#A78BFA"></div></div>
   <div class="rtimeline" id="tl-PRODF-97" style="display:none">
     <div class="rtl-left">
@@ -1292,6 +1298,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#B45309;background:#FEF3C7">TPRM</span><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">⏰ 7d left</span><a href="https://zitenote.atlassian.net/browse/PRODF-114" target="_blank" class="lchip" title="Jira: PRODF-114">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5489229889" target="_blank" class="lchip" title="Exchange Hub">📄</a></span>
     <span class="rkey" onclick="openPanel('PRODF-114')">PRODF-114</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Final push — CRUD API and testing epics closing out ahead of Apr 29 ETA</span><span class="rd-focus">⚡ PV2-1840 CRUD API finalization; PV2-1844 testing & readiness</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:75%;background:#FBBF24"></div></div>
   <div class="rtimeline" id="tl-PRODF-114" style="display:none">
     <div class="rtl-left">
@@ -1370,6 +1377,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#92400E;background:#FDE68A">TPRM P2</span><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">📅 9w left</span><a href="https://zitenote.atlassian.net/browse/PRODF-289" target="_blank" class="lchip" title="Jira: PRODF-289">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5856100353" target="_blank" class="lchip" title="Account Settings">📄</a></span>
     <span class="rkey" onclick="openPanel('PRODF-289')">PRODF-289</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Frontend config epic on hold; planned restart S28 after Account Settings scoping completes</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:25%;background:#7DD3FC"></div></div>
   <div class="rtimeline" id="tl-PRODF-289" style="display:none">
     <div class="rtl-left">
@@ -1408,6 +1416,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#92400E;background:#FDE68A">TPRM P2</span><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">📅 3w left</span><a href="https://zitenote.atlassian.net/browse/PRODF-113" target="_blank" class="lchip" title="Jira: PRODF-113">🔗</a><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/4899143748" target="_blank" class="lchip" title="Notifications">📄</a><a href="https://www.figma.com/design/BPEsCNGsGKPpvedy0mddbc/Notifications-Engine" target="_blank" class="lchip" title="Figma">🎨</a></span>
     <span class="rkey" onclick="openPanel('PRODF-113')">PRODF-113</span>
   </div>
+  <div class="row-detail"><span class="rd-update">In scoping phase; development start planned for S28, design is ready in Figma</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:20%;background:#7DD3FC"></div></div>
   <div class="rtimeline" id="tl-PRODF-113" style="display:none">
     <div class="rtl-left">
@@ -1436,6 +1445,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#7C3AED;background:#F5F3FF">PB2</span><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">📅 5w left</span><a href="https://zitenote.atlassian.net/browse/PRODF-363" target="_blank" class="lchip" title="Jira: PRODF-363">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-363')">PRODF-363</span>
   </div>
+  <div class="row-detail"><span class="rd-update">Ideation phase — no active epics yet; scoping underway for Q2</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:15%;background:#D1D5DB"></div></div>
   <div class="rtimeline" id="tl-PRODF-363" style="display:none">
     <div class="rtl-left">
@@ -1464,6 +1474,7 @@ details.epic-exp .einner{padding:10px 12px}
     <span class="rnmeta"><span class="lmini" style="color:#0F766E;background:#CCFBF1">Pub Beta</span><span class="etag">📅 5w left</span><a href="https://zitenote.atlassian.net/browse/PRODF-387" target="_blank" class="lchip" title="Jira: PRODF-387">🔗</a></span>
     <span class="rkey" onclick="openPanel('PRODF-387')">PRODF-387</span>
   </div>
+  <div class="row-detail"><span class="rd-update">3 epics in needs-refinement; still in ideation — no implementation has started</span></div>
   <div class="row-prog-always"><div class="row-prog-always-fill" style="width:0%;background:#D1D5DB"></div></div>
   <div class="rtimeline" id="tl-PRODF-387" style="display:none">
     <div class="rtl-left">
