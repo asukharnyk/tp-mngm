@@ -243,7 +243,7 @@
   <h1>Figma vs Confluence — Design Checklist</h1>
   <p>Per-feature review: what's done, what's missing, what's extra, and when things last changed.</p>
   <div class="meta-row">
-    <span>Updated: <strong>April 24, 2026</strong></span>
+    <span>Updated: <strong>May 8, 2026</strong></span>
     <span>Features with Figma: <strong>7</strong></span>
     <span>Features with Confluence: <strong>6</strong></span>
     <span>Features with both: <strong>6</strong></span>
@@ -255,32 +255,52 @@
   <div class="wn-header">
     <span>🆕</span>
     <h3>What Changed Today</h3>
-    <span class="wn-also">📄 Also new: File Vault now has a Confluence page — "Publicly Available Files" (v1, Apr 24)</span>
-    <span class="wn-date">Apr 24, 2026 · 3 Confluence updates · Figma files unchanged</span>
+    <span class="wn-date">May 8, 2026 · 5 Confluence updates · Figma files unchanged</span>
   </div>
   <div class="wn-body">
     <div class="wn-item">
       <div class="wn-title">
-        <a href="#feat-2">User Management</a>
-        <span class="wn-badge">Conf v12</span>
+        <a href="#feat-1">VRM Dashboard</a>
+        <span class="wn-badge">Conf v19 · May 5</span>
       </div>
       <ul class="wn-list">
-        <li>"Design vs Requirements (Apr 24'26)" section added — gaps formally documented</li>
-        <li>v1.2 scope narrowed: extended actions now apply to <strong>new registrants only</strong></li>
-        <li>Change Team + Assign OU removed from v1.2 actions</li>
-        <li>Permissions section added to spec</li>
-        <li>Confirmed "neglect for now": Customers column, AOR field, Bypass verification</li>
+        <li>Requirements significantly expanded from v15; hover states, drill-down UX, and export questions added</li>
+      </ul>
+    </div>
+    <div class="wn-item">
+      <div class="wn-title">
+        <a href="#feat-2">User Management</a>
+        <span class="wn-badge">Conf v18 · Apr 30</span>
+      </div>
+      <ul class="wn-list">
+        <li>MFA, SSO, Import/Export fully specified; Invite flow, Account Lifecycle, Compliance & Security added</li>
       </ul>
     </div>
     <div class="wn-item">
       <div class="wn-title">
         <a href="#feat-3">Rule Management</a>
-        <span class="wn-badge">Conf v39</span>
+        <span class="wn-badge">Conf v50 · May 6</span>
       </div>
       <ul class="wn-list">
-        <li>New <strong>Alert Email Template</strong> section: Immediate Alert + Daily Digest defined</li>
-        <li>Error states expanded to <strong>7 categorized groups</strong></li>
-        <li>Unsubscribe flow refined — entry points + confirmation copy specified</li>
+        <li>Alert Email Templates (Immediate Alert + Daily Digest) fully specified; Error States complete; Unsubscribe flow refined</li>
+      </ul>
+    </div>
+    <div class="wn-item">
+      <div class="wn-title">
+        <a href="#feat-4">Notification Settings</a>
+        <span class="wn-badge">Conf v12 · May 1</span>
+      </div>
+      <ul class="wn-list">
+        <li>Logo upload/reset/delete flows, RBAC matrix, and cross-feature dependency suggestions added</li>
+      </ul>
+    </div>
+    <div class="wn-item">
+      <div class="wn-title">
+        <a href="#feat-6">Exchange Hub</a>
+        <span class="wn-badge">Conf v13 · May 5</span>
+      </div>
+      <ul class="wn-list">
+        <li>ABAC access table, delivery status spec, and Topic Link/ID requirement added — all currently missing from Figma</li>
       </ul>
     </div>
   </div>
@@ -298,12 +318,12 @@
 <!-- TOC -->
 <div class="toc-bar">
   <span class="toc-label">Jump to</span>
-  <a href="#feat-1" class="toc-btn">1 · VRM Dashboard</a>
+  <a href="#feat-1" class="toc-btn has-update">1 · VRM Dashboard 🆕</a>
   <a href="#feat-2" class="toc-btn has-update">2 · User Management 🆕</a>
   <a href="#feat-3" class="toc-btn has-update">3 · Rule Management 🆕</a>
   <a href="#feat-4" class="toc-btn no-req">4 · Notification Settings</a>
   <a href="#feat-5" class="toc-btn">5 · Own Account</a>
-  <a href="#feat-6" class="toc-btn">6 · Exchange Hub</a>
+  <a href="#feat-6" class="toc-btn has-update">6 · Exchange Hub 🆕</a>
   <a href="#feat-7" class="toc-btn has-update">7 · File Vault 🆕</a>
   <div class="toc-divider"></div>
   <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
@@ -312,7 +332,7 @@
 </div>
 
 <!-- ═══ 1. VRM DASHBOARD ═══ -->
-<div id="feat-1" class="feature-card" data-tags="has-gaps">
+<div id="feat-1" class="feature-card has-update" data-tags="has-gaps">
   <div class="feature-header">
     <div class="feature-title-block">
       <a href="https://www.figma.com/design/P0AlK7ILpd8oouZN3xDTRg/Reporting---Dashboards?node-id=1316-3818" target="_blank" class="feature-title">
@@ -325,20 +345,21 @@
         </a>
         <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" class="link-pill confluence" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Confluence v15 · Apr 16
+          Confluence v19 · May 5 🆕
         </a>
       </div>
     </div>
     <div class="badge-row">
       <span class="badge green">✅ All 7 widgets designed</span>
       <span class="badge yellow">⚠️ Interactions incomplete</span>
+      <span class="badge blue">🆕 Conf v19 · May 5</span>
     </div>
   </div>
   <div class="mismatch">
     <strong>⚠️ Node ID mismatch:</strong> Feature table links to <code>1155-4605</code> (page cover), not actual design. Use Confluence PRD node <code>1316-3818</code> for reviews.
   </div>
   <div class="change-banner">
-    <span class="change-date">Latest Figma: March 2, 2026</span> — Frame "Dashboard- 30 Day Filter- 030226". Confluence v15 (Apr 16) — hover states, drill-down UX, and export open questions added.
+    <span class="change-date">Latest Figma: March 2, 2026</span> — Frame "Dashboard- 30 Day Filter- 030226". Confluence v19 (May 5) — requirements significantly expanded; new open questions on drill-down UX, CSV/PDF export, and hover states.
     <ul><li>Confluence open question: Reporting Center CSV/PDF export — handled by frontend or Reporting Center?</li></ul>
   </div>
   <div class="progress-section">
@@ -415,7 +436,7 @@
         </a>
         <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/User+Management" class="link-pill confluence" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Confluence v12 · Apr 24 🆕
+          Confluence v18 · Apr 30 🆕
         </a>
       </div>
     </div>
@@ -426,7 +447,7 @@
     </div>
   </div>
   <div class="change-banner">
-    <span class="change-date">Confluence updated Apr 24, 2026 (v12)</span> — "Design vs Requirements (Apr 24'26)" section added. v1.2 scope narrowed: extended actions apply to <strong>new registrants only</strong>; Change Team + Assign OU removed; Permissions section added. Figma unchanged.
+    <span class="change-date">Confluence updated Apr 30, 2026 (v18)</span> — MFA, SSO, Import/Export, Invite, Account Lifecycle sections fully specified. Email Notifications and Compliance & Security added. Figma unchanged.
     <ul>
       <li>SSC migrated users = read-only by design; all v1.2 actions target new registrants only</li>
       <li>Three Figma items confirmed "neglect for now": Customers column, AOR field, Bypass verification</li>
@@ -513,7 +534,7 @@
         </a>
         <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" class="link-pill confluence" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Confluence v39 · Apr 24 🆕
+          Confluence v50 · May 6 🆕
         </a>
       </div>
     </div>
@@ -528,7 +549,7 @@
     <strong>⚠️ Node ID mismatch:</strong> Feature table links to <code>188-2</code> (the "High Fidelity" page root). Correct design frame: <code>304-36065</code> — "Rules and Automations- March 24 2026".
   </div>
   <div class="change-banner">
-    <span class="change-date">Confluence updated Apr 24, 2026 (v39)</span> — New Alert Email Template section added; Error States expanded to 7 categories; Unsubscribe flow refined. Figma last updated March 24 — now <strong>31 days behind</strong> Confluence.
+    <span class="change-date">Confluence updated May 6, 2026 (v50)</span> — Alert Email Templates fully specified (Immediate Alert + Daily Digest); Error States and Edge Cases complete; Unsubscribe flow refined. Figma last updated March 24 — now <strong>43 days behind</strong> Confluence.
     <ul>
       <li>New req: <strong>Immediate Alert</strong> (Critical findings) + <strong>Daily Digest</strong> (High priority) email templates — each needs a distinct layout</li>
       <li>Error states now in 7 groups: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery</li>
@@ -616,17 +637,17 @@
         </a>
         <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5970591801/Notification+Settings+Foundation" class="link-pill conf" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          v6 · Apr 29 🆕
+          v12 · May 1 🆕
         </a>
         <a href="https://zitenote.atlassian.net/browse/PRODF-113" class="link-pill jira" target="_blank">PRODF-113 · 🔁 Scoping</a>
       </div>
     </div>
     <div class="badge-row">
-      <span class="badge blue">🆕 Conf added Apr 29</span>
+      <span class="badge blue">🆕 Conf v12 · May 1</span>
     </div>
   </div>
   <div class="change-banner">
-    <span class="change-date">🆕 Confluence v6 · Apr 29, 2026</span> — First requirements doc. Phase 1 in scope: Notification Management (mute per source), Email Configuration (logo, sender name, audit log), Email Templates (list + preview). Webhooks, in-app, integrations — Phase 2.
+    <span class="change-date">🆕 Confluence v12 · May 1, 2026</span> — Logo upload flow (upload/override/reset/delete), RBAC matrix, cross-feature suggestions and open questions added. Phase 1 scope unchanged.
   </div>
   <div class="progress-section">
     <div class="progress-row">
@@ -778,7 +799,7 @@
 </div>
 
 <!-- ═══ 6. EXCHANGE HUB ═══ -->
-<div id="feat-6" class="feature-card" data-tags="has-gaps">
+<div id="feat-6" class="feature-card has-update" data-tags="has-gaps">
   <div class="feature-header">
     <div class="feature-title-block">
       <a href="https://www.figma.com/design/jsRMUziPQEEcjfR8WByjkU/Exchange-Hub" target="_blank" class="feature-title">
@@ -791,18 +812,19 @@
         </a>
         <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5489229889" class="link-pill confluence" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Confluence v10 · Apr 1
+          Confluence v13 · May 5 🆕
         </a>
       </div>
     </div>
     <div class="badge-row">
       <span class="badge green">✅ Core thread UI designed</span>
       <span class="badge red">❌ 5 XD-187 items pending</span>
-      <span class="badge yellow">⚠️ Conf 89 days newer</span>
+      <span class="badge yellow">⚠️ Conf 99 days newer</span>
+      <span class="badge blue">🆕 Conf v13 · May 5</span>
     </div>
   </div>
   <div class="change-banner">
-    <span class="change-date">Latest Figma: January 26, 2026 (page "012625")</span> — Titan styling rebuild, Thread Actions, Search, Archived messages. Confluence v10 (Apr 1) contains ABAC access table, delivery status spec, Topic Link/ID requirement — all missing from Figma.
+    <span class="change-date">Latest Figma: January 26, 2026 (page "012625")</span> — Titan styling rebuild, Thread Actions, Search, Archived messages. Confluence v13 (May 5) contains ABAC access table, delivery status spec, Topic Link/ID requirement — all missing from Figma.
     <ul><li>Open Jira XD-187 "Design updates for Exchange Hub" — 5 specific tasks, 2 partially done</li></ul>
   </div>
   <div class="progress-section">
