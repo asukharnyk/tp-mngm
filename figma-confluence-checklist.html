@@ -237,14 +237,18 @@
 
   /* ── Collapse toggle ── */
   .card-toggle {
-    background: none; border: none; cursor: pointer;
-    color: #B8B4D8; font-size: 13px; padding: 2px 6px;
-    border-radius: 6px; line-height: 1; flex-shrink: 0;
-    transition: color .15s, background .15s, transform .2s;
-    align-self: center; margin-left: 4px;
+    background: #EDE9F8; border: 1px solid #C8C0EE; cursor: pointer;
+    color: #5A4FA0; font-size: 14px; padding: 5px 12px;
+    border-radius: 20px; line-height: 1; flex-shrink: 0;
+    transition: color .15s, background .15s, box-shadow .15s;
+    align-self: center; margin-left: 8px;
+    font-weight: 600; letter-spacing: 0.02em;
+    box-shadow: 0 1px 3px rgba(90,79,160,.10);
+    display: flex; align-items: center; gap: 5px;
   }
-  .card-toggle:hover { background: #F0EFFB; color: #6C63B0; }
-  .card-toggle .chevron { display: inline-block; transition: transform .2s; }
+  .card-toggle:hover { background: #D8D0F5; border-color: #9B8FD8; color: #3D2E8A; box-shadow: 0 2px 6px rgba(90,79,160,.18); }
+  .card-toggle:active { background: #C8BEF0; }
+  .card-toggle .chevron { display: inline-block; transition: transform .25s cubic-bezier(.4,0,.2,1); font-style: normal; }
   .feature-card.collapsed .chevron { transform: rotate(-90deg); }
   .feature-card.collapsed .card-collapsible { display: none; }
 </style>
@@ -1139,10 +1143,13 @@
 
 <script>
 (function() {
-  // Restore collapsed state from localStorage
+  // Default: all cards collapsed. Expand only if user explicitly expanded (stored '0').
   document.querySelectorAll('.feature-card').forEach(function(card) {
     var id = card.id;
-    if (id && localStorage.getItem('collapsed-' + id) === '1') {
+    var stored = id ? localStorage.getItem('collapsed-' + id) : null;
+    if (stored === '0') {
+      // user explicitly expanded this card — keep it open
+    } else {
       card.classList.add('collapsed');
     }
   });
