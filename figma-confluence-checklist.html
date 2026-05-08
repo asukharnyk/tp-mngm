@@ -234,6 +234,19 @@
     .progress-row { gap: 8px; }
     .figma-age { margin-left: 0; }
   }
+
+  /* ── Collapse toggle ── */
+  .card-toggle {
+    background: none; border: none; cursor: pointer;
+    color: #B8B4D8; font-size: 13px; padding: 2px 6px;
+    border-radius: 6px; line-height: 1; flex-shrink: 0;
+    transition: color .15s, background .15s, transform .2s;
+    align-self: center; margin-left: 4px;
+  }
+  .card-toggle:hover { background: #F0EFFB; color: #6C63B0; }
+  .card-toggle .chevron { display: inline-block; transition: transform .2s; }
+  .feature-card.collapsed .chevron { transform: rotate(-90deg); }
+  .feature-card.collapsed .card-collapsible { display: none; }
 </style>
 </head>
 <body>
@@ -354,7 +367,9 @@
       <span class="badge yellow">⚠️ Interactions incomplete</span>
       <span class="badge blue">🆕 Conf v19 · May 5</span>
     </div>
-  </div>
+  
+    <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
+  <div class="card-collapsible">
   <div class="mismatch">
     <strong>⚠️ Node ID mismatch:</strong> Feature table links to <code>1155-4605</code> (page cover), not actual design. Use Confluence PRD node <code>1316-3818</code> for reviews.
   </div>
@@ -420,7 +435,7 @@
       <div class="cda-issue green"><span>✅ Correctly using DS:</span><span style="color:#5E5880"> nav items, sidebar header, account menu, breadcrumb, Select, Badge, header content — all instances.</span></div>
     </div>
   </details>
-</div>
+</div></div>
 
 <!-- ═══ 2. USER MANAGEMENT ═══ -->
 <div id="feat-2" class="feature-card" data-tags="updated has-gaps">
@@ -445,7 +460,9 @@
       <span class="badge red">❌ v1.2 actions missing</span>
       <span class="badge blue">🔔 Conf updated Apr 24</span>
     </div>
-  </div>
+  
+    <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
+  <div class="card-collapsible">
   <div class="change-banner">
     <span class="change-date">Confluence updated Apr 30, 2026 (v18)</span> — MFA, SSO, Import/Export, Invite, Account Lifecycle sections fully specified. Email Notifications and Compliance & Security added. Figma unchanged.
     <ul>
@@ -518,7 +535,7 @@
       <div class="cda-issue green"><span>✅ Correctly using DS:</span><span style="color:#5E5880"> sidebar media asset, sidebar labels, input/basic for forms, buttons, modals — good overall use of DS interaction components.</span></div>
     </div>
   </details>
-</div>
+</div></div>
 
 <!-- ═══ 3. RULE MANAGEMENT ═══ -->
 <div id="feat-3" class="feature-card" data-tags="updated has-gaps">
@@ -544,7 +561,9 @@
       <span class="badge grey">v39 — very active</span>
       <span class="badge blue">🔔 Conf updated Apr 24</span>
     </div>
-  </div>
+  
+    <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
+  <div class="card-collapsible">
   <div class="mismatch">
     <strong>⚠️ Node ID mismatch:</strong> Feature table links to <code>188-2</code> (the "High Fidelity" page root). Correct design frame: <code>304-36065</code> — "Rules and Automations- March 24 2026".
   </div>
@@ -621,7 +640,7 @@
       <div class="cda-issue yellow"><span class="cda-badge">×6 frames</span><span><code>Data Table / Column Template / Default</code> — DS column template components not used.</span></div>
     </div>
   </details>
-</div>
+</div></div>
 
 <!-- ═══ 4. NOTIFICATION SETTINGS ═══ -->
 <div id="feat-4" class="feature-card has-update" data-tags="has-gaps">
@@ -645,7 +664,9 @@
     <div class="badge-row">
       <span class="badge blue">🆕 Conf v12 · May 1</span>
     </div>
-  </div>
+  
+    <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
+  <div class="card-collapsible">
   <div class="change-banner">
     <span class="change-date">🆕 Confluence v12 · May 1, 2026</span> — Logo upload flow (upload/override/reset/delete), RBAC matrix, cross-feature suggestions and open questions added. Phase 1 scope unchanged.
   </div>
@@ -705,7 +726,7 @@
       <div class="cda-issue green"><span>✅ Benchmark file:</span><span style="color:#5E5880"> sidebar, header, top-section, empty state, file uploader, buttons, onboarding banner — all DS instances. Use as structural template.</span></div>
     </div>
   </details>
-</div>
+</div></div>
 
 <!-- ═══ 5. OWN ACCOUNT ═══ -->
 <div id="feat-5" class="feature-card" data-tags="has-gaps">
@@ -729,7 +750,9 @@
       <span class="badge green">✅ Main settings screen</span>
       <span class="badge red">❌ Flows &amp; error states missing</span>
     </div>
-  </div>
+  
+    <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
+  <div class="card-collapsible">
   <div class="change-banner">
     <span class="change-date">Latest Figma: no date in frame names</span> — "High Fidelity" page: Full Page Options, Suggested Redlines, User Options, User Settings, User Settings-Option Active, Mobile Example. Confluence v6 last updated Mar 30.
     <ul><li>Main settings page is designed but all interaction flows (password change, MFA setup, account deletion) are missing</li></ul>
@@ -796,7 +819,7 @@
       <div class="cda-issue yellow"><span class="cda-badge">×2 frames</span><span><code>Setting Cards</code> — should use DS Card or align with Settings file Card pattern.</span></div>
     </div>
   </details>
-</div>
+</div></div>
 
 <!-- ═══ 6. EXCHANGE HUB ═══ -->
 <div id="feat-6" class="feature-card has-update" data-tags="has-gaps">
@@ -822,7 +845,9 @@
       <span class="badge yellow">⚠️ Conf 99 days newer</span>
       <span class="badge blue">🆕 Conf v13 · May 5</span>
     </div>
-  </div>
+  
+    <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
+  <div class="card-collapsible">
   <div class="change-banner">
     <span class="change-date">Latest Figma: January 26, 2026 (page "012625")</span> — Titan styling rebuild, Thread Actions, Search, Archived messages. Confluence v13 (May 5) contains ABAC access table, delivery status spec, Topic Link/ID requirement — all missing from Figma.
     <ul><li>Open Jira XD-187 "Design updates for Exchange Hub" — 5 specific tasks, 2 partially done</li></ul>
@@ -880,7 +905,7 @@
       <div class="cda-issue yellow"><span class="cda-badge">action needed</span><span>Update the Figma link in the checklist to a specific screen node to enable component audit. The current link points to the file root without selecting a frame.</span></div>
     </div>
   </details>
-</div>
+</div></div>
 
 <!-- ═══ 7. FILE VAULT ═══ -->
 <div id="feat-7" class="feature-card" data-tags="updated has-gaps">
@@ -905,7 +930,9 @@
       <span class="badge blue">🔔 Conf created Apr 24</span>
       <span class="badge yellow">⚠️ Permission flows missing</span>
     </div>
-  </div>
+  
+    <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
+  <div class="card-collapsible">
   <div class="change-banner">
     <span class="change-date">Confluence created Apr 24, 2026 (v1) — "Publicly Available Files"</span> — 11 functional requirements around auto-sharing: when a vendor attaches a file to an Observation, view-only access is auto-granted to <strong>all monitoring orgs</strong> without manual permission management. Figma covers the upload/vault UI but not the permission/audit layer.
     <ul>
@@ -1095,7 +1122,7 @@
   </table>
 </div>
 
-<div class="page-footer">Updated April 24, 2026 · 7 Figma files · 6 Confluence pages · Data from Figma MCP + Atlassian MCP</div>
+<div class="page-footer">Updated April 24, 2026 · 7 Figma files · 6 Confluence pages · Data from Figma MCP + Atlassian MCP</div></div>
 
 <script>
   function filterCards(type, btn) {
@@ -1108,6 +1135,31 @@
       else if (type === 'no-req') card.classList.toggle('hidden', !tags.includes('no-req'));
     });
   }
+</script>
+
+<script>
+(function() {
+  // Restore collapsed state from localStorage
+  document.querySelectorAll('.feature-card').forEach(function(card) {
+    var id = card.id;
+    if (id && localStorage.getItem('collapsed-' + id) === '1') {
+      card.classList.add('collapsed');
+    }
+  });
+
+  // Toggle handler
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.card-toggle');
+    if (!btn) return;
+    var card = btn.closest('.feature-card');
+    if (!card) return;
+    card.classList.toggle('collapsed');
+    if (card.id) {
+      localStorage.setItem('collapsed-' + card.id,
+        card.classList.contains('collapsed') ? '1' : '0');
+    }
+  });
+})();
 </script>
 </body>
 </html>
