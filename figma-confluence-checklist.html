@@ -289,10 +289,12 @@
     <div class="wn-item">
       <div class="wn-title">
         <a href="#feat-2">User Management</a>
-        <span class="wn-badge">Conf v18 · Apr 30</span>
+        <span class="wn-badge">Conf v24 · May 15</span>
       </div>
       <ul class="wn-list">
-        <li>MFA, SSO, Import/Export fully specified; Invite flow, Account Lifecycle, Compliance & Security added</li>
+        <li>Origin column (PV1/PV2) added as explicit requirement; PV1 users = role-assign only</li>
+        <li>Deleted users must stay visible in table with "Deleted" status (soft delete)</li>
+        <li>7 new missing items: off-canvas roles panel, sidebar grouping, status labels, icons, team flag</li>
       </ul>
     </div>
     <div class="wn-item">
@@ -444,7 +446,7 @@
 </div></div>
 
 <!-- ═══ 2. USER MANAGEMENT ═══ -->
-<div id="feat-2" class="feature-card" data-tags="updated has-gaps">
+<div id="feat-2" class="feature-card has-update" data-tags="updated has-gaps">
   <div class="feature-header">
     <div class="feature-title-block">
       <a href="https://www.figma.com/design/5pHv3VXYefvEeA54fMRgm7/User-Management?node-id=234-27452" target="_blank" class="feature-title">
@@ -455,35 +457,36 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           Figma — High Fidelity
         </a>
-        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/User+Management" class="link-pill confluence" target="_blank">
+        <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management" class="link-pill confluence" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Confluence v18 · Apr 30 🆕
+          Confluence v24 · May 15 🆕
         </a>
       </div>
     </div>
     <div class="badge-row">
       <span class="badge green">✅ v1 table &amp; role assignment</span>
       <span class="badge red">❌ v1.2 actions missing</span>
-      <span class="badge blue">🔔 Conf updated Apr 24</span>
+      <span class="badge blue">🆕 Conf v24 · May 15</span>
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
   <div class="card-collapsible">
   <div class="change-banner">
-    <span class="change-date">Confluence updated Apr 30, 2026 (v18)</span> — MFA, SSO, Import/Export, Invite, Account Lifecycle sections fully specified. Email Notifications and Compliance & Security added. Figma unchanged.
+    <span class="change-date">Confluence updated May 15, 2026 (v24)</span> — Origin column (PV1/PV2) added as explicit requirement; deleted users must stay visible in table; 7 new missing-design items (sidebar grouping, off-canvas roles panel, status labels, etc.). Figma unchanged.
     <ul>
-      <li>SSC migrated users = read-only by design; all v1.2 actions target new registrants only</li>
-      <li>Three Figma items confirmed "neglect for now": Customers column, AOR field, Bypass verification</li>
-      <li>Permissions section now defines role-based access rules</li>
+      <li>Origin section added: PV1 users = role-assign only; PV2 users = full action set in v1.2</li>
+      <li>Deleted users: soft-delete only, must appear in table with "Deleted" status — not hidden</li>
+      <li>Roles Table: clicking a row must open off-canvas panel with full permission detail</li>
+      <li>Role + User Management to be grouped under single sidebar folder; icons TBD with DS</li>
     </ul>
   </div>
   <div class="progress-section">
     <div class="progress-row">
       <span class="prog-label">Figma coverage</span>
-      <span class="prog-count">7 of 20 <span>requirements covered</span><span class="prog-pct">35%</span></span>
+      <span class="prog-count">7 of 27 <span>requirements covered</span><span class="prog-pct">26%</span></span>
       <span class="figma-age age-grey">🕐 No date on Figma frames</span>
     </div>
-    <div class="prog-track"><div class="prog-fill pct-red" style="width:35%"></div></div>
+    <div class="prog-track"><div class="prog-fill pct-red" style="width:26%"></div></div>
   </div>
   <div class="card-body">
     <div class="col">
@@ -503,7 +506,7 @@
       <ul class="check-list">
         <li><span class="icon">❌</span><span>Invite User flow (form + confirmation)<span class="note">v1.2 — new registrants only. No modal designed.</span></span></li>
         <li><span class="icon">❌</span><span>Import Users via CSV<span class="note">v1.2 — new registrants only.</span></span></li>
-        <li><span class="icon">❌</span><span>Suspend / Reactivate / Delete modals<span class="note">v1.2 — new registrants only (Apr 24 scope update).</span></span></li>
+        <li><span class="icon">❌</span><span>Suspend / Reactivate / Delete confirmation modals<span class="note">v1.2 — new registrants only.</span></span></li>
         <li><span class="icon">❌</span><span>User details side panel (invite status, last login, MFA status, org unit…)</span></li>
         <li><span class="icon">❌</span><span>Suspended row visual state (greyed / strikethrough)</span></li>
         <li><span class="icon">❌</span><span>Pending Verification row visual state</span></li>
@@ -513,13 +516,20 @@
         <li><span class="icon">❌</span><span>SSO provider display per user row</span></li>
         <li><span class="icon">❌</span><span>Pagination</span></li>
         <li><span class="icon">❌</span><span>Force Password Reset action</span></li>
-        <li><span class="icon">❌</span><span>Permissions section design<span class="note">New req added Apr 24 — not yet in Figma.</span></span></li>
+        <li><span class="icon">❌</span><span>Permissions section design<span class="note">New req — not yet in Figma.</span></span></li>
+        <li><span class="icon">❌</span><span>Origin column (PV1 / PV2) in user table<span class="note">New v24 req — read-only, non-filterable in v1.</span></span></li>
+        <li><span class="icon">❌</span><span>Deleted users visible in table with "Deleted" status<span class="note">Must not be hidden — soft delete only.</span></span></li>
+        <li><span class="icon">❌</span><span>Status labels as text, not dot indicators</span></li>
+        <li><span class="icon">❌</span><span>Roles Table row click → off-canvas permission panel<span class="note">Shows full permissions per service for that role.</span></span></li>
+        <li><span class="icon">❌</span><span>Role + User Management grouped under one sidebar folder<span class="note">Final folder name TBD with design.</span></span></li>
+        <li><span class="icon">❌</span><span>Icons for all sidebar items<span class="note">Placeholders acceptable; design sign-off later.</span></span></li>
+        <li><span class="icon">❌</span><span>Team Management hidden behind feature flag</span></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
       <ul class="extra-list">
-        <li>"Customers" column — confirmed "neglect for now" (Apr 24)</li>
-        <li>AOR (Area of Responsibility) field — confirmed "neglect for now" (Apr 24)</li>
-        <li>Bypass verification — confirmed "neglect for now" (Apr 24)</li>
+        <li>"Customers" column — confirmed "neglect for now"</li>
+        <li>AOR (Area of Responsibility) field — confirmed "neglect for now"</li>
+        <li>Bypass verification — confirmed "neglect for now"</li>
         <li>MFA column in table — marked "nice to have" in spec</li>
         <li>Email Template sub-nav — belongs to Notifications, not User Management</li>
       </ul>
@@ -543,8 +553,7 @@
   </details>
 </div></div>
 
-<!-- ═══ 3. RULE MANAGEMENT ═══ -->
-<div id="feat-3" class="feature-card" data-tags="updated has-gaps">
+<!-- ═══ 3. RULE MANAGEMENT ═══ --><div id="feat-3" class="feature-card" data-tags="updated has-gaps">
   <div class="feature-header">
     <div class="feature-title-block">
       <a href="https://www.figma.com/design/ywoToiS3c2qAWFqsvua2Za/Rules---Automations?node-id=304-36065" target="_blank" class="feature-title">
@@ -1057,8 +1066,8 @@
         <td><a href="https://zitenote.atlassian.net/browse/XD-81" target="_blank">XD-81 ↗</a> <span class="jira-status ready-for-dev">Ready for Dev</span></td>
         <td>No date</td>
         <td style="color:#8A84AA">—</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/User+Management" target="_blank" style="color:#2D7A50">v12 Apr 24 🆕 ↗</a></td>
-        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:35%"></div></div><span class="mini-label">7/20 · 35%</span></div></td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management" target="_blank" style="color:#2D7A50">v24 May 15 🆕 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:26%"></div></div><span class="mini-label">7/27 · 26%</span></div></td>
         <td>✅ v1 table &amp; role</td>
         <td>❌ All v1.2 flows</td>
         <td>✅</td>
