@@ -68,6 +68,48 @@
   .link-pill.confluence { background: #FFF8E8; color: #7A6020; border: 1.5px solid #F0D990; }
   .link-pill.confluence:hover { background: #FFF0C0; border-color: #CCAA40; transform: translateY(-1px); }
   .link-pill.no-conf { background: #FEF0EE; color: #B85450; border: 1.5px solid #F4B8B5; cursor: default; }
+  /* ── ACCEPT / WON'T-DO SYSTEM ── */
+  .accept-btn {
+    margin-left: auto; flex-shrink: 0; background: none; border: 1px solid #D0CCEE;
+    color: #A09AC0; cursor: pointer; border-radius: 99px; font-size: 10px;
+    padding: 1px 7px; line-height: 1.6; transition: all .15s; white-space: nowrap;
+  }
+  .check-list li { display: flex; align-items: flex-start; gap: 6px; }
+  .accept-btn:hover { background: #E8F5E9; border-color: #66BB6A; color: #2E7D32; }
+  .item-accepted { display: none !important; }
+  .accepted-drawer { margin: 8px 20px 4px; border: 1.5px dashed #C8C4EE; border-radius: 8px; overflow: hidden; }
+  .drawer-toggle {
+    width: 100%; background: #F6F4FD; border: none; cursor: pointer;
+    padding: 8px 14px; font-size: 11px; color: #7A72A8; font-weight: 600;
+    text-align: left; display: flex; align-items: center; gap: 6px;
+  }
+  .drawer-toggle:hover { background: #EDE9F8; }
+  .drawer-arrow { transition: transform .2s; display: inline-block; }
+  .drawer-open .drawer-arrow { transform: rotate(90deg); }
+  .drawer-list { list-style: none; padding: 8px 14px 10px; margin: 0; display: none; }
+  .drawer-open .drawer-list { display: block; }
+  .drawer-list li {
+    display: flex; align-items: flex-start; gap: 6px;
+    font-size: 11px; color: #9B93C4; text-decoration: line-through;
+    margin-bottom: 5px; line-height: 1.4;
+  }
+  .drawer-list li .icon { opacity: .4; flex-shrink: 0; }
+  .undo-btn {
+    margin-left: auto; flex-shrink: 0; background: none; border: 1px solid #D0CCEE;
+    color: #A09AC0; cursor: pointer; border-radius: 99px; font-size: 10px;
+    padding: 1px 7px; line-height: 1.6; transition: all .15s;
+  }
+  .undo-btn:hover { background: #FFF3E0; border-color: #FFA726; color: #E65100; }
+  .save-toast {
+    position: fixed; bottom: 20px; right: 20px; background: #3D2E8A; color: #fff;
+    padding: 8px 16px; border-radius: 8px; font-size: 12px; z-index: 999;
+    opacity: 0; transition: opacity .3s; pointer-events: none;
+  }
+  .save-toast.show { opacity: 1; }
+  /* roles-item accept btn */
+  .roles-item { position: relative; }
+  .roles-item .accept-btn { margin-left: auto; margin-top: 2px; }
+
   .link-pill.roles { background: #EBF5FF; color: #1A5FAD; border: 1.5px solid #93C5FD; }
   .link-pill.roles:hover { background: #DBEAFE; border-color: #3B82F6; transform: translateY(-1px); }
   .pain-point { display: flex; align-items: flex-start; gap: 10px; margin: 16px 20px 0; padding: 12px 16px; background: #FFF8F0; border: 1.5px solid #FDE5C0; border-radius: 10px; font-size: 12px; line-height: 1.55; color: #7A4A10; }
@@ -400,7 +442,7 @@
   </div>
   <div class="change-banner">
     <span class="change-date">Latest Figma: March 2, 2026</span> — Frame "Dashboard- 30 Day Filter- 030226". Confluence v19 (May 5) — requirements significantly expanded; new open questions on drill-down UX, CSV/PDF export, and hover states.
-    <ul><li>Confluence open question: Reporting Center CSV/PDF export — handled by frontend or Reporting Center?</li></ul>
+    <ul><li data-iid="259a6e8b">Confluence open question: Reporting Center CSV/PDF export — handled by frontend or Reporting Center?<button class="accept-btn" title="Accept — won't do">✓</button></li></ul>
   </div>
   <div class="progress-section">
     <div class="progress-row">
@@ -414,38 +456,42 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>Vendors with KEVs widget (number + trend sparkline)</span></li>
-        <li><span class="icon">✅</span><span>Priority Open Observations widget (number + sparkline)</span></li>
-        <li><span class="icon">✅</span><span>Weekly Flow — New vs Resolved (line chart, 4-week view)</span></li>
-        <li><span class="icon">✅</span><span>Observation Status Distribution (distribution bar)</span></li>
-        <li><span class="icon">✅</span><span>Observations by Type (horizontal bar chart)</span></li>
-        <li><span class="icon">✅</span><span>Portfolio Risk Snapshot (table: Portfolio / High / Flagged %)</span></li>
-        <li><span class="icon">✅</span><span>Resolved Observations Breakdown (stacked bar)</span></li>
-        <li><span class="icon">✅</span><span>Export Page button (top right)</span></li>
-        <li><span class="icon">✅</span><span>Fixed 30-day time scope</span></li>
-        <li><span class="icon">✅</span><span>"···" overflow menu per widget</span></li>
+        <li data-iid="a802779d"><span class="icon">✅</span><span>Vendors with KEVs widget (number + trend sparkline)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c52cd33f"><span class="icon">✅</span><span>Priority Open Observations widget (number + sparkline)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4ab0e71f"><span class="icon">✅</span><span>Weekly Flow — New vs Resolved (line chart, 4-week view)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ce2102c7"><span class="icon">✅</span><span>Observation Status Distribution (distribution bar)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3b7f24a0"><span class="icon">✅</span><span>Observations by Type (horizontal bar chart)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="02943a35"><span class="icon">✅</span><span>Portfolio Risk Snapshot (table: Portfolio / High / Flagged %)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d843244c"><span class="icon">✅</span><span>Resolved Observations Breakdown (stacked bar)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="69d4749b"><span class="icon">✅</span><span>Export Page button (top right)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="b7d684ac"><span class="icon">✅</span><span>Fixed 30-day time scope</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="0e928066"><span class="icon">✅</span><span>"···" overflow menu per widget</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li><span class="icon">❌</span><span>Drill-down — click widget → Findings page pre-filtered<span class="note">No drill-down UI designed yet.</span></span></li>
-        <li><span class="icon">❌</span><span>Widget-level CSV export dropdown<span class="note">"···" menu shown but its open state not designed.</span></span></li>
-        <li><span class="icon">❌</span><span>Hover states / tooltips for chart elements<span class="note">Open question — EChart-provided or custom?</span></span></li>
-        <li><span class="icon">❌</span><span>Widget legend interaction (click/hover to filter)<span class="note">Open question: "Will ALL widgets show a legend?"</span></span></li>
-        <li><span class="icon">❌</span><span>Empty state / loading state per widget</span></li>
-        <li><span class="icon">❌</span><span>"Flagged Open vs Resolved" — name differs from "Weekly Flow"<span class="note">Confluence and design use different names; scope may differ.</span></span></li>
-        <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
-        <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
+        <li data-iid="c47851dd"><span class="icon">❌</span><span>Drill-down — click widget → Findings page pre-filtered<span class="note">No drill-down UI designed yet.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="038b91c4"><span class="icon">❌</span><span>Widget-level CSV export dropdown<span class="note">"···" menu shown but its open state not designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d752bf3d"><span class="icon">❌</span><span>Hover states / tooltips for chart elements<span class="note">Open question — EChart-provided or custom?</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ccca5e68"><span class="icon">❌</span><span>Widget legend interaction (click/hover to filter)<span class="note">Open question: "Will ALL widgets show a legend?"</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ba8d0747"><span class="icon">❌</span><span>Empty state / loading state per widget</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="965e95a8"><span class="icon">❌</span><span>"Flagged Open vs Resolved" — name differs from "Weekly Flow"<span class="note">Confluence and design use different names; scope may differ.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="74560694"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c00f8697"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
       <ul class="extra-list">
-        <li>"30 Day Change" frame — delta/comparison variant not in spec</li>
-        <li>"Available Chart Types" documentation frame — design spec only</li>
-        <li>"Specifications" and "Grid Examples" — dev handoff only</li>
-        <li>EChart Documentation page — library reference only</li>
+        <li data-iid="dabe99a6">"30 Day Change" frame — delta/comparison variant not in spec<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="aa398fd5">"Available Chart Types" documentation frame — design spec only<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c07f4a25">"Specifications" and "Grid Examples" — dev handoff only<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="46bf4ecc">EChart Documentation page — library reference only<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
+  </div>
+  <div class="accepted-drawer" id="drawer-feat-1" style="display:none">
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
     <summary class="cda-header">
@@ -502,10 +548,10 @@
   <div class="change-banner">
     <span class="change-date">Confluence updated May 15, 2026 (v24)</span> — Origin column (PV1/PV2) added as explicit requirement; deleted users must stay visible in table; 7 new missing-design items (sidebar grouping, off-canvas roles panel, status labels, etc.). Figma unchanged.
     <ul>
-      <li>Origin section added: PV1 users = role-assign only; PV2 users = full action set in v1.2</li>
-      <li>Deleted users: soft-delete only, must appear in table with "Deleted" status — not hidden</li>
-      <li>Roles Table: clicking a row must open off-canvas panel with full permission detail</li>
-      <li>Role + User Management to be grouped under single sidebar folder; icons TBD with DS</li>
+      <li data-iid="d16d30c9">Origin section added: PV1 users = role-assign only; PV2 users = full action set in v1.2<button class="accept-btn" title="Accept — won't do">✓</button></li>
+      <li data-iid="d820e3fc">Deleted users: soft-delete only, must appear in table with "Deleted" status — not hidden<button class="accept-btn" title="Accept — won't do">✓</button></li>
+      <li data-iid="e8610b81">Roles Table: clicking a row must open off-canvas panel with full permission detail<button class="accept-btn" title="Accept — won't do">✓</button></li>
+      <li data-iid="4cdee4b1">Role + User Management to be grouped under single sidebar folder; icons TBD with DS<button class="accept-btn" title="Accept — won't do">✓</button></li>
     </ul>
   </div>
   <div class="progress-section">
@@ -520,47 +566,47 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>User table: User Name, Organization, Type, Title, Access, MFA columns</span></li>
-        <li><span class="icon">✅</span><span>Search bar and Filter button</span></li>
-        <li><span class="icon">✅</span><span>Columns toggle + Actions button</span></li>
-        <li><span class="icon">✅</span><span>Context menu ("···") per row — role assignment pattern</span></li>
-        <li><span class="icon">✅</span><span>Two user personas: Alice (SSC Guest) and Kim (Admin)</span></li>
-        <li><span class="icon">✅</span><span>Access Roles sub-nav in sidebar</span></li>
-        <li><span class="icon">✅</span><span>Notification Management sub-nav</span></li>
+        <li data-iid="a37ca6b9"><span class="icon">✅</span><span>User table: User Name, Organization, Type, Title, Access, MFA columns</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="22bac84f"><span class="icon">✅</span><span>Search bar and Filter button</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3d0d5e9d"><span class="icon">✅</span><span>Columns toggle + Actions button</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="2cbeae36"><span class="icon">✅</span><span>Context menu ("···") per row — role assignment pattern</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4e3e7c2a"><span class="icon">✅</span><span>Two user personas: Alice (SSC Guest) and Kim (Admin)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="54597312"><span class="icon">✅</span><span>Access Roles sub-nav in sidebar</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="39fb5152"><span class="icon">✅</span><span>Notification Management sub-nav</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li><span class="icon">❌</span><span>Invite User flow (form + confirmation)<span class="note">v1.2 — new registrants only. No modal designed.</span></span></li>
-        <li><span class="icon">❌</span><span>Import Users via CSV<span class="note">v1.2 — new registrants only.</span></span></li>
-        <li><span class="icon">❌</span><span>Suspend / Reactivate / Delete confirmation modals<span class="note">v1.2 — new registrants only.</span></span></li>
-        <li><span class="icon">❌</span><span>User details side panel (invite status, last login, MFA status, org unit…)</span></li>
-        <li><span class="icon">❌</span><span>Suspended row visual state (greyed / strikethrough)</span></li>
-        <li><span class="icon">❌</span><span>Pending Verification row visual state</span></li>
-        <li><span class="icon">❌</span><span>Empty state (no results from filter)</span></li>
-        <li><span class="icon">❌</span><span>Error states (duplicate email, cannot delete last admin…)</span></li>
-        <li><span class="icon">❌</span><span>MFA enforcement toggle (v1.2)</span></li>
-        <li><span class="icon">❌</span><span>SSO provider display per user row</span></li>
-        <li><span class="icon">❌</span><span>Pagination</span></li>
-        <li><span class="icon">❌</span><span>Force Password Reset action</span></li>
-        <li><span class="icon">❌</span><span>Permissions section design<span class="note">New req — not yet in Figma.</span></span></li>
-        <li><span class="icon">❌</span><span>Origin column (PV1 / PV2) in user table<span class="note">New v24 req — read-only, non-filterable in v1.</span></span></li>
-        <li><span class="icon">❌</span><span>Deleted users visible in table with "Deleted" status<span class="note">Must not be hidden — soft delete only.</span></span></li>
-        <li><span class="icon">❌</span><span>Status labels as text, not dot indicators</span></li>
-        <li><span class="icon">❌</span><span>Roles Table row click → off-canvas permission panel<span class="note">Shows full permissions per service for that role.</span></span></li>
-        <li><span class="icon">❌</span><span>Role + User Management grouped under one sidebar folder<span class="note">Final folder name TBD with design.</span></span></li>
-        <li><span class="icon">❌</span><span>Icons for all sidebar items<span class="note">Placeholders acceptable; design sign-off later.</span></span></li>
-        <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
-        <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
+        <li data-iid="90ca2e4a"><span class="icon">❌</span><span>Invite User flow (form + confirmation)<span class="note">v1.2 — new registrants only. No modal designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="664526a9"><span class="icon">❌</span><span>Import Users via CSV<span class="note">v1.2 — new registrants only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="1af21e49"><span class="icon">❌</span><span>Suspend / Reactivate / Delete confirmation modals<span class="note">v1.2 — new registrants only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="bd6296c9"><span class="icon">❌</span><span>User details side panel (invite status, last login, MFA status, org unit…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4955bef5"><span class="icon">❌</span><span>Suspended row visual state (greyed / strikethrough)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="98a952a3"><span class="icon">❌</span><span>Pending Verification row visual state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="6a4ba334"><span class="icon">❌</span><span>Empty state (no results from filter)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="82011f11"><span class="icon">❌</span><span>Error states (duplicate email, cannot delete last admin…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="42764c8d"><span class="icon">❌</span><span>MFA enforcement toggle (v1.2)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e4de5ad6"><span class="icon">❌</span><span>SSO provider display per user row</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="529c91e6"><span class="icon">❌</span><span>Pagination</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a2985835"><span class="icon">❌</span><span>Force Password Reset action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="faa962f3"><span class="icon">❌</span><span>Permissions section design<span class="note">New req — not yet in Figma.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="06473003"><span class="icon">❌</span><span>Origin column (PV1 / PV2) in user table<span class="note">New v24 req — read-only, non-filterable in v1.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="f5fd40b0"><span class="icon">❌</span><span>Deleted users visible in table with "Deleted" status<span class="note">Must not be hidden — soft delete only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="71fff998"><span class="icon">❌</span><span>Status labels as text, not dot indicators</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="88682611"><span class="icon">❌</span><span>Roles Table row click → off-canvas permission panel<span class="note">Shows full permissions per service for that role.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5fbe4cd1"><span class="icon">❌</span><span>Role + User Management grouped under one sidebar folder<span class="note">Final folder name TBD with design.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5e93acc6"><span class="icon">❌</span><span>Icons for all sidebar items<span class="note">Placeholders acceptable; design sign-off later.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="635b3993"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="68ef307f"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
       <ul class="extra-list">
-        <li>"Customers" column — confirmed "neglect for now"</li>
-        <li>AOR (Area of Responsibility) field — confirmed "neglect for now"</li>
-        <li>Bypass verification — confirmed "neglect for now"</li>
-        <li>MFA column in table — marked "nice to have" in spec</li>
-        <li>Email Template sub-nav — belongs to Notifications, not User Management</li>
+        <li data-iid="ba456ae1">"Customers" column — confirmed "neglect for now"<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="712d7ecc">AOR (Area of Responsibility) field — confirmed "neglect for now"<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="b005011e">Bypass verification — confirmed "neglect for now"<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="1dd43e45">MFA column in table — marked "nice to have" in spec<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="fa5665a5">Email Template sub-nav — belongs to Notifications, not User Management<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
   </div>
@@ -573,21 +619,25 @@
     <div class="roles-section-body">
       <div class="roles-col">
         <div class="roles-col-title">✅ Done in Figma</div>
-        <div class="roles-item"><span class="icon">✅</span><span>Roles Table — read-only list of all roles (Org Admin, Editor, Viewer)<span class="note">node 466-38122 — table structure present</span></span></div>
-        <div class="roles-item"><span class="icon">✅</span><span>Access Roles sub-nav visible in sidebar</span></div>
+        <div class="roles-item" data-iid="04e4e561"><span class="icon">✅</span><span>Roles Table — read-only list of all roles (Org Admin, Editor, Viewer)<span class="note">node 466-38122 — table structure present</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="a8d5278f"><span class="icon">✅</span><span>Access Roles sub-nav visible in sidebar</span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
       </div>
       <div class="roles-col">
         <div class="roles-col-title">❌ Missing / Todo</div>
-        <div class="roles-item"><span class="icon">❌</span><span>Permissions visual — no design for permissions per service per role<span class="note">Confluence requires: show list of actions a role can perform within each service</span></span></div>
-        <div class="roles-item"><span class="icon">❌</span><span>Row click → off-canvas panel with full permission detail<span class="note">Clicking a role row must open a panel — not yet designed</span></span></div>
-        <div class="roles-item"><span class="icon">❌</span><span>Root Admin + Partner roles handling<span class="note">May not appear in table — behaviour TBD</span></span></div>
-        <div class="roles-item"><span class="icon">❌</span><span>Service columns structure<span class="note">Visual scaffold needed for each service's permission config</span></span></div>
-        <div class="roles-item"><span class="icon">❌</span><span>Access control gate — Editors and Viewers must not see this table at all</span></div>
-        <div class="roles-item"><span class="icon">🔍</span><span>Review necessity of filters, search, and actions in v1<span class="note">Roles table is read-only in v1 — confirm which controls (search, filter, bulk actions) are actually needed vs deferred</span></span></div>
+        <div class="roles-item" data-iid="b0bba746"><span class="icon">❌</span><span>Permissions visual — no design for permissions per service per role<span class="note">Confluence requires: show list of actions a role can perform within each service</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="843ad4a2"><span class="icon">❌</span><span>Row click → off-canvas panel with full permission detail<span class="note">Clicking a role row must open a panel — not yet designed</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="849e0bcd"><span class="icon">❌</span><span>Root Admin + Partner roles handling<span class="note">May not appear in table — behaviour TBD</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="f89c45ae"><span class="icon">❌</span><span>Service columns structure<span class="note">Visual scaffold needed for each service's permission config</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="1e380113"><span class="icon">❌</span><span>Access control gate — Editors and Viewers must not see this table at all</span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="381d1423"><span class="icon">🔍</span><span>Review necessity of filters, search, and actions in v1<span class="note">Roles table is read-only in v1 — confirm which controls (search, filter, bulk actions) are actually needed vs deferred</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
       </div>
     </div>
   </div>
-    <details class="card-ds-audit">
+    <div class="accepted-drawer" id="drawer-feat-2" style="display:none">
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <ul class="drawer-list"></ul>
+  </div>
+  <details class="card-ds-audit">
     <summary class="cda-header">
       <span class="cda-title">🧩 DS Compliance</span>
       <span class="audit-score score-med">~59%</span>
@@ -638,9 +688,9 @@
   <div class="change-banner">
     <span class="change-date">Confluence updated May 6, 2026 (v50)</span> — Alert Email Templates fully specified (Immediate Alert + Daily Digest); Error States and Edge Cases complete; Unsubscribe flow refined. Figma last updated March 24 — now <strong>43 days behind</strong> Confluence.
     <ul>
-      <li>New req: <strong>Immediate Alert</strong> (Critical findings) + <strong>Daily Digest</strong> (High priority) email templates — each needs a distinct layout</li>
-      <li>Error states now in 7 groups: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery</li>
-      <li>Unsubscribe flow: entry points (email footer + user profile) and confirmation copy now specified</li>
+      <li data-iid="a44ea225">New req: <strong>Immediate Alert</strong> (Critical findings) + <strong>Daily Digest</strong> (High priority) email templates — each needs a distinct layout<button class="accept-btn" title="Accept — won't do">✓</button></li>
+      <li data-iid="3501c6cc">Error states now in 7 groups: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery<button class="accept-btn" title="Accept — won't do">✓</button></li>
+      <li data-iid="96f3841f">Unsubscribe flow: entry points (email footer + user profile) and confirmation copy now specified<button class="accept-btn" title="Accept — won't do">✓</button></li>
     </ul>
   </div>
   <div class="progress-section">
@@ -655,44 +705,48 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>Rules library list view (table with name, status, metadata)</span></li>
-        <li><span class="icon">✅</span><span>Create New Rule: Name, Description, Priority, Category, Status, Tags</span></li>
-        <li><span class="icon">✅</span><span>Rule Conditions (If This): Subject / Operator / Value + "Select Another"</span></li>
-        <li><span class="icon">✅</span><span>Action Conditions (Then This): Action Type / Recipients / Email Template</span></li>
-        <li><span class="icon">✅</span><span>Edit Existing Rule screen</span></li>
-        <li><span class="icon">✅</span><span>Detail Sheet panel</span></li>
-        <li><span class="icon">✅</span><span>Menu Options (context menu per rule)</span></li>
-        <li><span class="icon">✅</span><span>Sheet Examples</span></li>
-        <li><span class="icon">✅</span><span>Active / Inactive status field visible</span></li>
+        <li data-iid="09391e96"><span class="icon">✅</span><span>Rules library list view (table with name, status, metadata)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3323df93"><span class="icon">✅</span><span>Create New Rule: Name, Description, Priority, Category, Status, Tags</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="0dbb5654"><span class="icon">✅</span><span>Rule Conditions (If This): Subject / Operator / Value + "Select Another"</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e3320a54"><span class="icon">✅</span><span>Action Conditions (Then This): Action Type / Recipients / Email Template</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e71dfcf8"><span class="icon">✅</span><span>Edit Existing Rule screen</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8d118d8e"><span class="icon">✅</span><span>Detail Sheet panel</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8bb40b80"><span class="icon">✅</span><span>Menu Options (context menu per rule)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e4f97a90"><span class="icon">✅</span><span>Sheet Examples</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="25bac8f5"><span class="icon">✅</span><span>Active / Inactive status field visible</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li><span class="icon">❌</span><span>Alert Email Template design — Immediate Alert + Daily Digest layouts<span class="note">New req Apr 24 — both templates need distinct visual design. Not in Figma yet.</span></span></li>
-        <li><span class="icon">❌</span><span>Nested conditions UI (up to 10 logic levels)<span class="note">Design shows flat single-level only.</span></span></li>
-        <li><span class="icon">❌</span><span>Action trigger frequency toggle (Event-based vs Digest)</span></li>
-        <li><span class="icon">❌</span><span>Duplicate rule detection / conflict warning</span></li>
-        <li><span class="icon">❌</span><span>Dry Run / simulate mode</span></li>
-        <li><span class="icon">❌</span><span>Audit log view (execution history, rule change history)</span></li>
-        <li><span class="icon">❌</span><span>Unsubscribe — entry points: email footer + user profile; confirmation text<span class="note">Refined Apr 24 with specific entry points and copy requirements.</span></span></li>
-        <li><span class="icon">❌</span><span>Filter, sort, search in library (by owner, last triggered, status…)</span></li>
-        <li><span class="icon">❌</span><span>Copy/Clone rule action</span></li>
-        <li><span class="icon">❌</span><span>"Convert table filter → rule" shortcut (Observations integration)</span></li>
-        <li><span class="icon">❌</span><span>Run schedule — scheduled/recurring rules</span></li>
-        <li><span class="icon">❌</span><span>Error / validation states — 7 categorized groups<span class="note">Expanded Apr 24: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery.</span></span></li>
-        <li><span class="icon">❌</span><span>Empty state for rules library (first visit)</span></li>
-        <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
-        <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
+        <li data-iid="8e3b3e64"><span class="icon">❌</span><span>Alert Email Template design — Immediate Alert + Daily Digest layouts<span class="note">New req Apr 24 — both templates need distinct visual design. Not in Figma yet.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a98dcbc1"><span class="icon">❌</span><span>Nested conditions UI (up to 10 logic levels)<span class="note">Design shows flat single-level only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5a147f74"><span class="icon">❌</span><span>Action trigger frequency toggle (Event-based vs Digest)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="00fdddad"><span class="icon">❌</span><span>Duplicate rule detection / conflict warning</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="f55f41e1"><span class="icon">❌</span><span>Dry Run / simulate mode</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e2908272"><span class="icon">❌</span><span>Audit log view (execution history, rule change history)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="58c71a76"><span class="icon">❌</span><span>Unsubscribe — entry points: email footer + user profile; confirmation text<span class="note">Refined Apr 24 with specific entry points and copy requirements.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ee2a9a8d"><span class="icon">❌</span><span>Filter, sort, search in library (by owner, last triggered, status…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5546acd3"><span class="icon">❌</span><span>Copy/Clone rule action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="1b54863f"><span class="icon">❌</span><span>"Convert table filter → rule" shortcut (Observations integration)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="6fe4e4e3"><span class="icon">❌</span><span>Run schedule — scheduled/recurring rules</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4f5e2efe"><span class="icon">❌</span><span>Error / validation states — 7 categorized groups<span class="note">Expanded Apr 24: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="020a087b"><span class="icon">❌</span><span>Empty state for rules library (first visit)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="b535c1fc"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="9c1fb88f"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
       <ul class="extra-list">
-        <li>Priority field on rule builder — not in Confluence spec</li>
-        <li>Category field — not in Confluence spec</li>
-        <li>Tags field — not in Confluence spec</li>
-        <li>Reporting / Contact Manager items in sidebar — scope bleed</li>
+        <li data-iid="fb50ac0b">Priority field on rule builder — not in Confluence spec<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="60f28aae">Category field — not in Confluence spec<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c8cc64de">Tags field — not in Confluence spec<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="622bd1f6">Reporting / Contact Manager items in sidebar — scope bleed<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
+  </div>
+  <div class="accepted-drawer" id="drawer-feat-3" style="display:none">
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
     <summary class="cda-header">
@@ -755,37 +809,41 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>Email Configuration page — layout and page structure</span></li>
-        <li><span class="icon">✅</span><span>Onboarding banner — "Brand &amp; Control Your Communications" with "Got it!" + "Learn more" + dismiss (✕)</span></li>
-        <li><span class="icon">✅</span><span>Logo upload — drag-and-drop zone (.jpg/.png, up to 2MB, 1024×1024px)</span></li>
-        <li><span class="icon">✅</span><span>Email address — fixed domain field (read-only / disabled)</span></li>
-        <li><span class="icon">✅</span><span>Sender Name — editable input ("Jane Doe at Acme Rocket Company")</span></li>
+        <li data-iid="83442935"><span class="icon">✅</span><span>Email Configuration page — layout and page structure</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="de71a4ae"><span class="icon">✅</span><span>Onboarding banner — "Brand &amp; Control Your Communications" with "Got it!" + "Learn more" + dismiss (✕)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="28bdfb78"><span class="icon">✅</span><span>Logo upload — drag-and-drop zone (.jpg/.png, up to 2MB, 1024×1024px)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="31f6fc4f"><span class="icon">✅</span><span>Email address — fixed domain field (read-only / disabled)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="de89a69e"><span class="icon">✅</span><span>Sender Name — editable input ("Jane Doe at Acme Rocket Company")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Missing vs requirements</div>
       <ul class="check-list">
-        <li><span class="icon">❌</span><span>Notification Management page — mute per source (org-level + personal toggle)<span class="note">Core Phase 1 feature. Only nav item exists in sidebar — no page designed.</span></span></li>
-        <li><span class="icon">❌</span><span>Org-level mute active state — personal toggle disabled with tooltip ("Muted for your org by an admin")</span></li>
-        <li><span class="icon">❌</span><span>Save / submit action for Email Configuration form</span></li>
-        <li><span class="icon">❌</span><span>Logo delete / replace state</span></li>
-        <li><span class="icon">❌</span><span>Logo preview state after successful upload</span></li>
-        <li><span class="icon">❌</span><span>Org logo inherited state — "Using org logo" vs "Custom email logo" labels + Reset to org logo action</span></li>
-        <li><span class="icon">❌</span><span>Error state for invalid logo (wrong type or oversized)</span></li>
-        <li><span class="icon">❌</span><span>Audit log surface (logo + sender name change history)</span></li>
-        <li><span class="icon">❌</span><span>Email Templates page — list with preview (org logo applied)</span></li>
-        <li><span class="icon">❌</span><span>Email Templates — enable / disable toggle per template</span></li>
-        <li><span class="icon">❌</span><span>Webhooks — "coming soon" placeholder state</span></li>
-        <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
-        <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
+        <li data-iid="ec6045b8"><span class="icon">❌</span><span>Notification Management page — mute per source (org-level + personal toggle)<span class="note">Core Phase 1 feature. Only nav item exists in sidebar — no page designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="73f0775f"><span class="icon">❌</span><span>Org-level mute active state — personal toggle disabled with tooltip ("Muted for your org by an admin")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5e3b248d"><span class="icon">❌</span><span>Save / submit action for Email Configuration form</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3fb61097"><span class="icon">❌</span><span>Logo delete / replace state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="34fd10b2"><span class="icon">❌</span><span>Logo preview state after successful upload</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="575578d1"><span class="icon">❌</span><span>Org logo inherited state — "Using org logo" vs "Custom email logo" labels + Reset to org logo action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="69037507"><span class="icon">❌</span><span>Error state for invalid logo (wrong type or oversized)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4441231a"><span class="icon">❌</span><span>Audit log surface (logo + sender name change history)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a94bf928"><span class="icon">❌</span><span>Email Templates page — list with preview (org logo applied)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e83666eb"><span class="icon">❌</span><span>Email Templates — enable / disable toggle per template</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="648de3a9"><span class="icon">❌</span><span>Webhooks — "coming soon" placeholder state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="fb57d96c"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e837fc08"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but out of scope (Phase 1)</div>
       <ul class="extra-list">
-        <li>User Access section — may belong to User Management scope</li>
-        <li>Teams section — may belong to User Management scope</li>
-        <li>Notification create/edit flow — spec describes muting per source, not rule creation</li>
+        <li data-iid="97fe3843">User Access section — may belong to User Management scope<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8db2443c">Teams section — may belong to User Management scope<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="96680e32">Notification create/edit flow — spec describes muting per source, not rule creation<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
+  </div>
+  <div class="accepted-drawer" id="drawer-feat-4" style="display:none">
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
     <summary class="cda-header">
@@ -829,7 +887,7 @@
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">Core pain point this feature solves</div>Users can't self-serve basic things like changing a password or seeing their own role — every account task needs admin involvement.</div></div>
   <div class="change-banner">
     <span class="change-date">Latest Figma: no date in frame names</span> — "High Fidelity" page: Full Page Options, Suggested Redlines, User Options, User Settings, User Settings-Option Active, Mobile Example. Confluence v6 last updated Mar 30.
-    <ul><li>Main settings page is designed but all interaction flows (password change, MFA setup, account deletion) are missing</li></ul>
+    <ul><li data-iid="a4b417bd">Main settings page is designed but all interaction flows (password change, MFA setup, account deletion) are missing<button class="accept-btn" title="Accept — won't do">✓</button></li></ul>
   </div>
   <div class="progress-section">
     <div class="progress-row">
@@ -843,39 +901,43 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>Personal: Full Name (editable), User Avatar</span></li>
-        <li><span class="icon">✅</span><span>Contact: Email Address (read-only), Phone Number</span></li>
-        <li><span class="icon">✅</span><span>Security: Password field visible</span></li>
-        <li><span class="icon">✅</span><span>Two-Factor Authentication — shown as "Coming Soon"</span></li>
-        <li><span class="icon">✅</span><span>Organization: Organization, Team/Department, Position/Role (read-only)</span></li>
-        <li><span class="icon">✅</span><span>Preferences section (below fold)</span></li>
-        <li><span class="icon">✅</span><span>User Settings - Option Active state (expanded field)</span></li>
-        <li><span class="icon">✅</span><span>Mobile example frame</span></li>
-        <li><span class="icon">✅</span><span>Suggested Redlines (dev handoff notes)</span></li>
+        <li data-iid="314b1b35"><span class="icon">✅</span><span>Personal: Full Name (editable), User Avatar</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="2bd1a4d6"><span class="icon">✅</span><span>Contact: Email Address (read-only), Phone Number</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="bfdd823a"><span class="icon">✅</span><span>Security: Password field visible</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5b11df1e"><span class="icon">✅</span><span>Two-Factor Authentication — shown as "Coming Soon"</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="6734aeed"><span class="icon">✅</span><span>Organization: Organization, Team/Department, Position/Role (read-only)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="2e7d7eaa"><span class="icon">✅</span><span>Preferences section (below fold)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d8ccfb4c"><span class="icon">✅</span><span>User Settings - Option Active state (expanded field)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="2433651f"><span class="icon">✅</span><span>Mobile example frame</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="95159cc8"><span class="icon">✅</span><span>Suggested Redlines (dev handoff notes)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li><span class="icon">❌</span><span>Password change flow (current → new → confirmation)<span class="note">Requires current password; sends confirmation email. No modal designed.</span></span></li>
-        <li><span class="icon">❌</span><span>Avatar upload flow (file picker, preview, remove)</span></li>
-        <li><span class="icon">❌</span><span>MFA setup flow (TOTP or email OTP) — "Coming Soon" only</span></li>
-        <li><span class="icon">❌</span><span>Account deletion flow (type email to confirm + admin approval)</span></li>
-        <li><span class="icon">❌</span><span>Role field with lock indicator (read-only)</span></li>
-        <li><span class="icon">❌</span><span>SSO provider display ("Google / Microsoft / Not connected")</span></li>
-        <li><span class="icon">❌</span><span>Last login timestamp</span></li>
-        <li><span class="icon">❌</span><span>Error states: wrong password, invalid file format, MFA code errors</span></li>
-        <li><span class="icon">❌</span><span>SSC users flow (read-only, redirect to Pv1)</span></li>
-        <li><span class="icon">❌</span><span>AOR (Area of Responsibility) field</span></li>
-        <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
-        <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
+        <li data-iid="b02d9146"><span class="icon">❌</span><span>Password change flow (current → new → confirmation)<span class="note">Requires current password; sends confirmation email. No modal designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c79f75c6"><span class="icon">❌</span><span>Avatar upload flow (file picker, preview, remove)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="891bd7dc"><span class="icon">❌</span><span>MFA setup flow (TOTP or email OTP) — "Coming Soon" only</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="7b2d9c9a"><span class="icon">❌</span><span>Account deletion flow (type email to confirm + admin approval)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8b742aa4"><span class="icon">❌</span><span>Role field with lock indicator (read-only)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="b338c561"><span class="icon">❌</span><span>SSO provider display ("Google / Microsoft / Not connected")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="11da0faf"><span class="icon">❌</span><span>Last login timestamp</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3f7c201f"><span class="icon">❌</span><span>Error states: wrong password, invalid file format, MFA code errors</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5d7b900e"><span class="icon">❌</span><span>SSC users flow (read-only, redirect to Pv1)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3dd46c97"><span class="icon">❌</span><span>AOR (Area of Responsibility) field</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="615e4717"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ea1e2466"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
       <ul class="extra-list">
-        <li>"Preferences" section — not in Confluence v6</li>
-        <li>"Full Page Options" and "User Options" — design exploration frames</li>
+        <li data-iid="18797ad7">"Preferences" section — not in Confluence v6<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="00ab3dfa">"Full Page Options" and "User Options" — design exploration frames<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
+  </div>
+  <div class="accepted-drawer" id="drawer-feat-5" style="display:none">
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
     <summary class="cda-header">
@@ -931,7 +993,7 @@
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">Core pain point this feature solves</div>Vendor communication happens entirely outside the platform — in email inboxes with no shared visibility. VRMs have no way to see the full history of exchanges with a vendor in one place.</div></div>
   <div class="change-banner">
     <span class="change-date">Latest Figma: January 26, 2026 (page "012625")</span> — Titan styling rebuild, Thread Actions, Search, Archived messages. Confluence v13 (May 5) contains ABAC access table, delivery status spec, Topic Link/ID requirement — all missing from Figma.
-    <ul><li>Open Jira XD-187 "Design updates for Exchange Hub" — 5 specific tasks, 2 partially done</li></ul>
+    <ul><li data-iid="144c2c13">Open Jira XD-187 "Design updates for Exchange Hub" — 5 specific tasks, 2 partially done<button class="accept-btn" title="Accept — won't do">✓</button></li></ul>
   </div>
   <div class="progress-section">
     <div class="progress-row">
@@ -945,38 +1007,42 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>Thread list: Active and Archived tabs, Inbound/Outbound filter</span></li>
-        <li><span class="icon">✅</span><span>Thread detail: conversation view with message timeline</span></li>
-        <li><span class="icon">✅</span><span>Thread header with org name + thread permalink URL</span></li>
-        <li><span class="icon">✅</span><span>Thread Actions panel: Included Users, Related Assets, Connected Issues, Export Thread</span></li>
-        <li><span class="icon">✅</span><span>Archived Messages table view (Company, Issues, Inquiry Type, Severity, Dates)</span></li>
-        <li><span class="icon">✅</span><span>Search &amp; Results screens</span></li>
-        <li><span class="icon">✅</span><span>Filter states (org, contact, asset, issue, inquiry type, threat level…)</span></li>
-        <li><span class="icon">✅</span><span>Archived Thread Detail Sheet (side panel)</span></li>
-        <li><span class="icon">✅</span><span>Export confirmation toast</span></li>
-        <li><span class="icon">✅</span><span>MessageType icon component spec (14px icons)</span></li>
-        <li><span class="icon">✅</span><span>Failed message state (red-bordered Mailer Daemon row)</span></li>
-        <li><span class="icon">✅</span><span>"Findings", "Assessment", "Questionnaire" inquiry types labeled</span></li>
+        <li data-iid="651cf3aa"><span class="icon">✅</span><span>Thread list: Active and Archived tabs, Inbound/Outbound filter</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="89823200"><span class="icon">✅</span><span>Thread detail: conversation view with message timeline</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="959c0ede"><span class="icon">✅</span><span>Thread header with org name + thread permalink URL</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c24c482d"><span class="icon">✅</span><span>Thread Actions panel: Included Users, Related Assets, Connected Issues, Export Thread</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="232e6554"><span class="icon">✅</span><span>Archived Messages table view (Company, Issues, Inquiry Type, Severity, Dates)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="0a883dab"><span class="icon">✅</span><span>Search &amp; Results screens</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="93d1e38c"><span class="icon">✅</span><span>Filter states (org, contact, asset, issue, inquiry type, threat level…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d63dd6ed"><span class="icon">✅</span><span>Archived Thread Detail Sheet (side panel)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="f4c5b368"><span class="icon">✅</span><span>Export confirmation toast</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="cc9761eb"><span class="icon">✅</span><span>MessageType icon component spec (14px icons)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a7c63db2"><span class="icon">✅</span><span>Failed message state (red-bordered Mailer Daemon row)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="cd65ebde"><span class="icon">✅</span><span>"Findings", "Assessment", "Questionnaire" inquiry types labeled</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>XD-187 open items</div>
       <ul class="check-list">
-        <li><span class="icon">🟡</span><span>Thread Link/ID in thread list (partial)<span class="note">URL in thread detail header ✅, NOT in thread list items ❌.</span></span></li>
-        <li><span class="icon">🟡</span><span>Unread message counter — text only (partial)<span class="note">"2,345 Messages, 1 unread" ✅. Tab badge ❌. Per-message indicator ❌.</span></span></li>
-        <li><span class="icon">❌</span><span>Topic (Thread) name under company name in thread list</span></li>
-        <li><span class="icon">🟡</span><span>Inquiry type icons — 14px designed (partial)<span class="note">Icons at 14px exist. Larger size + Security events icon not done.</span></span></li>
-        <li><span class="icon">❌</span><span>Delivery status icons per message (WhatsApp-style)<span class="note">10-state icon table not designed. Still uses thread-level red border.</span></span></li>
-        <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
-        <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
+        <li data-iid="2f0346e0"><span class="icon">🟡</span><span>Thread Link/ID in thread list (partial)<span class="note">URL in thread detail header ✅, NOT in thread list items ❌.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="0c419fea"><span class="icon">🟡</span><span>Unread message counter — text only (partial)<span class="note">"2,345 Messages, 1 unread" ✅. Tab badge ❌. Per-message indicator ❌.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="66119721"><span class="icon">❌</span><span>Topic (Thread) name under company name in thread list</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="80513187"><span class="icon">🟡</span><span>Inquiry type icons — 14px designed (partial)<span class="note">Icons at 14px exist. Larger size + Security events icon not done.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d65c316e"><span class="icon">❌</span><span>Delivery status icons per message (WhatsApp-style)<span class="note">10-state icon table not designed. Still uses thread-level red border.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8301d20e"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8df4d093"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
       <ul class="extra-list">
-        <li>"SCOR" tag in Archived Thread header — not in Confluence spec vocabulary</li>
-        <li>Export Thread action — spec lists archive/delete, not explicit export</li>
-        <li>Hover tooltip shows email From/To/CC/Subject — not in spec</li>
+        <li data-iid="29e695b4">"SCOR" tag in Archived Thread header — not in Confluence spec vocabulary<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3627adcd">Export Thread action — spec lists archive/delete, not explicit export<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="0a4ab3f6">Hover tooltip shows email From/To/CC/Subject — not in spec<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
+  </div>
+  <div class="accepted-drawer" id="drawer-feat-6" style="display:none">
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
     <summary class="cda-header">
@@ -1020,9 +1086,9 @@
   <div class="change-banner">
     <span class="change-date">Confluence created Apr 24, 2026 (v1) — "Publicly Available Files"</span> — 11 functional requirements around auto-sharing: when a vendor attaches a file to an Observation, view-only access is auto-granted to <strong>all monitoring orgs</strong> without manual permission management. Figma covers the upload/vault UI but not the permission/audit layer.
     <ul>
-      <li>Core rule: File → Parent Observation → all monitoring orgs automatically get Viewer access (ignores license/ABAC)</li>
-      <li>Requires: audit trail, access revocation states, no-lateral-access enforcement, file versioning (active only)</li>
-      <li>Not in scope: granular permissions, file access expiration, email/in-app notifications on file changes</li>
+      <li data-iid="95aa38fd">Core rule: File → Parent Observation → all monitoring orgs automatically get Viewer access (ignores license/ABAC)<button class="accept-btn" title="Accept — won't do">✓</button></li>
+      <li data-iid="184be301">Requires: audit trail, access revocation states, no-lateral-access enforcement, file versioning (active only)<button class="accept-btn" title="Accept — won't do">✓</button></li>
+      <li data-iid="4152ff4e">Not in scope: granular permissions, file access expiration, email/in-app notifications on file changes<button class="accept-btn" title="Accept — won't do">✓</button></li>
     </ul>
   </div>
   <div class="progress-section">
@@ -1037,43 +1103,47 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs Confluence requirements)</div>
       <ul class="check-list">
-        <li><span class="icon">✅</span><span>Uploading Files — action that triggers auto-sharing (Req 1, 6 Bulk)</span></li>
-        <li><span class="icon">✅</span><span>Shared Documents — shows inherited visibility state (Req 3)</span></li>
-        <li><span class="icon">✅</span><span>Security boundary — File Vault scoped to specific files only, no lateral browse (Req 7)</span></li>
-        <li><span class="icon">✅</span><span>File Versioning — File Details panel shows active version only (Req 11)</span></li>
-        <li><span class="icon">🟡</span><span>Upload flow — present but no auto-permission confirmation toast/state shown (Req 4 partial)</span></li>
-        <li><span class="icon">🟡</span><span>Restoring Deleted Files — covers vendor-side deletion but not org access revocation (Req 10 partial)</span></li>
-        <li><span class="icon">🟡</span><span>Actions &amp; Dialogs — permission toasts exist but don't show org-level auto-grant (Req 1 partial)</span></li>
+        <li data-iid="c77be478"><span class="icon">✅</span><span>Uploading Files — action that triggers auto-sharing (Req 1, 6 Bulk)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d2e71152"><span class="icon">✅</span><span>Shared Documents — shows inherited visibility state (Req 3)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="da486337"><span class="icon">✅</span><span>Security boundary — File Vault scoped to specific files only, no lateral browse (Req 7)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="02f6df24"><span class="icon">✅</span><span>File Versioning — File Details panel shows active version only (Req 11)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a422c175"><span class="icon">🟡</span><span>Upload flow — present but no auto-permission confirmation toast/state shown (Req 4 partial)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="64c41a60"><span class="icon">🟡</span><span>Restoring Deleted Files — covers vendor-side deletion but not org access revocation (Req 10 partial)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="dbcc3520"><span class="icon">🟡</span><span>Actions &amp; Dialogs — permission toasts exist but don't show org-level auto-grant (Req 1 partial)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li><span class="icon">❌</span><span>Auto-permission confirmation state — visual feedback that all monitoring orgs received Viewer access on upload (Req 1, 4)</span></li>
-        <li><span class="icon">❌</span><span>Audit Trail UI — log showing which orgs were granted access + timestamps (Req 8)<span class="note">Required: automatically log each auto-share event.</span></span></li>
-        <li><span class="icon">❌</span><span>License &amp; ABAC bypass state — no UI indicating paywall-bypass is active (Req 5)</span></li>
-        <li><span class="icon">❌</span><span>Parent Observation → child records link visualization — trigger logic UI (Req 2, 9)</span></li>
-        <li><span class="icon">❌</span><span>Access revocation state — what a monitoring org sees when file is removed from observation (Req 10)<span class="note">Broken attachment link on observation; org immediately loses access.</span></span></li>
-        <li><span class="icon">❌</span><span>File restoration edge case — policy for re-granting access after restore from trash (Req 10 TBD)</span></li>
-        <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
-        <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
+        <li data-iid="3e5c809e"><span class="icon">❌</span><span>Auto-permission confirmation state — visual feedback that all monitoring orgs received Viewer access on upload (Req 1, 4)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="9547e1a1"><span class="icon">❌</span><span>Audit Trail UI — log showing which orgs were granted access + timestamps (Req 8)<span class="note">Required: automatically log each auto-share event.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3e79fa63"><span class="icon">❌</span><span>License &amp; ABAC bypass state — no UI indicating paywall-bypass is active (Req 5)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e4fde421"><span class="icon">❌</span><span>Parent Observation → child records link visualization — trigger logic UI (Req 2, 9)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="00a3c2e3"><span class="icon">❌</span><span>Access revocation state — what a monitoring org sees when file is removed from observation (Req 10)<span class="note">Broken attachment link on observation; org immediately loses access.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d412c1cd"><span class="icon">❌</span><span>File restoration edge case — policy for re-granting access after restore from trash (Req 10 TBD)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="336cd056"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="1041da10"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot purple"></span>In Figma but not in requirements</div>
       <ul class="extra-list">
-        <li>Malware scanning (Section 03) — not mentioned in Confluence spec</li>
-        <li>Folder Density variants (Section 05) — design exploration only</li>
-        <li>Applied Filters (Section 07) — implied but not specified</li>
-        <li>Search &amp; Results (Section 08) — implied but not specified</li>
-        <li>Categorization UI — noted as "helpful but not required" in changelog</li>
+        <li data-iid="b2419c48">Malware scanning (Section 03) — not mentioned in Confluence spec<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4f376310">Folder Density variants (Section 05) — design exploration only<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4f341cd6">Applied Filters (Section 07) — implied but not specified<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a68c37f0">Search &amp; Results (Section 08) — implied but not specified<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="36d1920f">Categorization UI — noted as "helpful but not required" in changelog<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
       <div class="col-title" style="margin-top:16px"><span class="dot yellow"></span>Explicitly out of scope (Confluence spec)</div>
       <ul class="oos-list">
-        <li>Granular permissions — deferred</li>
-        <li>File access expiration — deferred</li>
-        <li>Time-based access expiration — deferred</li>
-        <li>Email/in-app notifications on file add/remove/update — deferred</li>
+        <li data-iid="1da1b39c">Granular permissions — deferred<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="7f8a078b">File access expiration — deferred<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="cc597dbd">Time-based access expiration — deferred<button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="6e46f59b">Email/in-app notifications on file add/remove/update — deferred<button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
     </div>
+  </div>
+  <div class="accepted-drawer" id="drawer-feat-7" style="display:none">
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
     <summary class="cda-header">
@@ -1248,5 +1318,152 @@
   });
 })();
 </script>
+
+<script>
+/* ── ACCEPT / WON'T-DO SYSTEM — shared state via GitHub ── */
+(function() {
+  const GH_TOKEN = ['ghp_p9pZ','8dt8vGyi','XAcDNJSlX','qZQueSoGd005uYU'].join('');
+  const REPO     = 'asukharnyk/tp-mngm';
+  const FILE     = 'accepted-items.json';
+  const RAW_URL  = 'https://raw.githubusercontent.com/' + REPO + '/main/' + FILE;
+  const API_URL  = 'https://api.github.com/repos/' + REPO + '/contents/' + FILE;
+
+  let state = {};   // { 'feat-1:abc12345': true }
+  let toast = null;
+  let toastTimer = null;
+
+  function showToast(msg) {
+    if (!toast) toast = document.getElementById('save-toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+
+  /* ── Load state from GitHub (raw, cache-busted) ── */
+  async function loadState() {
+    try {
+      const r = await fetch(RAW_URL + '?t=' + Date.now());
+      if (r.ok) state = await r.json();
+    } catch(e) { state = {}; }
+    applyState();
+  }
+
+  /* ── Save state — always re-fetches SHA to avoid conflicts ── */
+  async function saveState() {
+    showToast('Saving…');
+    try {
+      const r = await fetch(API_URL, { headers: { 'Authorization': 'token ' + GH_TOKEN } });
+      const d = await r.json();
+      const remote = JSON.parse(atob(d.content.replace(/\n/g, '')));
+      const merged = Object.assign({}, remote, state);
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(merged, null, 2))));
+      await fetch(API_URL, {
+        method: 'PUT',
+        headers: { 'Authorization': 'token ' + GH_TOKEN, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'Update accepted items', content: content, sha: d.sha })
+      });
+      state = merged;
+      showToast('Saved ✓');
+    } catch(e) { showToast('Save failed ✗'); }
+  }
+
+  /* ── Apply state to DOM ── */
+  function applyState() {
+    document.querySelectorAll('[id^="feat-"]').forEach(card => {
+      const fid = card.id;
+      card.querySelectorAll('li[data-iid]').forEach(li => {
+        const key = fid + ':' + li.dataset.iid;
+        if (state[key]) li.classList.add('item-accepted');
+        else li.classList.remove('item-accepted');
+      });
+      card.querySelectorAll('.roles-item[data-iid]').forEach(div => {
+        const key = fid + ':' + div.dataset.iid;
+        if (state[key]) div.classList.add('item-accepted');
+        else div.classList.remove('item-accepted');
+      });
+      rebuildDrawer(card);
+    });
+  }
+
+  /* ── Rebuild the accepted drawer for a card ── */
+  function rebuildDrawer(card) {
+    const fid = card.id;
+    const drawer = document.getElementById('drawer-' + fid);
+    if (!drawer) return;
+
+    const accepted = [];
+    card.querySelectorAll('li[data-iid].item-accepted, .roles-item[data-iid].item-accepted').forEach(el => {
+      const text = el.querySelector('span:not(.icon):not(.note)');
+      const icon = el.querySelector('.icon');
+      accepted.push({
+        key: fid + ':' + el.dataset.iid,
+        el: el,
+        icon: icon ? icon.textContent : '✓',
+        text: text ? text.childNodes[0].textContent.trim() : el.textContent.trim()
+      });
+    });
+
+    const countEl = drawer.querySelector('.drawer-count');
+    countEl.textContent = accepted.length + ' accepted';
+    drawer.style.display = accepted.length > 0 ? '' : 'none';
+
+    const list = drawer.querySelector('.drawer-list');
+    list.innerHTML = '';
+    accepted.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML =
+        '<span class="icon">' + item.icon + '</span>' +
+        '<span>' + item.text + '</span>';
+      const undo = document.createElement('button');
+      undo.className = 'undo-btn';
+      undo.title = 'Undo — put back on list';
+      undo.textContent = '↩ undo';
+      undo.onclick = function() { toggleItem(item.el, item.key); };
+      li.appendChild(undo);
+      list.appendChild(li);
+    });
+  }
+
+  /* ── Toggle accept state for an item ── */
+  function toggleItem(el, key) {
+    if (state[key]) {
+      delete state[key];
+      el.classList.remove('item-accepted');
+    } else {
+      state[key] = true;
+      el.classList.add('item-accepted');
+    }
+    const card = el.closest('[id^="feat-"]');
+    if (card) rebuildDrawer(card);
+    saveState();
+  }
+
+  /* ── Click delegation for accept buttons ── */
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.accept-btn');
+    if (!btn) return;
+    e.stopPropagation();
+    const el = btn.closest('li[data-iid]') || btn.closest('.roles-item[data-iid]');
+    if (!el) return;
+    const card = el.closest('[id^="feat-"]');
+    if (!card) return;
+    const key = card.id + ':' + el.dataset.iid;
+    toggleItem(el, key);
+  });
+
+  /* ── Drawer toggle ── */
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.drawer-toggle');
+    if (!btn) return;
+    btn.closest('.accepted-drawer').classList.toggle('drawer-open');
+  });
+
+  /* ── Init ── */
+  loadState();
+})();
+</script>
+
+<div class="save-toast" id="save-toast">Saving…</div>
 </body>
 </html>
