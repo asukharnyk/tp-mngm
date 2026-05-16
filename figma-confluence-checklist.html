@@ -21,17 +21,17 @@
   .wn-header { background: #2C2C2A; padding: 12px 20px; display: flex; align-items: center; gap: 10px; border-bottom: none; flex-wrap: wrap; }
   .wn-header h3 { font-size: 11px; font-weight: 500; color: #D3D1C7; text-transform: uppercase; letter-spacing: .10em; }
   .wn-date { margin-left: auto; font-size: 11px; color: #888780; font-weight: 400; }
-  .wn-also { font-size: 11.5px; color: #7A6020; background: #FFF8E8; border: 1px solid #F0D990; border-radius: 20px; padding: 2px 10px; }
+  .wn-also { font-size: 11px; color: #FAC775; background: rgba(255,248,220,0.15); border: 1px solid rgba(250,199,117,.3); border-radius: 20px; padding: 2px 10px; }
   .wn-body { display: grid; grid-template-columns: 1fr 1fr; }
-  .wn-item { padding: 16px 20px; border-right: 1px solid #EEEAFF; }
+  .wn-item { padding: 16px 20px; border-right: 1px solid #E0DDD6; }
   .wn-item:last-child { border-right: none; }
-  .wn-title { font-weight: 700; font-size: 13px; color: #5B55A0; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
-  .wn-title a { color: #5B55A0; }
-  .wn-title a:hover { text-decoration: underline; }
-  .wn-badge { font-size: 10px; background: #E4F5EC; color: #2D7A50; border-radius: 10px; padding: 2px 8px; font-weight: 700; }
+  .wn-title { font-weight: 500; font-size: 13px; color: #2C2C2A; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+  .wn-title a { color: #534AB7; }
+  .wn-title a:hover { text-decoration: underline; color: #3C3489; }
+  .wn-badge { font-size: 10px; background: #E1F5EE; color: #0F6E56; border-radius: 10px; padding: 2px 8px; font-weight: 500; }
   .wn-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-  .wn-list li { font-size: 12.5px; color: #5E5880; display: flex; gap: 6px; }
-  .wn-list li::before { content: "→"; color: #A09BCC; flex-shrink: 0; }
+  .wn-list li { font-size: 12px; color: #5F5E5A; display: flex; gap: 6px; }
+  .wn-list li::before { content: "→"; color: #B4B2A9; flex-shrink: 0; }
 
   /* KPI */
   .kpi-strip { display: flex; gap: 12px; padding: 20px 40px; flex-wrap: wrap; }
@@ -77,13 +77,13 @@
   .check-list li { display: flex; align-items: flex-start; gap: 6px; }
   .accept-btn:hover { background: #E8F5E9; border-color: #66BB6A; color: #2E7D32; }
   .item-accepted { display: none !important; }
-  .accepted-drawer { margin: 8px 20px 4px; border: 1.5px dashed #C8C4EE; border-radius: 8px; overflow: hidden; }
+  .accepted-drawer { margin: 8px 22px 4px; border: 1px dashed #C9C7C0; border-radius: 8px; overflow: hidden; }
   .drawer-toggle {
-    width: 100%; background: #F6F4FD; border: none; cursor: pointer;
-    padding: 8px 14px; font-size: 11px; color: #7A72A8; font-weight: 600;
+    width: 100%; background: #F5F4F0; border: none; cursor: pointer;
+    padding: 8px 14px; font-size: 11px; color: #5F5E5A; font-weight: 500;
     text-align: left; display: flex; align-items: center; gap: 6px;
   }
-  .drawer-toggle:hover { background: #EDE9F8; }
+  .drawer-toggle:hover { background: #EEECEA; }
   .drawer-arrow { transition: transform .2s; display: inline-block; }
   .drawer-open .drawer-arrow { transform: rotate(90deg); }
   .drawer-list { list-style: none; padding: 8px 14px 10px; margin: 0; display: none; }
@@ -212,25 +212,25 @@
   .oos-list li::before { content: "🚫"; font-size: 11px; flex-shrink: 0; margin-top: 1px; text-decoration: none; display: inline-block; }
 
   /* SUMMARY TABLE */
-  .summary-wrap { margin: 20px 40px 24px; background: #fff; border-radius: 12px; border: 1.5px solid #E2DFF5; overflow: hidden; box-shadow: 0 2px 8px rgba(100,90,180,.06); }
-  .table-head { background: linear-gradient(135deg, #8B8FD4, #6B6FAF); color: #fff; padding: 14px 24px; font-weight: 700; font-size: 14px; }
-  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  thead tr { background: #F5F4FD; }
-  th { padding: 10px 14px; text-align: left; border-bottom: 1.5px solid #E2DFF5; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: #9B96CC; }
-  td { padding: 10px 14px; border-bottom: 1px solid #F0EFFB; color: #3D3558; vertical-align: middle; }
+  .summary-wrap { margin: 0; background: #fff; border-radius: 0 0 12px 12px; border: none; border-top: 1px solid #3E3C3A; overflow: hidden; }
+  .table-head { background: #2C2C2A; color: #D3D1C7; padding: 12px 20px; font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; display: none; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  thead tr { background: #F5F4F0; }
+  th { padding: 9px 14px; text-align: left; border-bottom: 1px solid #E0DDD6; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .10em; color: #888780; }
+  td { padding: 9px 14px; border-bottom: 0.5px solid #EEECEA; color: #2C2C2A; vertical-align: middle; }
   tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: #F7F7F9; }
-  td a { color: #7B78C8; font-weight: 600; }
+  tbody tr:hover { background: #F5F4F0; }
+  td a { color: #534AB7; font-weight: 500; }
   td a:hover { text-decoration: underline; }
 
   /* MINI PROGRESS IN TABLE */
   .mini-prog { display: flex; align-items: center; gap: 6px; }
-  .mini-track { width: 60px; height: 6px; background: #E8E5F5; border-radius: 99px; overflow: hidden; flex-shrink: 0; }
+  .mini-track { width: 52px; height: 4px; background: #E0DDD6; border-radius: 99px; overflow: hidden; flex-shrink: 0; }
   .mini-fill { height: 100%; border-radius: 99px; }
-  .mini-fill.pct-green  { background: #6DBF8B; }
-  .mini-fill.pct-yellow { background: #E8C46A; }
-  .mini-fill.pct-red    { background: #E8806D; }
-  .mini-label { font-size: 11px; color: #6B68B0; font-weight: 600; white-space: nowrap; }
+  .mini-fill.pct-green  { background: #1D9E75; }
+  .mini-fill.pct-yellow { background: #BA7517; }
+  .mini-fill.pct-red    { background: #A32D2D; }
+  .mini-label { font-size: 11px; color: #534AB7; font-weight: 500; white-space: nowrap; }
 
   /* JIRA STATUS + DUE DATE */
   .jira-status { display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 10px; font-size: 10.5px; font-weight: 700; white-space: nowrap; }
@@ -242,9 +242,9 @@
   .due-none     { color: #9B96CC; font-style: italic; font-size: 11.5px; }
 
   /* DS AUDIT SECTION */
-  .ds-audit-wrap { margin: 20px 40px 24px; background: #fff; border-radius: 12px; border: 1.5px solid #E2DFF5; overflow: hidden; box-shadow: 0 2px 8px rgba(100,90,180,.06); }
-  .ds-audit-head { background: linear-gradient(135deg, #2E2B4A 0%, #3D3A5E 100%); color: #fff; padding: 16px 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .ds-audit-head h2 { font-size: 14px; font-weight: 700; flex: 1; }
+  .ds-audit-wrap { margin: 20px 40px 24px; background: #fff; border-radius: 12px; border: 1px solid #C9C7C0; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .ds-audit-head { background: #2C2C2A; color: #D3D1C7; padding: 14px 22px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .ds-audit-head h2 { font-size: 13px; font-weight: 500; flex: 1; text-transform: uppercase; letter-spacing: .08em; }
   .ds-audit-meta { font-size: 11px; opacity: .7; }
   .ds-audit-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 20px; }
   .ds-library-strip { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
@@ -266,8 +266,8 @@
   .ds-note { font-size: 12px; color: #9B96CC; font-style: italic; padding: 8px 12px; background: #F7F7F9; border-radius: 8px; }
   /* PER-FEATURE AUDIT CARDS */
   .feat-audit-card { border: 1.5px solid #E2DFF5; border-radius: 10px; overflow: hidden; background: #fff; }
-  .feat-audit-header { display: flex; align-items: center; gap: 10px; padding: 11px 16px; background: #F7F7F9; border-bottom: 1px solid #EEEDF8; flex-wrap: wrap; }
-  .feat-audit-name { font-size: 13px; font-weight: 700; color: #3D3558; flex: 1; }
+  .feat-audit-header { display: flex; align-items: center; gap: 10px; padding: 11px 16px; background: #F5F4F0; border-bottom: 1px solid #E0DDD6; flex-wrap: wrap; }
+  .feat-audit-name { font-size: 13px; font-weight: 500; color: #2C2C2A; flex: 1; }
   .feat-audit-ratio { font-size: 11px; color: #9B96CC; margin-left: auto; }
   .audit-score { font-size: 10.5px; font-weight: 700; padding: 2px 10px; border-radius: 10px; border: 1.5px solid; white-space: nowrap; }
   .audit-score.score-good { background: #E4F5EC; color: #2D7A50; border-color: #A8D5BA; }
@@ -301,7 +301,7 @@
   .cda-na { padding: 10px 24px 12px; font-size: 12px; color: #9B96CC; font-style: italic; background: #F7F7F9; }
 
   /* FOOTER */
-  .page-footer { text-align: center; padding: 24px; color: #B0ABCC; font-size: 12px; }
+  .page-footer { text-align: center; padding: 24px; color: #888780; font-size: 11px; }
 
   @media(max-width: 760px) {
     .feature-card, .whats-new, .summary-wrap { margin: 12px 16px; }
@@ -345,6 +345,20 @@
     font-size: 9px; font-weight: 500; letter-spacing: .14em;
     text-transform: uppercase; color: #888780; margin-bottom: 4px;
   }
+
+  /* COLLAPSIBLE QUICK REFERENCE inside whats-new */
+  .wn-qr-toggle {
+    width: 100%; background: #232320; border: none; cursor: pointer;
+    padding: 10px 20px; font-size: 11px; color: #888780; font-weight: 500;
+    text-align: left; display: flex; align-items: center; gap: 8px;
+    border-top: 1px solid #3E3C3A; letter-spacing: .04em;
+    text-transform: uppercase; transition: background .15s;
+  }
+  .wn-qr-toggle:hover { background: #2A2A28; color: #B4B2A9; }
+  .wn-qr-arrow { transition: transform .22s; display: inline-block; font-style: normal; }
+  .wn-qr-open .wn-qr-arrow { transform: rotate(90deg); }
+  .wn-qr-body { display: none; }
+  .wn-qr-open .wn-qr-body { display: block; }
 </style>
 </head>
 <body>
@@ -416,7 +430,128 @@
         <li>ABAC access table, delivery status spec, and Topic Link/ID requirement added — all currently missing from Figma</li>
       </ul>
     </div>
+  
+<div class="wn-qr-section" id="wn-qr">
+  <button class="wn-qr-toggle" onclick="var s=document.getElementById('wn-qr');s.classList.toggle('wn-qr-open')">
+    <span class="wn-qr-arrow">▸</span> Quick reference — all features
+  </button>
+  <div class="wn-qr-body">
+<div class="summary-wrap">
+  <div class="table-head">Quick Reference — All Features</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Feature status</th>
+        <th>Due date</th>
+        <th>UI task</th>
+        <th>Figma date</th>
+        <th>Figma age</th>
+        <th>Confluence</th>
+        <th>Progress</th>
+        <th>Core screens</th>
+        <th>Flows / errors</th>
+        <th>Node ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#feat-1">VRM Dashboard</a></td>
+        <td><span class="jira-status in-progress">🔄 In Progress</span></td>
+        <td><span class="due-overdue">⚠️ Feb 20, 2026</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-123" target="_blank">XD-123 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
+        <td>Mar 2, 2026</td>
+        <td style="color:#7A6020;font-weight:600">53 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" target="_blank">v15 Apr 16 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:62%"></div></div><span class="mini-label">10/16 · 62%</span></div></td>
+        <td>✅ All 7 widgets</td>
+        <td>❌ Drill-down, CSV</td>
+        <td>⚠️ Cover node</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-2">User Management</a></td>
+        <td><span class="jira-status ready-for-dev">✅ Ready for Dev</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-81" target="_blank">XD-81 ↗</a> <span class="jira-status ready-for-dev">Ready for Dev</span></td>
+        <td>No date</td>
+        <td style="color:#8A84AA">—</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management" target="_blank" style="color:#2D7A50">v24 May 15 🆕 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:26%"></div></div><span class="mini-label">7/27 · 26%</span></div></td>
+        <td>✅ v1 table &amp; role</td>
+        <td>❌ All v1.2 flows</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-3">Rule Management</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-upcoming">May 9, 2026</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-104" target="_blank">XD-104 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>Mar 24, 2026</td>
+        <td style="color:#7A6020;font-weight:600">31 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" target="_blank" style="color:#2D7A50">v39 Apr 24 🆕 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:41%"></div></div><span class="mini-label">9/22 · 41%</span></div></td>
+        <td>✅ 6 screens</td>
+        <td>❌ Nesting, dry run, emails</td>
+        <td>⚠️ Page node</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-4">Notification Settings</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-126" target="_blank">XD-126 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>No date</td>
+        <td style="color:#8A84AA">—</td>
+        <td style="color:#B85450;font-weight:600">None</td>
+        <td><span style="color:#9B96CC;font-size:11px;font-style:italic">No requirements</span></td>
+        <td>✅ WIP screens</td>
+        <td>⚠️ Can't verify</td>
+        <td>⚠️ v0 (old)</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-5">Own Account</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-190" target="_blank">XD-190 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>No date</td>
+        <td style="color:#8A84AA">—</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5856100353/User+Account+Settings" target="_blank">v6 Mar 30 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:47%"></div></div><span class="mini-label">9/19 · 47%</span></div></td>
+        <td>✅ Main settings</td>
+        <td>❌ Password / MFA / Delete</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-6">Exchange Hub</a></td>
+        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-187" target="_blank">XD-187 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
+        <td>Jan 26, 2026</td>
+        <td style="color:#B85450;font-weight:600">88 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5489229889" target="_blank">v10 Apr 1 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-green" style="width:79%"></div></div><span class="mini-label">12/17 · 79%</span></div></td>
+        <td>✅ Full thread UI</td>
+        <td>🟡 5 XD-187 partial</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td><a href="#feat-7">File Vault</a></td>
+        <td><span class="jira-status in-progress">🔄 In Progress</span></td>
+        <td><span class="due-none">—</span></td>
+        <td><a href="https://zitenote.atlassian.net/browse/XD-149" target="_blank">XD-149 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
+        <td>Jan 26, 2026</td>
+        <td style="color:#B85450;font-weight:600">88 days</td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5960499220/Publicly+Available+Files" target="_blank" style="color:#2D7A50">v1 Apr 24 🆕 ↗</a></td>
+        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:50%"></div></div><span class="mini-label">4/11 · 50%</span></div></td>
+        <td>✅ 10 sections</td>
+        <td>❌ Permission / audit flows</td>
+        <td>✅</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
   </div>
+</div>
+</div>
 </div>
 
 <!-- KPI -->
@@ -524,7 +659,7 @@
     </div>
   </div>
   <div class="accepted-drawer" id="drawer-feat-1" style="display:none">
-    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted · in UI directly</span></button>
     <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
@@ -668,7 +803,7 @@
     </div>
   </div>
     <div class="accepted-drawer" id="drawer-feat-2" style="display:none">
-    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted · in UI directly</span></button>
     <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
@@ -779,7 +914,7 @@
     </div>
   </div>
   <div class="accepted-drawer" id="drawer-feat-3" style="display:none">
-    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted · in UI directly</span></button>
     <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
@@ -876,7 +1011,7 @@
     </div>
   </div>
   <div class="accepted-drawer" id="drawer-feat-4" style="display:none">
-    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted · in UI directly</span></button>
     <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
@@ -970,7 +1105,7 @@
     </div>
   </div>
   <div class="accepted-drawer" id="drawer-feat-5" style="display:none">
-    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted · in UI directly</span></button>
     <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
@@ -1075,7 +1210,7 @@
     </div>
   </div>
   <div class="accepted-drawer" id="drawer-feat-6" style="display:none">
-    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted · in UI directly</span></button>
     <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
@@ -1176,7 +1311,7 @@
     </div>
   </div>
   <div class="accepted-drawer" id="drawer-feat-7" style="display:none">
-    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted</span></button>
+    <button class="drawer-toggle"><span class="drawer-arrow">▸</span> <span class="drawer-count">0 accepted · in UI directly</span></button>
     <ul class="drawer-list"></ul>
   </div>
   <details class="card-ds-audit">
@@ -1197,120 +1332,7 @@
   </details>
 </div>
 
-<!-- SUMMARY TABLE -->
-<div class="summary-wrap">
-  <div class="table-head">Quick Reference — All Features</div>
-  <table>
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th>Feature status</th>
-        <th>Due date</th>
-        <th>UI task</th>
-        <th>Figma date</th>
-        <th>Figma age</th>
-        <th>Confluence</th>
-        <th>Progress</th>
-        <th>Core screens</th>
-        <th>Flows / errors</th>
-        <th>Node ID</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="#feat-1">VRM Dashboard</a></td>
-        <td><span class="jira-status in-progress">🔄 In Progress</span></td>
-        <td><span class="due-overdue">⚠️ Feb 20, 2026</span></td>
-        <td><a href="https://zitenote.atlassian.net/browse/XD-123" target="_blank">XD-123 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
-        <td>Mar 2, 2026</td>
-        <td style="color:#7A6020;font-weight:600">53 days</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" target="_blank">v15 Apr 16 ↗</a></td>
-        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:62%"></div></div><span class="mini-label">10/16 · 62%</span></div></td>
-        <td>✅ All 7 widgets</td>
-        <td>❌ Drill-down, CSV</td>
-        <td>⚠️ Cover node</td>
-      </tr>
-      <tr>
-        <td><a href="#feat-2">User Management</a></td>
-        <td><span class="jira-status ready-for-dev">✅ Ready for Dev</span></td>
-        <td><span class="due-none">—</span></td>
-        <td><a href="https://zitenote.atlassian.net/browse/XD-81" target="_blank">XD-81 ↗</a> <span class="jira-status ready-for-dev">Ready for Dev</span></td>
-        <td>No date</td>
-        <td style="color:#8A84AA">—</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management" target="_blank" style="color:#2D7A50">v24 May 15 🆕 ↗</a></td>
-        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:26%"></div></div><span class="mini-label">7/27 · 26%</span></div></td>
-        <td>✅ v1 table &amp; role</td>
-        <td>❌ All v1.2 flows</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td><a href="#feat-3">Rule Management</a></td>
-        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
-        <td><span class="due-upcoming">May 9, 2026</span></td>
-        <td><a href="https://zitenote.atlassian.net/browse/XD-104" target="_blank">XD-104 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
-        <td>Mar 24, 2026</td>
-        <td style="color:#7A6020;font-weight:600">31 days</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" target="_blank" style="color:#2D7A50">v39 Apr 24 🆕 ↗</a></td>
-        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:41%"></div></div><span class="mini-label">9/22 · 41%</span></div></td>
-        <td>✅ 6 screens</td>
-        <td>❌ Nesting, dry run, emails</td>
-        <td>⚠️ Page node</td>
-      </tr>
-      <tr>
-        <td><a href="#feat-4">Notification Settings</a></td>
-        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
-        <td><span class="due-none">—</span></td>
-        <td><a href="https://zitenote.atlassian.net/browse/XD-126" target="_blank">XD-126 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
-        <td>No date</td>
-        <td style="color:#8A84AA">—</td>
-        <td style="color:#B85450;font-weight:600">None</td>
-        <td><span style="color:#9B96CC;font-size:11px;font-style:italic">No requirements</span></td>
-        <td>✅ WIP screens</td>
-        <td>⚠️ Can't verify</td>
-        <td>⚠️ v0 (old)</td>
-      </tr>
-      <tr>
-        <td><a href="#feat-5">Own Account</a></td>
-        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
-        <td><span class="due-none">—</span></td>
-        <td><a href="https://zitenote.atlassian.net/browse/XD-190" target="_blank">XD-190 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
-        <td>No date</td>
-        <td style="color:#8A84AA">—</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5856100353/User+Account+Settings" target="_blank">v6 Mar 30 ↗</a></td>
-        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:47%"></div></div><span class="mini-label">9/19 · 47%</span></div></td>
-        <td>✅ Main settings</td>
-        <td>❌ Password / MFA / Delete</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td><a href="#feat-6">Exchange Hub</a></td>
-        <td><span class="jira-status needs-refine">🔁 Needs Refinement</span></td>
-        <td><span class="due-none">—</span></td>
-        <td><a href="https://zitenote.atlassian.net/browse/XD-187" target="_blank">XD-187 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
-        <td>Jan 26, 2026</td>
-        <td style="color:#B85450;font-weight:600">88 days</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5489229889" target="_blank">v10 Apr 1 ↗</a></td>
-        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-green" style="width:79%"></div></div><span class="mini-label">12/17 · 79%</span></div></td>
-        <td>✅ Full thread UI</td>
-        <td>🟡 5 XD-187 partial</td>
-        <td>✅</td>
-      </tr>
-      <tr>
-        <td><a href="#feat-7">File Vault</a></td>
-        <td><span class="jira-status in-progress">🔄 In Progress</span></td>
-        <td><span class="due-none">—</span></td>
-        <td><a href="https://zitenote.atlassian.net/browse/XD-149" target="_blank">XD-149 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
-        <td>Jan 26, 2026</td>
-        <td style="color:#B85450;font-weight:600">88 days</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5960499220/Publicly+Available+Files" target="_blank" style="color:#2D7A50">v1 Apr 24 🆕 ↗</a></td>
-        <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:50%"></div></div><span class="mini-label">4/11 · 50%</span></div></td>
-        <td>✅ 10 sections</td>
-        <td>❌ Permission / audit flows</td>
-        <td>✅</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
 
 <div class="page-footer">Updated May 8, 2026 · 7 Figma files · 6 Confluence pages · Data from Figma MCP + Atlassian MCP</div></div>
 
@@ -1439,7 +1461,7 @@
     });
 
     const countEl = drawer.querySelector('.drawer-count');
-    countEl.textContent = accepted.length + ' accepted';
+    countEl.textContent = accepted.length + ' accepted · in UI directly';
     drawer.style.display = accepted.length > 0 ? '' : 'none';
 
     const list = drawer.querySelector('.drawer-list');
@@ -1512,6 +1534,7 @@
       var badge = document.createElement('div');
       badge.className = 'pct-badge ' + cls;
       badge.textContent = pctText;
+      badge.title = 'Design progress';
       var hdr = card.querySelector('.feature-header');
       var toggle = hdr.querySelector('.card-toggle');
       hdr.insertBefore(badge, toggle);
