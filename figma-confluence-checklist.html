@@ -359,6 +359,27 @@
   .wn-qr-open .wn-qr-arrow { transform: rotate(90deg); }
   .wn-qr-body { display: none; }
   .wn-qr-open .wn-qr-body { display: block; }
+
+  /* SVG CHECK / X ICONS */
+  .ic-chk { width: 12px; height: 12px; display: inline-block; vertical-align: middle; color: #1D9E75; }
+  .ic-x   { width: 12px; height: 12px; display: inline-block; vertical-align: middle; color: #A32D2D; }
+  .td-chk { font-size: 12px; font-weight: 600; color: #1D9E75; }
+  .td-x   { font-size: 12px; font-weight: 600; color: #A32D2D; }
+  /* DESIGNER / PM META row */
+  .feat-meta-row {
+    display: flex; gap: 14px; margin-top: 6px; flex-wrap: wrap;
+  }
+  .feat-meta-item {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 10px; color: #888780;
+  }
+  .feat-meta-item .meta-lbl {
+    font-size: 9px; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase; color: #5F5E5A;
+  }
+  .feat-meta-item .meta-val {
+    color: #B4B2A9;
+  }
 </style>
 </head>
 <body>
@@ -464,22 +485,22 @@
         <td style="color:#7A6020;font-weight:600">53 days</td>
         <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" target="_blank">v15 Apr 16 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:62%"></div></div><span class="mini-label">10/16 · 62%</span></div></td>
-        <td>✅ All 7 widgets</td>
-        <td>❌ Drill-down, CSV</td>
+        <td>✓ All 7 widgets</td>
+        <td>✕ Drill-down, CSV</td>
         <td>⚠️ Cover node</td>
       </tr>
       <tr>
         <td><a href="#feat-2">User Management</a></td>
-        <td><span class="jira-status ready-for-dev">✅ Ready for Dev</span></td>
+        <td><span class="jira-status ready-for-dev">✓ Ready for Dev</span></td>
         <td><span class="due-none">—</span></td>
         <td><a href="https://zitenote.atlassian.net/browse/XD-81" target="_blank">XD-81 ↗</a> <span class="jira-status ready-for-dev">Ready for Dev</span></td>
         <td>No date</td>
         <td style="color:#8A84AA">—</td>
         <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management" target="_blank" style="color:#2D7A50">v24 May 15 🆕 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:26%"></div></div><span class="mini-label">7/27 · 26%</span></div></td>
-        <td>✅ v1 table &amp; role</td>
-        <td>❌ All v1.2 flows</td>
-        <td>✅</td>
+        <td>✓ v1 table &amp; role</td>
+        <td>✕ All v1.2 flows</td>
+        <td>✓ </td>
       </tr>
       <tr>
         <td><a href="#feat-3">Rule Management</a></td>
@@ -490,8 +511,8 @@
         <td style="color:#7A6020;font-weight:600">31 days</td>
         <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" target="_blank" style="color:#2D7A50">v39 Apr 24 🆕 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:41%"></div></div><span class="mini-label">9/22 · 41%</span></div></td>
-        <td>✅ 6 screens</td>
-        <td>❌ Nesting, dry run, emails</td>
+        <td>✓ 6 screens</td>
+        <td>✕ Nesting, dry run, emails</td>
         <td>⚠️ Page node</td>
       </tr>
       <tr>
@@ -503,7 +524,7 @@
         <td style="color:#8A84AA">—</td>
         <td style="color:#B85450;font-weight:600">None</td>
         <td><span style="color:#9B96CC;font-size:11px;font-style:italic">No requirements</span></td>
-        <td>✅ WIP screens</td>
+        <td>✓ WIP screens</td>
         <td>⚠️ Can't verify</td>
         <td>⚠️ v0 (old)</td>
       </tr>
@@ -516,9 +537,9 @@
         <td style="color:#8A84AA">—</td>
         <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5856100353/User+Account+Settings" target="_blank">v6 Mar 30 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:47%"></div></div><span class="mini-label">9/19 · 47%</span></div></td>
-        <td>✅ Main settings</td>
-        <td>❌ Password / MFA / Delete</td>
-        <td>✅</td>
+        <td>✓ Main settings</td>
+        <td>✕ Password / MFA / Delete</td>
+        <td>✓ </td>
       </tr>
       <tr>
         <td><a href="#feat-6">Exchange Hub</a></td>
@@ -529,9 +550,9 @@
         <td style="color:#B85450;font-weight:600">88 days</td>
         <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5489229889" target="_blank">v10 Apr 1 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-green" style="width:79%"></div></div><span class="mini-label">12/17 · 79%</span></div></td>
-        <td>✅ Full thread UI</td>
+        <td>✓ Full thread UI</td>
         <td>🟡 5 XD-187 partial</td>
-        <td>✅</td>
+        <td>✓ </td>
       </tr>
       <tr>
         <td><a href="#feat-7">File Vault</a></td>
@@ -542,9 +563,9 @@
         <td style="color:#B85450;font-weight:600">88 days</td>
         <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5960499220/Publicly+Available+Files" target="_blank" style="color:#2D7A50">v1 Apr 24 🆕 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:50%"></div></div><span class="mini-label">4/11 · 50%</span></div></td>
-        <td>✅ 10 sections</td>
-        <td>❌ Permission / audit flows</td>
-        <td>✅</td>
+        <td>✓ 10 sections</td>
+        <td>✕ Permission / audit flows</td>
+        <td>✓ </td>
       </tr>
     </tbody>
   </table>
@@ -596,9 +617,10 @@
           Confluence v19 · May 5 🆕
         </a>
       </div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Claudio</span></span></div>
     </div>
     <div class="badge-row">
-      <span class="badge green">✅ All 7 widgets designed</span>
+      <span class="badge green">✓ All 7 widgets designed</span>
       <span class="badge yellow">⚠️ Interactions incomplete</span>
       <span class="badge blue">🆕 Conf v19 · May 5</span>
     </div>
@@ -625,27 +647,27 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li data-iid="a802779d"><span class="icon">✅</span><span>Vendors with KEVs widget (number + trend sparkline)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="c52cd33f"><span class="icon">✅</span><span>Priority Open Observations widget (number + sparkline)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="4ab0e71f"><span class="icon">✅</span><span>Weekly Flow — New vs Resolved (line chart, 4-week view)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="ce2102c7"><span class="icon">✅</span><span>Observation Status Distribution (distribution bar)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="3b7f24a0"><span class="icon">✅</span><span>Observations by Type (horizontal bar chart)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="02943a35"><span class="icon">✅</span><span>Portfolio Risk Snapshot (table: Portfolio / High / Flagged %)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="d843244c"><span class="icon">✅</span><span>Resolved Observations Breakdown (stacked bar)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="69d4749b"><span class="icon">✅</span><span>Export Page button (top right)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="b7d684ac"><span class="icon">✅</span><span>Fixed 30-day time scope</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="0e928066"><span class="icon">✅</span><span>"···" overflow menu per widget</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a802779d"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Vendors with KEVs widget (number + trend sparkline)</span></li>
+        <li data-iid="c52cd33f"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Priority Open Observations widget (number + sparkline)</span></li>
+        <li data-iid="4ab0e71f"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Weekly Flow — New vs Resolved (line chart, 4-week view)</span></li>
+        <li data-iid="ce2102c7"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Observation Status Distribution (distribution bar)</span></li>
+        <li data-iid="3b7f24a0"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Observations by Type (horizontal bar chart)</span></li>
+        <li data-iid="02943a35"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Portfolio Risk Snapshot (table: Portfolio / High / Flagged %)</span></li>
+        <li data-iid="d843244c"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Resolved Observations Breakdown (stacked bar)</span></li>
+        <li data-iid="69d4749b"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Export Page button (top right)</span></li>
+        <li data-iid="b7d684ac"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Fixed 30-day time scope</span></li>
+        <li data-iid="0e928066"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>"···" overflow menu per widget</span></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li data-iid="c47851dd"><span class="icon">❌</span><span>Drill-down — click widget → Findings page pre-filtered<span class="note">No drill-down UI designed yet.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="038b91c4"><span class="icon">❌</span><span>Widget-level CSV export dropdown<span class="note">"···" menu shown but its open state not designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="d752bf3d"><span class="icon">❌</span><span>Hover states / tooltips for chart elements<span class="note">Open question — EChart-provided or custom?</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="ccca5e68"><span class="icon">❌</span><span>Widget legend interaction (click/hover to filter)<span class="note">Open question: "Will ALL widgets show a legend?"</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="ba8d0747"><span class="icon">❌</span><span>Empty state / loading state per widget</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="965e95a8"><span class="icon">❌</span><span>"Flagged Open vs Resolved" — name differs from "Weekly Flow"<span class="note">Confluence and design use different names; scope may differ.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c47851dd"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Drill-down — click widget → Findings page pre-filtered<span class="note">No drill-down UI designed yet.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="038b91c4"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Widget-level CSV export dropdown<span class="note">"···" menu shown but its open state not designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d752bf3d"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Hover states / tooltips for chart elements<span class="note">Open question — EChart-provided or custom?</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ccca5e68"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Widget legend interaction (click/hover to filter)<span class="note">Open question: "Will ALL widgets show a legend?"</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ba8d0747"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Empty state / loading state per widget</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="965e95a8"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>"Flagged Open vs Resolved" — name differs from "Weekly Flow"<span class="note">Confluence and design use different names; scope may differ.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="74560694"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="c00f8697"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
@@ -674,7 +696,7 @@
       <div class="cda-issue red"><span class="cda-badge">frame</span><span>Sidebar <code>search</code> — custom frame (icon + text + shortcut). DS has <strong>Input / Basic</strong> — should replace this assembly.</span></div>
       <div class="cda-issue yellow"><span class="cda-badge">frames</span><span>Portfolio Risk Snapshot table — raw <code>Column → Column Label → Value</code> frames. DS <strong>Data Table / Cell</strong> (updated Apr 1 '26) should be used.</span></div>
       <div class="cda-issue yellow"><span class="cda-badge">vectors</span><span>Charts (bar, line, donut) — drawn as raw vectors + boolean-operations, no DS chart wrapper. Flag for when DS adds chart patterns.</span></div>
-      <div class="cda-issue green"><span>✅ Correctly using DS:</span><span style="color:#5E5880"> nav items, sidebar header, account menu, breadcrumb, Select, Badge, header content — all instances.</span></div>
+      <div class="cda-issue green"><span>✓ Correctly using DS:</span><span style="color:#5E5880"> nav items, sidebar header, account menu, breadcrumb, Select, Badge, header content — all instances.</span></div>
     </div>
   </details>
 </div></div>
@@ -704,10 +726,11 @@
           Prototype — Permissions (for review)
         </a>
       </div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
     </div>
     <div class="badge-row">
-      <span class="badge green">✅ v1 table &amp; role assignment</span>
-      <span class="badge red">❌ v1.2 actions missing</span>
+      <span class="badge green">✓ v1 table &amp; role assignment</span>
+      <span class="badge red">✕ v1.2 actions missing</span>
       <span class="badge blue">🆕 Conf v24 · May 15</span>
     </div>
   
@@ -735,37 +758,37 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li data-iid="a37ca6b9"><span class="icon">✅</span><span>User table: User Name, Organization, Type, Title, Access, MFA columns</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="22bac84f"><span class="icon">✅</span><span>Search bar and Filter button</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="3d0d5e9d"><span class="icon">✅</span><span>Columns toggle + Actions button</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="2cbeae36"><span class="icon">✅</span><span>Context menu ("···") per row — role assignment pattern</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="4e3e7c2a"><span class="icon">✅</span><span>Two user personas: Alice (SSC Guest) and Kim (Admin)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="54597312"><span class="icon">✅</span><span>Access Roles sub-nav in sidebar</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="39fb5152"><span class="icon">✅</span><span>Notification Management sub-nav</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a37ca6b9"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>User table: User Name, Organization, Type, Title, Access, MFA columns</span></li>
+        <li data-iid="22bac84f"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Search bar and Filter button</span></li>
+        <li data-iid="3d0d5e9d"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Columns toggle + Actions button</span></li>
+        <li data-iid="2cbeae36"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Context menu ("···") per row — role assignment pattern</span></li>
+        <li data-iid="4e3e7c2a"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Two user personas: Alice (SSC Guest) and Kim (Admin)</span></li>
+        <li data-iid="54597312"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Access Roles sub-nav in sidebar</span></li>
+        <li data-iid="39fb5152"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Notification Management sub-nav</span></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li data-iid="90ca2e4a"><span class="icon">❌</span><span>Invite User flow (form + confirmation)<span class="note">v1.2 — new registrants only. No modal designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="664526a9"><span class="icon">❌</span><span>Import Users via CSV<span class="note">v1.2 — new registrants only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="1af21e49"><span class="icon">❌</span><span>Suspend / Reactivate / Delete confirmation modals<span class="note">v1.2 — new registrants only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="bd6296c9"><span class="icon">❌</span><span>User details side panel (invite status, last login, MFA status, org unit…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="4955bef5"><span class="icon">❌</span><span>Suspended row visual state (greyed / strikethrough)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="98a952a3"><span class="icon">❌</span><span>Pending Verification row visual state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="6a4ba334"><span class="icon">❌</span><span>Empty state (no results from filter)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="82011f11"><span class="icon">❌</span><span>Error states (duplicate email, cannot delete last admin…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="42764c8d"><span class="icon">❌</span><span>MFA enforcement toggle (v1.2)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="e4de5ad6"><span class="icon">❌</span><span>SSO provider display per user row</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="529c91e6"><span class="icon">❌</span><span>Pagination</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="a2985835"><span class="icon">❌</span><span>Force Password Reset action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="faa962f3"><span class="icon">❌</span><span>Permissions section design<span class="note">New req — not yet in Figma.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="06473003"><span class="icon">❌</span><span>Origin column (PV1 / PV2) in user table<span class="note">New v24 req — read-only, non-filterable in v1.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="f5fd40b0"><span class="icon">❌</span><span>Deleted users visible in table with "Deleted" status<span class="note">Must not be hidden — soft delete only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="71fff998"><span class="icon">❌</span><span>Status labels as text, not dot indicators</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="88682611"><span class="icon">❌</span><span>Roles Table row click → off-canvas permission panel<span class="note">Shows full permissions per service for that role.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="5fbe4cd1"><span class="icon">❌</span><span>Role + User Management grouped under one sidebar folder<span class="note">Final folder name TBD with design.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="5e93acc6"><span class="icon">❌</span><span>Icons for all sidebar items<span class="note">Placeholders acceptable; design sign-off later.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="90ca2e4a"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Invite User flow (form + confirmation)<span class="note">v1.2 — new registrants only. No modal designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="664526a9"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Import Users via CSV<span class="note">v1.2 — new registrants only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="1af21e49"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Suspend / Reactivate / Delete confirmation modals<span class="note">v1.2 — new registrants only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="bd6296c9"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>User details side panel (invite status, last login, MFA status, org unit…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4955bef5"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Suspended row visual state (greyed / strikethrough)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="98a952a3"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Pending Verification row visual state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="6a4ba334"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Empty state (no results from filter)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="82011f11"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Error states (duplicate email, cannot delete last admin…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="42764c8d"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>MFA enforcement toggle (v1.2)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e4de5ad6"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>SSO provider display per user row</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="529c91e6"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Pagination</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a2985835"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Force Password Reset action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="faa962f3"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Permissions section design<span class="note">New req — not yet in Figma.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="06473003"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Origin column (PV1 / PV2) in user table<span class="note">New v24 req — read-only, non-filterable in v1.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="f5fd40b0"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Deleted users visible in table with "Deleted" status<span class="note">Must not be hidden — soft delete only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="71fff998"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Status labels as text, not dot indicators</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="88682611"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Roles Table row click → off-canvas permission panel<span class="note">Shows full permissions per service for that role.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5fbe4cd1"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Role + User Management grouped under one sidebar folder<span class="note">Final folder name TBD with design.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5e93acc6"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Icons for all sidebar items<span class="note">Placeholders acceptable; design sign-off later.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="635b3993"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="68ef307f"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
@@ -787,17 +810,17 @@
     </div>
     <div class="roles-section-body">
       <div class="roles-col">
-        <div class="roles-col-title">✅ Done in Figma</div>
-        <div class="roles-item" data-iid="04e4e561"><span class="icon">✅</span><span>Roles Table — read-only list of all roles (Org Admin, Editor, Viewer)<span class="note">node 466-38122 — table structure present</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
-        <div class="roles-item" data-iid="a8d5278f"><span class="icon">✅</span><span>Access Roles sub-nav visible in sidebar</span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-col-title">✓ Done in Figma</div>
+        <div class="roles-item" data-iid="04e4e561"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Roles Table — read-only list of all roles (Org Admin, Editor, Viewer)<span class="note">node 466-38122 — table structure present</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="a8d5278f"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Access Roles sub-nav visible in sidebar</span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
       </div>
       <div class="roles-col">
-        <div class="roles-col-title">❌ Missing / Todo</div>
-        <div class="roles-item" data-iid="b0bba746"><span class="icon">❌</span><span>Permissions visual — no design for permissions per service per role<span class="note">Confluence requires: show list of actions a role can perform within each service</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
-        <div class="roles-item" data-iid="843ad4a2"><span class="icon">❌</span><span>Row click → off-canvas panel with full permission detail<span class="note">Clicking a role row must open a panel — not yet designed</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
-        <div class="roles-item" data-iid="849e0bcd"><span class="icon">❌</span><span>Root Admin + Partner roles handling<span class="note">May not appear in table — behaviour TBD</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
-        <div class="roles-item" data-iid="f89c45ae"><span class="icon">❌</span><span>Service columns structure<span class="note">Visual scaffold needed for each service's permission config</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
-        <div class="roles-item" data-iid="1e380113"><span class="icon">❌</span><span>Access control gate — Editors and Viewers must not see this table at all</span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-col-title">✕ Missing / Todo</div>
+        <div class="roles-item" data-iid="b0bba746"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Permissions visual — no design for permissions per service per role<span class="note">Confluence requires: show list of actions a role can perform within each service</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="843ad4a2"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Row click → off-canvas panel with full permission detail<span class="note">Clicking a role row must open a panel — not yet designed</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="849e0bcd"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Root Admin + Partner roles handling<span class="note">May not appear in table — behaviour TBD</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="f89c45ae"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Service columns structure<span class="note">Visual scaffold needed for each service's permission config</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
+        <div class="roles-item" data-iid="1e380113"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Access control gate — Editors and Viewers must not see this table at all</span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
         <div class="roles-item" data-iid="381d1423"><span class="icon">🔍</span><span>Review necessity of filters, search, and actions in v1<span class="note">Roles table is read-only in v1 — confirm which controls (search, filter, bulk actions) are actually needed vs deferred</span></span></div<button class="accept-btn" title="Accept — won't do">✓</button></div>
       </div>
     </div>
@@ -819,7 +842,7 @@
       <div class="cda-issue red"><span class="cda-badge">×4 frames</span><span><code>Sidebar / SidebarGroup</code> — outer sidebar shell not componentized despite inner elements using DS instances correctly.</span></div>
       <div class="cda-issue yellow"><span class="cda-badge">×2 frames</span><span><code>Icon Button</code> — built as frame; DS has icon button component.</span></div>
       <div class="cda-issue yellow"><span class="cda-badge">×2 each</span><span><code>search</code> + <code>title &amp; search</code> — custom search header bars; should use DS Search / Input pattern.</span></div>
-      <div class="cda-issue green"><span>✅ Correctly using DS:</span><span style="color:#5E5880"> sidebar media asset, sidebar labels, input/basic for forms, buttons, modals — good overall use of DS interaction components.</span></div>
+      <div class="cda-issue green"><span>✓ Correctly using DS:</span><span style="color:#5E5880"> sidebar media asset, sidebar labels, input/basic for forms, buttons, modals — good overall use of DS interaction components.</span></div>
     </div>
   </details>
 </div></div>
@@ -840,9 +863,10 @@
           Confluence v50 · May 6 🆕
         </a>
       </div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
     </div>
     <div class="badge-row">
-      <span class="badge green">✅ Core CRUD screens</span>
+      <span class="badge green">✓ Core CRUD screens</span>
       <span class="badge yellow">⚠️ Advanced logic not designed</span>
       <span class="badge grey">v39 — very active</span>
       <span class="badge blue">🔔 Conf updated Apr 24</span>
@@ -874,33 +898,33 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li data-iid="09391e96"><span class="icon">✅</span><span>Rules library list view (table with name, status, metadata)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="3323df93"><span class="icon">✅</span><span>Create New Rule: Name, Description, Priority, Category, Status, Tags</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="0dbb5654"><span class="icon">✅</span><span>Rule Conditions (If This): Subject / Operator / Value + "Select Another"</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="e3320a54"><span class="icon">✅</span><span>Action Conditions (Then This): Action Type / Recipients / Email Template</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="e71dfcf8"><span class="icon">✅</span><span>Edit Existing Rule screen</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="8d118d8e"><span class="icon">✅</span><span>Detail Sheet panel</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="8bb40b80"><span class="icon">✅</span><span>Menu Options (context menu per rule)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="e4f97a90"><span class="icon">✅</span><span>Sheet Examples</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="25bac8f5"><span class="icon">✅</span><span>Active / Inactive status field visible</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="09391e96"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Rules library list view (table with name, status, metadata)</span></li>
+        <li data-iid="3323df93"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Create New Rule: Name, Description, Priority, Category, Status, Tags</span></li>
+        <li data-iid="0dbb5654"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Rule Conditions (If This): Subject / Operator / Value + "Select Another"</span></li>
+        <li data-iid="e3320a54"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Action Conditions (Then This): Action Type / Recipients / Email Template</span></li>
+        <li data-iid="e71dfcf8"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Edit Existing Rule screen</span></li>
+        <li data-iid="8d118d8e"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Detail Sheet panel</span></li>
+        <li data-iid="8bb40b80"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Menu Options (context menu per rule)</span></li>
+        <li data-iid="e4f97a90"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Sheet Examples</span></li>
+        <li data-iid="25bac8f5"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Active / Inactive status field visible</span></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li data-iid="8e3b3e64"><span class="icon">❌</span><span>Alert Email Template design — Immediate Alert + Daily Digest layouts<span class="note">New req Apr 24 — both templates need distinct visual design. Not in Figma yet.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="a98dcbc1"><span class="icon">❌</span><span>Nested conditions UI (up to 10 logic levels)<span class="note">Design shows flat single-level only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="5a147f74"><span class="icon">❌</span><span>Action trigger frequency toggle (Event-based vs Digest)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="00fdddad"><span class="icon">❌</span><span>Duplicate rule detection / conflict warning</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="f55f41e1"><span class="icon">❌</span><span>Dry Run / simulate mode</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="e2908272"><span class="icon">❌</span><span>Audit log view (execution history, rule change history)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="58c71a76"><span class="icon">❌</span><span>Unsubscribe — entry points: email footer + user profile; confirmation text<span class="note">Refined Apr 24 with specific entry points and copy requirements.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="ee2a9a8d"><span class="icon">❌</span><span>Filter, sort, search in library (by owner, last triggered, status…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="5546acd3"><span class="icon">❌</span><span>Copy/Clone rule action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="1b54863f"><span class="icon">❌</span><span>"Convert table filter → rule" shortcut (Observations integration)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="6fe4e4e3"><span class="icon">❌</span><span>Run schedule — scheduled/recurring rules</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="4f5e2efe"><span class="icon">❌</span><span>Error / validation states — 7 categorized groups<span class="note">Expanded Apr 24: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="020a087b"><span class="icon">❌</span><span>Empty state for rules library (first visit)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8e3b3e64"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Alert Email Template design — Immediate Alert + Daily Digest layouts<span class="note">New req Apr 24 — both templates need distinct visual design. Not in Figma yet.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a98dcbc1"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Nested conditions UI (up to 10 logic levels)<span class="note">Design shows flat single-level only.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5a147f74"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Action trigger frequency toggle (Event-based vs Digest)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="00fdddad"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Duplicate rule detection / conflict warning</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="f55f41e1"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Dry Run / simulate mode</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e2908272"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Audit log view (execution history, rule change history)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="58c71a76"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Unsubscribe — entry points: email footer + user profile; confirmation text<span class="note">Refined Apr 24 with specific entry points and copy requirements.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ee2a9a8d"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Filter, sort, search in library (by owner, last triggered, status…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5546acd3"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Copy/Clone rule action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="1b54863f"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>"Convert table filter → rule" shortcut (Observations integration)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="6fe4e4e3"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Run schedule — scheduled/recurring rules</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4f5e2efe"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Error / validation states — 7 categorized groups<span class="note">Expanded Apr 24: Rule Builder validation, save/activation, library actions, dry run, filter conversion, ABAC permissions, notifications/delivery.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="020a087b"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Empty state for rules library (first visit)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="b535c1fc"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="9c1fb88f"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
@@ -953,6 +977,7 @@
         </a>
         <a href="https://zitenote.atlassian.net/browse/PRODF-113" class="link-pill jira" target="_blank">PRODF-113 · 🔁 Scoping</a>
       </div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Leya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge blue">🆕 Conf v12 · May 1</span>
@@ -978,27 +1003,27 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma</div>
       <ul class="check-list">
-        <li data-iid="83442935"><span class="icon">✅</span><span>Email Configuration page — layout and page structure</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="de71a4ae"><span class="icon">✅</span><span>Onboarding banner — "Brand &amp; Control Your Communications" with "Got it!" + "Learn more" + dismiss (✕)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="28bdfb78"><span class="icon">✅</span><span>Logo upload — drag-and-drop zone (.jpg/.png, up to 2MB, 1024×1024px)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="31f6fc4f"><span class="icon">✅</span><span>Email address — fixed domain field (read-only / disabled)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="de89a69e"><span class="icon">✅</span><span>Sender Name — editable input ("Jane Doe at Acme Rocket Company")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="83442935"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Email Configuration page — layout and page structure</span></li>
+        <li data-iid="de71a4ae"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Onboarding banner — "Brand &amp; Control Your Communications" with "Got it!" + "Learn more" + dismiss (✕)</span></li>
+        <li data-iid="28bdfb78"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Logo upload — drag-and-drop zone (.jpg/.png, up to 2MB, 1024×1024px)</span></li>
+        <li data-iid="31f6fc4f"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Email address — fixed domain field (read-only / disabled)</span></li>
+        <li data-iid="de89a69e"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Sender Name — editable input ("Jane Doe at Acme Rocket Company")</span></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Missing vs requirements</div>
       <ul class="check-list">
-        <li data-iid="ec6045b8"><span class="icon">❌</span><span>Notification Management page — mute per source (org-level + personal toggle)<span class="note">Core Phase 1 feature. Only nav item exists in sidebar — no page designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="73f0775f"><span class="icon">❌</span><span>Org-level mute active state — personal toggle disabled with tooltip ("Muted for your org by an admin")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="5e3b248d"><span class="icon">❌</span><span>Save / submit action for Email Configuration form</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="3fb61097"><span class="icon">❌</span><span>Logo delete / replace state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="34fd10b2"><span class="icon">❌</span><span>Logo preview state after successful upload</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="575578d1"><span class="icon">❌</span><span>Org logo inherited state — "Using org logo" vs "Custom email logo" labels + Reset to org logo action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="69037507"><span class="icon">❌</span><span>Error state for invalid logo (wrong type or oversized)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="4441231a"><span class="icon">❌</span><span>Audit log surface (logo + sender name change history)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="a94bf928"><span class="icon">❌</span><span>Email Templates page — list with preview (org logo applied)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="e83666eb"><span class="icon">❌</span><span>Email Templates — enable / disable toggle per template</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="648de3a9"><span class="icon">❌</span><span>Webhooks — "coming soon" placeholder state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="ec6045b8"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Notification Management page — mute per source (org-level + personal toggle)<span class="note">Core Phase 1 feature. Only nav item exists in sidebar — no page designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="73f0775f"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Org-level mute active state — personal toggle disabled with tooltip ("Muted for your org by an admin")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5e3b248d"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Save / submit action for Email Configuration form</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3fb61097"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Logo delete / replace state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="34fd10b2"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Logo preview state after successful upload</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="575578d1"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Org logo inherited state — "Using org logo" vs "Custom email logo" labels + Reset to org logo action</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="69037507"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Error state for invalid logo (wrong type or oversized)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="4441231a"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Audit log surface (logo + sender name change history)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="a94bf928"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Email Templates page — list with preview (org logo applied)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e83666eb"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Email Templates — enable / disable toggle per template</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="648de3a9"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Webhooks — "coming soon" placeholder state</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="fb57d96c"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="e837fc08"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
@@ -1023,7 +1048,7 @@
     <div class="cda-body">
       <div class="cda-issue yellow"><span class="cda-badge">frame</span><span><code>Card</code> / <code>Card Content</code> — settings group card as raw frames. DS may have a Card / Settings Group component.</span></div>
       <div class="cda-issue yellow"><span class="cda-badge">frames</span><span><code>Input / Basic</code> wrappers — outer label+input row is a custom frame; actual DS inputs are used correctly inside.</span></div>
-      <div class="cda-issue green"><span>✅ Benchmark file:</span><span style="color:#5E5880"> sidebar, header, top-section, empty state, file uploader, buttons, onboarding banner — all DS instances. Use as structural template.</span></div>
+      <div class="cda-issue green"><span>✓ Benchmark file:</span><span style="color:#5E5880"> sidebar, header, top-section, empty state, file uploader, buttons, onboarding banner — all DS instances. Use as structural template.</span></div>
     </div>
   </details>
 </div></div>
@@ -1045,10 +1070,11 @@
           Confluence v6 · Mar 30
         </a>
       </div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
     </div>
     <div class="badge-row">
-      <span class="badge green">✅ Main settings screen</span>
-      <span class="badge red">❌ Flows &amp; error states missing</span>
+      <span class="badge green">✓ Main settings screen</span>
+      <span class="badge red">✕ Flows &amp; error states missing</span>
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
@@ -1070,30 +1096,30 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li data-iid="314b1b35"><span class="icon">✅</span><span>Personal: Full Name (editable), User Avatar</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="2bd1a4d6"><span class="icon">✅</span><span>Contact: Email Address (read-only), Phone Number</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="bfdd823a"><span class="icon">✅</span><span>Security: Password field visible</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="5b11df1e"><span class="icon">✅</span><span>Two-Factor Authentication — shown as "Coming Soon"</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="6734aeed"><span class="icon">✅</span><span>Organization: Organization, Team/Department, Position/Role (read-only)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="2e7d7eaa"><span class="icon">✅</span><span>Preferences section (below fold)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="d8ccfb4c"><span class="icon">✅</span><span>User Settings - Option Active state (expanded field)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="2433651f"><span class="icon">✅</span><span>Mobile example frame</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="95159cc8"><span class="icon">✅</span><span>Suggested Redlines (dev handoff notes)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="314b1b35"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Personal: Full Name (editable), User Avatar</span></li>
+        <li data-iid="2bd1a4d6"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Contact: Email Address (read-only), Phone Number</span></li>
+        <li data-iid="bfdd823a"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Security: Password field visible</span></li>
+        <li data-iid="5b11df1e"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Two-Factor Authentication — shown as "Coming Soon"</span></li>
+        <li data-iid="6734aeed"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Organization: Organization, Team/Department, Position/Role (read-only)</span></li>
+        <li data-iid="2e7d7eaa"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Preferences section (below fold)</span></li>
+        <li data-iid="d8ccfb4c"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>User Settings - Option Active state (expanded field)</span></li>
+        <li data-iid="2433651f"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Mobile example frame</span></li>
+        <li data-iid="95159cc8"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Suggested Redlines (dev handoff notes)</span></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li data-iid="b02d9146"><span class="icon">❌</span><span>Password change flow (current → new → confirmation)<span class="note">Requires current password; sends confirmation email. No modal designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="c79f75c6"><span class="icon">❌</span><span>Avatar upload flow (file picker, preview, remove)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="891bd7dc"><span class="icon">❌</span><span>MFA setup flow (TOTP or email OTP) — "Coming Soon" only</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="7b2d9c9a"><span class="icon">❌</span><span>Account deletion flow (type email to confirm + admin approval)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="8b742aa4"><span class="icon">❌</span><span>Role field with lock indicator (read-only)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="b338c561"><span class="icon">❌</span><span>SSO provider display ("Google / Microsoft / Not connected")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="11da0faf"><span class="icon">❌</span><span>Last login timestamp</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="3f7c201f"><span class="icon">❌</span><span>Error states: wrong password, invalid file format, MFA code errors</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="5d7b900e"><span class="icon">❌</span><span>SSC users flow (read-only, redirect to Pv1)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="3dd46c97"><span class="icon">❌</span><span>AOR (Area of Responsibility) field</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="b02d9146"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Password change flow (current → new → confirmation)<span class="note">Requires current password; sends confirmation email. No modal designed.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c79f75c6"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Avatar upload flow (file picker, preview, remove)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="891bd7dc"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>MFA setup flow (TOTP or email OTP) — "Coming Soon" only</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="7b2d9c9a"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Account deletion flow (type email to confirm + admin approval)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="8b742aa4"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Role field with lock indicator (read-only)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="b338c561"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>SSO provider display ("Google / Microsoft / Not connected")</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="11da0faf"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Last login timestamp</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3f7c201f"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Error states: wrong password, invalid file format, MFA code errors</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="5d7b900e"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>SSC users flow (read-only, redirect to Pv1)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3dd46c97"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>AOR (Area of Responsibility) field</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="615e4717"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="ea1e2466"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
@@ -1149,10 +1175,11 @@
           Loom walkthrough
         </a>
       </div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
     </div>
     <div class="badge-row">
-      <span class="badge green">✅ Core thread UI designed</span>
-      <span class="badge red">❌ 5 XD-187 items pending</span>
+      <span class="badge green">✓ Core thread UI designed</span>
+      <span class="badge red">✕ 5 XD-187 items pending</span>
       <span class="badge yellow">⚠️ Conf 99 days newer</span>
       <span class="badge blue">🆕 Conf v13 · May 5</span>
     </div>
@@ -1176,28 +1203,28 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs requirements)</div>
       <ul class="check-list">
-        <li data-iid="651cf3aa"><span class="icon">✅</span><span>Thread list: Active and Archived tabs, Inbound/Outbound filter</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="89823200"><span class="icon">✅</span><span>Thread detail: conversation view with message timeline</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="959c0ede"><span class="icon">✅</span><span>Thread header with org name + thread permalink URL</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="c24c482d"><span class="icon">✅</span><span>Thread Actions panel: Included Users, Related Assets, Connected Issues, Export Thread</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="232e6554"><span class="icon">✅</span><span>Archived Messages table view (Company, Issues, Inquiry Type, Severity, Dates)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="0a883dab"><span class="icon">✅</span><span>Search &amp; Results screens</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="93d1e38c"><span class="icon">✅</span><span>Filter states (org, contact, asset, issue, inquiry type, threat level…)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="d63dd6ed"><span class="icon">✅</span><span>Archived Thread Detail Sheet (side panel)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="f4c5b368"><span class="icon">✅</span><span>Export confirmation toast</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="cc9761eb"><span class="icon">✅</span><span>MessageType icon component spec (14px icons)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="a7c63db2"><span class="icon">✅</span><span>Failed message state (red-bordered Mailer Daemon row)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="cd65ebde"><span class="icon">✅</span><span>"Findings", "Assessment", "Questionnaire" inquiry types labeled</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="651cf3aa"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Thread list: Active and Archived tabs, Inbound/Outbound filter</span></li>
+        <li data-iid="89823200"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Thread detail: conversation view with message timeline</span></li>
+        <li data-iid="959c0ede"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Thread header with org name + thread permalink URL</span></li>
+        <li data-iid="c24c482d"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Thread Actions panel: Included Users, Related Assets, Connected Issues, Export Thread</span></li>
+        <li data-iid="232e6554"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Archived Messages table view (Company, Issues, Inquiry Type, Severity, Dates)</span></li>
+        <li data-iid="0a883dab"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Search &amp; Results screens</span></li>
+        <li data-iid="93d1e38c"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Filter states (org, contact, asset, issue, inquiry type, threat level…)</span></li>
+        <li data-iid="d63dd6ed"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Archived Thread Detail Sheet (side panel)</span></li>
+        <li data-iid="f4c5b368"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Export confirmation toast</span></li>
+        <li data-iid="cc9761eb"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>MessageType icon component spec (14px icons)</span></li>
+        <li data-iid="a7c63db2"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Failed message state (red-bordered Mailer Daemon row)</span></li>
+        <li data-iid="cd65ebde"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>"Findings", "Assessment", "Questionnaire" inquiry types labeled</span></li>
       </ul>
     </div>
     <div class="col">
       <div class="col-title"><span class="dot red"></span>XD-187 open items</div>
       <ul class="check-list">
-        <li data-iid="2f0346e0"><span class="icon">🟡</span><span>Thread Link/ID in thread list (partial)<span class="note">URL in thread detail header ✅, NOT in thread list items ❌.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="0c419fea"><span class="icon">🟡</span><span>Unread message counter — text only (partial)<span class="note">"2,345 Messages, 1 unread" ✅. Tab badge ❌. Per-message indicator ❌.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="66119721"><span class="icon">❌</span><span>Topic (Thread) name under company name in thread list</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="2f0346e0"><span class="icon">🟡</span><span>Thread Link/ID in thread list (partial)<span class="note">URL in thread detail header ✓, NOT in thread list items ✕.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="0c419fea"><span class="icon">🟡</span><span>Unread message counter — text only (partial)<span class="note">"2,345 Messages, 1 unread" ✓. Tab badge ✕. Per-message indicator ✕.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="66119721"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Topic (Thread) name under company name in thread list</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="80513187"><span class="icon">🟡</span><span>Inquiry type icons — 14px designed (partial)<span class="note">Icons at 14px exist. Larger size + Security events icon not done.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="d65c316e"><span class="icon">❌</span><span>Delivery status icons per message (WhatsApp-style)<span class="note">10-state icon table not designed. Still uses thread-level red border.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d65c316e"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Delivery status icons per message (WhatsApp-style)<span class="note">10-state icon table not designed. Still uses thread-level red border.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="8301d20e"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="8df4d093"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
@@ -1242,9 +1269,10 @@
           Confluence v1 · Apr 24 🆕
         </a>
       </div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
     </div>
     <div class="badge-row">
-      <span class="badge green">✅ 10 sections designed</span>
+      <span class="badge green">✓ 10 sections designed</span>
       <span class="badge blue">🔔 Conf created Apr 24</span>
       <span class="badge yellow">⚠️ Permission flows missing</span>
     </div>
@@ -1272,10 +1300,10 @@
     <div class="col">
       <div class="col-title"><span class="dot green"></span>Done in Figma (vs Confluence requirements)</div>
       <ul class="check-list">
-        <li data-iid="c77be478"><span class="icon">✅</span><span>Uploading Files — action that triggers auto-sharing (Req 1, 6 Bulk)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="d2e71152"><span class="icon">✅</span><span>Shared Documents — shows inherited visibility state (Req 3)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="da486337"><span class="icon">✅</span><span>Security boundary — File Vault scoped to specific files only, no lateral browse (Req 7)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="02f6df24"><span class="icon">✅</span><span>File Versioning — File Details panel shows active version only (Req 11)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="c77be478"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Uploading Files — action that triggers auto-sharing (Req 1, 6 Bulk)</span></li>
+        <li data-iid="d2e71152"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Shared Documents — shows inherited visibility state (Req 3)</span></li>
+        <li data-iid="da486337"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Security boundary — File Vault scoped to specific files only, no lateral browse (Req 7)</span></li>
+        <li data-iid="02f6df24"><span class="icon chk-done"><svg class="ic-chk" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5.5L4 8.5L9.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>File Versioning — File Details panel shows active version only (Req 11)</span></li>
         <li data-iid="a422c175"><span class="icon">🟡</span><span>Upload flow — present but no auto-permission confirmation toast/state shown (Req 4 partial)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="64c41a60"><span class="icon">🟡</span><span>Restoring Deleted Files — covers vendor-side deletion but not org access revocation (Req 10 partial)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="dbcc3520"><span class="icon">🟡</span><span>Actions &amp; Dialogs — permission toasts exist but don't show org-level auto-grant (Req 1 partial)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
@@ -1284,12 +1312,12 @@
     <div class="col">
       <div class="col-title"><span class="dot red"></span>Not done / missing vs requirements</div>
       <ul class="check-list">
-        <li data-iid="3e5c809e"><span class="icon">❌</span><span>Auto-permission confirmation state — visual feedback that all monitoring orgs received Viewer access on upload (Req 1, 4)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="9547e1a1"><span class="icon">❌</span><span>Audit Trail UI — log showing which orgs were granted access + timestamps (Req 8)<span class="note">Required: automatically log each auto-share event.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="3e79fa63"><span class="icon">❌</span><span>License &amp; ABAC bypass state — no UI indicating paywall-bypass is active (Req 5)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="e4fde421"><span class="icon">❌</span><span>Parent Observation → child records link visualization — trigger logic UI (Req 2, 9)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="00a3c2e3"><span class="icon">❌</span><span>Access revocation state — what a monitoring org sees when file is removed from observation (Req 10)<span class="note">Broken attachment link on observation; org immediately loses access.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
-        <li data-iid="d412c1cd"><span class="icon">❌</span><span>File restoration edge case — policy for re-granting access after restore from trash (Req 10 TBD)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3e5c809e"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Auto-permission confirmation state — visual feedback that all monitoring orgs received Viewer access on upload (Req 1, 4)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="9547e1a1"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Audit Trail UI — log showing which orgs were granted access + timestamps (Req 8)<span class="note">Required: automatically log each auto-share event.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="3e79fa63"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>License &amp; ABAC bypass state — no UI indicating paywall-bypass is active (Req 5)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="e4fde421"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Parent Observation → child records link visualization — trigger logic UI (Req 2, 9)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="00a3c2e3"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Access revocation state — what a monitoring org sees when file is removed from observation (Req 10)<span class="note">Broken attachment link on observation; org immediately loses access.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
+        <li data-iid="d412c1cd"><span class="icon chk-todo"><svg class="ic-x" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L9 9M9 2L2 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>File restoration edge case — policy for re-granting access after restore from trash (Req 10 TBD)</span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="336cd056"><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
         <li data-iid="1041da10"><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span><button class="accept-btn" title="Accept — won't do">✓</button></li>
       </ul>
@@ -1327,7 +1355,7 @@
       <div class="cda-issue yellow"><span class="cda-badge">×18 each</span><span><code>.sheet-header</code> + <code>.footer</code> — sheet/drawer headers and footers built as frames across 18 screens. Consistent pattern, good candidate for DS Sheet Header component.</span></div>
       <div class="cda-issue yellow"><span class="cda-badge">×4 each</span><span><code>search-action</code> + <code>search&amp;filter</code> — custom search + filter toolbar. DS Input / Search should be used; filter pattern may need a DS component proposal.</span></div>
       <div class="cda-issue yellow"><span class="cda-badge">×4 each</span><span><code>Data Table / Table Tools</code> + <code>Column Settings Menu</code> — table toolbar and column settings as frames. Check if DS has canonical versions.</span></div>
-      <div class="cda-issue green"><span>✅ Good overall ratio:</span><span style="color:#5E5880"> 1,213 instances. Navigation, sidebar, buttons, breadcrumbs, and interactive elements correctly use DS. Data table layer is the main gap.</span></div>
+      <div class="cda-issue green"><span>✓ Good overall ratio:</span><span style="color:#5E5880"> 1,213 instances. Navigation, sidebar, buttons, breadcrumbs, and interactive elements correctly use DS. Data table layer is the main gap.</span></div>
     </div>
   </details>
 </div>
