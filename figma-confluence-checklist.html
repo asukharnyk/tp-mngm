@@ -484,6 +484,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           Figma — Roles &amp; Permissions
         </a>
+        <a href="https://claude.ai/design/p/019e2b3c-bfa0-75e6-a686-000ab719d03c?file=Role+Permission+Detail+v2.html&via=share" class="link-pill loom" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          Prototype — Permissions (for review)
+        </a>
       </div>
     </div>
     <div class="badge-row">
@@ -547,7 +551,6 @@
         <li><span class="icon">❌</span><span>Roles Table row click → off-canvas permission panel<span class="note">Shows full permissions per service for that role.</span></span></li>
         <li><span class="icon">❌</span><span>Role + User Management grouped under one sidebar folder<span class="note">Final folder name TBD with design.</span></span></li>
         <li><span class="icon">❌</span><span>Icons for all sidebar items<span class="note">Placeholders acceptable; design sign-off later.</span></span></li>
-        <li><span class="icon">❌</span><span>Team Management hidden behind feature flag</span></li>
         <li><span class="icon">🔐</span><span>Define feature visibility &amp; availability per role<span class="note">Which roles can see this feature? Which can interact? Confirm with RBAC spec before handoff.</span></span></li>
         <li><span class="icon">🏷️</span><span>Naming audit — within feature &amp; cross-feature consistency<span class="note">Check labels, column names, report titles, action names. No duplicates across features; names should be intuitive and unambiguous.</span></span></li>
       </ul>
@@ -578,7 +581,7 @@
         <div class="roles-item"><span class="icon">❌</span><span>Permissions visual — no design for permissions per service per role<span class="note">Confluence requires: show list of actions a role can perform within each service</span></span></div>
         <div class="roles-item"><span class="icon">❌</span><span>Row click → off-canvas panel with full permission detail<span class="note">Clicking a role row must open a panel — not yet designed</span></span></div>
         <div class="roles-item"><span class="icon">❌</span><span>Root Admin + Partner roles handling<span class="note">May not appear in table — behaviour TBD</span></span></div>
-        <div class="roles-item"><span class="icon">❌</span><span>Service columns structure<span class="note">Each service owning team adds their permission config — visual scaffold needed</span></span></div>
+        <div class="roles-item"><span class="icon">❌</span><span>Service columns structure<span class="note">Visual scaffold needed for each service's permission config</span></span></div>
         <div class="roles-item"><span class="icon">❌</span><span>Access control gate — Editors and Viewers must not see this table at all</span></div>
         <div class="roles-item"><span class="icon">🔍</span><span>Review necessity of filters, search, and actions in v1<span class="note">Roles table is read-only in v1 — confirm which controls (search, filter, bulk actions) are actually needed vs deferred</span></span></div>
       </div>
@@ -1222,13 +1225,11 @@
 
 <script>
 (function() {
-  // Default: all cards collapsed. Expand only if user explicitly expanded (stored '0').
+  // Default: all cards expanded. Collapse only if user explicitly collapsed (stored '1').
   document.querySelectorAll('.feature-card').forEach(function(card) {
     var id = card.id;
     var stored = id ? localStorage.getItem('collapsed-' + id) : null;
-    if (stored === '0') {
-      // user explicitly expanded this card — keep it open
-    } else {
+    if (stored === '1') {
       card.classList.add('collapsed');
     }
   });
