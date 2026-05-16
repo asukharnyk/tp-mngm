@@ -371,15 +371,18 @@
   }
   .feat-meta-item {
     display: flex; align-items: center; gap: 4px;
-    font-size: 10px; color: #888780;
+    font-size: 10px;
   }
   .feat-meta-item .meta-lbl {
     font-size: 9px; font-weight: 500; letter-spacing: .08em;
-    text-transform: uppercase; color: #5F5E5A;
+    text-transform: uppercase; color: #888780;
   }
   .feat-meta-item .meta-val {
-    color: #B4B2A9;
+    color: #5F5E5A;
   }
+  /* On dark feature header — override to visible tones */
+  .feature-header .feat-meta-item .meta-lbl { color: #888780; }
+  .feature-header .feat-meta-item .meta-val  { color: #D3D1C7; }
 </style>
 </head>
 <body>
