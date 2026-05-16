@@ -68,6 +68,19 @@
   .link-pill.confluence { background: #FFF8E8; color: #7A6020; border: 1.5px solid #F0D990; }
   .link-pill.confluence:hover { background: #FFF0C0; border-color: #CCAA40; transform: translateY(-1px); }
   .link-pill.no-conf { background: #FEF0EE; color: #B85450; border: 1.5px solid #F4B8B5; cursor: default; }
+  .link-pill.roles { background: #EBF5FF; color: #1A5FAD; border: 1.5px solid #93C5FD; }
+  .link-pill.roles:hover { background: #DBEAFE; border-color: #3B82F6; transform: translateY(-1px); }
+  .roles-section { margin: 16px 20px 4px; border: 1.5px solid #E2DFF5; border-radius: 10px; overflow: hidden; background: #FAFAFE; }
+  .roles-section-header { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: #F3F1FC; border-bottom: 1px solid #E2DFF5; font-weight: 600; font-size: 12px; color: #4A4272; }
+  .roles-section-header a { color: #5A4FA0; text-decoration: none; font-size: 11px; font-weight: 400; }
+  .roles-section-header a:hover { text-decoration: underline; }
+  .roles-section-body { display: flex; gap: 0; }
+  .roles-col { flex: 1; padding: 12px 16px; font-size: 12px; }
+  .roles-col + .roles-col { border-left: 1px solid #E2DFF5; }
+  .roles-col-title { font-weight: 600; font-size: 11px; color: #6C63B0; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .roles-item { display: flex; gap: 6px; align-items: flex-start; margin-bottom: 6px; line-height: 1.4; color: #4A4272; }
+  .roles-item .icon { flex-shrink: 0; }
+  .roles-item .note { display: block; color: #9B93C4; font-size: 10px; margin-top: 2px; }
   .link-pill.loom { background: #FFF0EB; color: #C2410C; border: 1.5px solid #FBB89E; }
   .link-pill.loom:hover { background: #FFE0D0; border-color: #F97316; transform: translateY(-1px); }
 
@@ -461,6 +474,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           Confluence v24 · May 15 🆕
         </a>
+        <a href="https://www.figma.com/design/XKer2RGadTuBBgF3QHEifm/Access-Roles?node-id=466-37501" class="link-pill roles" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Figma — Roles &amp; Permissions
+        </a>
       </div>
     </div>
     <div class="badge-row">
@@ -535,7 +552,29 @@
       </ul>
     </div>
   </div>
-  <details class="card-ds-audit">
+  <div class="roles-section">
+    <div class="roles-section-header">
+      🔐 Roles &amp; Permissions sub-feature
+      <a href="https://www.figma.com/design/XKer2RGadTuBBgF3QHEifm/Access-Roles?node-id=466-37501" target="_blank">↗ Open Figma</a>
+      <a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management#Roles-and-Role-permissions-preview" target="_blank">↗ Confluence section</a>
+    </div>
+    <div class="roles-section-body">
+      <div class="roles-col">
+        <div class="roles-col-title">✅ Done in Figma</div>
+        <div class="roles-item"><span class="icon">✅</span><span>Roles Table — read-only list of all roles (Org Admin, Editor, Viewer)<span class="note">node 466-38122 — table structure present</span></span></div>
+        <div class="roles-item"><span class="icon">✅</span><span>Access Roles sub-nav visible in sidebar</span></div>
+      </div>
+      <div class="roles-col">
+        <div class="roles-col-title">❌ Missing / Todo</div>
+        <div class="roles-item"><span class="icon">❌</span><span>Permissions visual — no design for permissions per service per role<span class="note">Confluence requires: show list of actions a role can perform within each service</span></span></div>
+        <div class="roles-item"><span class="icon">❌</span><span>Row click → off-canvas panel with full permission detail<span class="note">Clicking a role row must open a panel — not yet designed</span></span></div>
+        <div class="roles-item"><span class="icon">❌</span><span>Root Admin + Partner roles handling<span class="note">May not appear in table — behaviour TBD</span></span></div>
+        <div class="roles-item"><span class="icon">❌</span><span>Service columns structure<span class="note">Each service owning team adds their permission config — visual scaffold needed</span></span></div>
+        <div class="roles-item"><span class="icon">❌</span><span>Access control gate — Editors and Viewers must not see this table at all</span></div>
+      </div>
+    </div>
+  </div>
+    <details class="card-ds-audit">
     <summary class="cda-header">
       <span class="cda-title">🧩 DS Compliance</span>
       <span class="audit-score score-med">~59%</span>
