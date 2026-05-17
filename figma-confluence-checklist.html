@@ -384,79 +384,12 @@
   .feature-header .feat-meta-item .meta-lbl { color: #888780; }
   .feature-header .feat-meta-item .meta-val  { color: #D3D1C7; }
 
-/* Dev strip */
-.dev-strip {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 6px 14px;
-  background: #F0EEE9;
-  border-bottom: 1px solid #DDD9D3;
-  font-size: 11px;
-}
-.dev-strip-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #888780;
-}
-.dev-status-pill {
-  border-radius: 10px;
-  padding: 1px 8px;
-  font-size: 10px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-.dev-status-pill.overdue  { background: #FEE2E2; color: #9B1C1C; }
-.dev-status-pill.blocked  { background: #FEF3C7; color: #92400E; }
-.dev-status-pill.on-track { background: #D1FAE5; color: #065F46; }
-.dev-status-pill.scoping  { background: #EDE9FE; color: #5B21B6; }
-.dev-status-pill.done-st  { background: #E0F2F1; color: #004D40; }
-.dev-due { font-size: 10px; color: #5F5E5A; white-space: nowrap; }
-.dev-progress {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.dev-progress-label { font-size: 10px; color: #888780; white-space: nowrap; }
-.dev-progress-bar {
-  width: 44px;
-  height: 4px;
-  background: #D4D2CC;
-  border-radius: 2px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.dev-progress-fill {
-  height: 100%;
-  border-radius: 2px;
-  background: #D97706;
-}
-.dev-progress-fill.done   { background: #1D9E75; }
-.dev-progress-fill.behind { background: #D97706; }
-.dev-progress-fill.ok     { background: #1D9E75; }
-.dev-progress-pct { font-size: 10px; color: #5F5E5A; white-space: nowrap; }
-.dev-label-chip {
-  border-radius: 8px;
-  padding: 1px 6px;
-  font-size: 9px;
-  font-weight: 500;
-  background: #E8E6E0;
-  color: #5F5E5A;
-  white-space: nowrap;
-}
-.dev-jira-link {
-  font-size: 10px;
-  color: #888780;
-  text-decoration: none;
-  margin-left: 2px;
-}
-.dev-jira-link:hover { color: #534AB7; text-decoration: underline; }
-.dev-strip-sep { color: #C8C6C0; }
-.dev-note { font-size: 10px; color: #888780; font-style: italic; }
+
 .dev-on-hold { font-size: 10px; color: #9B6B00; }
+
+
+/* Dev meta in feature header */
+.feature-header .meta-val.meta-dev-pct { color: #D3D1C7; }
 
 </style>
 </head>
@@ -695,7 +628,7 @@
           Confluence v19 · May 5 🆕
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Claudio</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Claudio</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Mar 31, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">60%</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ All 7 widgets designed</span>
@@ -704,7 +637,7 @@
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
-  <div class="dev-strip"><span class="dev-strip-label">Dev</span><span class="dev-status-pill overdue">⏰ Overdue</span><span class="dev-strip-sep">·</span><span class="dev-due">📅 Mar 31, 2026</span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">⚙️ BE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:28%"></span></span><span class="dev-progress-pct">2/7</span></span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">🖥️ FE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:33%"></span></span><span class="dev-progress-pct">1/3</span></span><span class="dev-label-chip">PB2</span><span class="dev-label-chip">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-287" class="dev-jira-link" target="_blank">PRODF-287 ↗</a></div>
+  
   <div class="card-collapsible">
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">💢 WHAT. Core pain point this feature solves</div>VRMs are blind to their overall risk exposure — no way to know which vendors are most dangerous or if the program is falling behind without manual data digging.<div class="who-inner"><div class="who-label">💢 <a href="https://drive.google.com/file/d/1BkotOmm5ZxoeK8D7wpxlo_lAPi44RKSf/view" target="_blank">WHO</a>. Personas this feature serves</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">R1 TPRM / Vendor Risk Manager</span> — primary daily user — monitors vendor observations, KEVs, and resolution flow. Measured on risk coverage and incident avoidance.</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">R0 CISO / GRC Strategy</span> — strategic overview of vendor risk program health. Needs the iceberg view across the full portfolio.</div></div></div></div>
   <div class="mismatch">
@@ -805,7 +738,7 @@
           Prototype — Permissions (for review)
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">25%</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ v1 table &amp; role assignment</span>
@@ -814,7 +747,7 @@
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
-  <div class="dev-strip"><span class="dev-strip-label">Dev</span><span class="dev-status-pill blocked">🚫 Blocked</span><span class="dev-strip-sep">·</span><span class="dev-due">📅 Jun 24, 2026</span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">⚙️ BE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:0%"></span></span><span class="dev-progress-pct">0/2</span></span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">🖥️ FE</span><span class="dev-progress-bar"><span class="dev-progress-fill ok" style="width:14%"></span></span><span class="dev-progress-pct">1/7</span></span><span class="dev-label-chip">TPRM P2</span><span class="dev-label-chip">PB2</span><span class="dev-label-chip">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-504" class="dev-jira-link" target="_blank">PRODF-504 ↗</a><span class="dev-note">v1 table ✓ shipped</span></div>
+  
   <div class="card-collapsible">
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">💢 WHAT. Core pain point this feature solves</div>Admins can't control who has access to what on the new platform. Users arrive from Pv1 migration with no roles or permissions assigned and no tool to fix that.<div class="who-inner"><div class="who-label">💢 <a href="https://drive.google.com/file/d/1BkotOmm5ZxoeK8D7wpxlo_lAPi44RKSf/view" target="_blank">WHO</a>. Personas this feature serves</div><div class="who-persona"><span class="who-world-label">1st party</span><span class="who-role">R0 CISO / GRC Strategy</span> — the only role with admin permissions to assign roles and manage who has access to the platform. Applies in both worlds — same admin need.</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">R0 CISO / GRC Strategy</span> — manages their org's team access on Titan the same way — onboards users, assigns Titan roles post-migration.</div></div></div></div>
   <div class="change-banner">
@@ -944,7 +877,7 @@
           Confluence v50 · May 6 🆕
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 30, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">35%</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ Core CRUD screens</span>
@@ -954,7 +887,7 @@
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
-  <div class="dev-strip"><span class="dev-strip-label">Dev</span><span class="dev-status-pill blocked">🚫 Blocked</span><span class="dev-strip-sep">·</span><span class="dev-due">📅 Jun 30, 2026</span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">⚙️ BE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:0%"></span></span><span class="dev-progress-pct">0/3</span></span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">🖥️ FE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:0%"></span></span><span class="dev-progress-pct">0/1</span></span><span class="dev-label-chip">PB2</span><span class="dev-label-chip">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-119" class="dev-jira-link" target="_blank">PRODF-119 ↗</a></div>
+  
   <div class="card-collapsible">
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">💢 WHAT. Core pain point this feature solves</div>Every repetitive case like risk response (alert on critical finding) requires manual action. Provide a clear way to automate routines and save clients hours of effort daily.<div class="who-inner"><div class="who-label">💢 <a href="https://drive.google.com/file/d/1BkotOmm5ZxoeK8D7wpxlo_lAPi44RKSf/view" target="_blank">WHO</a>. Personas this feature serves</div><div class="who-persona"><span class="who-world-label">1st party</span><span class="who-role">R2 Security Operator</span> — automates alert triage and incident response. "Stopping the bleeding" — rules filter thousands of detections down to what's real and actionable.</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">R1 TPRM / Vendor Risk Manager</span> — automates vendor risk monitoring — triggers alerts on score drops, critical findings, or KEVs without manual checking.</div></div></div></div>
   <div class="mismatch">
@@ -1059,14 +992,14 @@
         </a>
         <a href="https://zitenote.atlassian.net/browse/PRODF-113" class="link-pill jira" target="_blank">PRODF-113 · 🔁 Scoping</a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Leya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Leya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">May 13, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">20%</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge blue">🆕 Conf v12 · May 1</span>
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
-  <div class="dev-strip"><span class="dev-strip-label">Dev</span><span class="dev-status-pill scoping">🔎 Scoping</span><span class="dev-strip-sep">·</span><span class="dev-due">📅 May 13, 2026</span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">⚙️ BE</span><span class="dev-progress-bar"><span class="dev-progress-fill done" style="width:100%"></span></span><span class="dev-progress-pct">3/3</span></span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">🖥️ FE</span><span class="dev-progress-bar"><span class="dev-progress-fill done" style="width:100%"></span></span><span class="dev-progress-pct">1/1</span></span><span class="dev-label-chip">TPRM P2</span><span class="dev-label-chip">PB2</span><span class="dev-label-chip">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-113" class="dev-jira-link" target="_blank">PRODF-113 ↗</a><span class="dev-note">impl epics not yet created</span></div>
+  
   <div class="card-collapsible">
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">💢 WHAT. Core pain point this feature solves</div>Users receive system emails with no control over which events they're notified about or how often. Without configurable preferences, noise becomes unmanageable and relevant alerts get lost.<div class="who-inner"><div class="who-label">💢 <a href="https://drive.google.com/file/d/1BkotOmm5ZxoeK8D7wpxlo_lAPi44RKSf/view" target="_blank">WHO</a>. Personas this feature serves</div><div class="who-persona"><span class="who-world-label">1st party</span><span class="who-role">R2 Security Operator</span> — high alert volume — needs fine-grained control to separate signal from noise. Without this, relevant incidents get lost.</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">R1 TPRM / Vendor Risk Manager</span> — needs timely notifications on vendor status changes without being flooded. Each missed alert = delayed incident response.</div></div></div></div>
   <div class="change-banner">
@@ -1153,7 +1086,7 @@
           Confluence v6 · Mar 30
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">25%</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ Profile &amp; org fields done</span>
@@ -1163,7 +1096,7 @@
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
-  <div class="dev-strip"><span class="dev-strip-label">Dev</span><span class="dev-status-pill scoping">🔎 Scoping</span><span class="dev-strip-sep">·</span><span class="dev-due">📅 Jun 24, 2026</span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">🖥️ FE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:0%"></span></span><span class="dev-progress-pct">0/1</span></span><span class="dev-label-chip">TPRM P2</span><span class="dev-label-chip">PB2</span><span class="dev-label-chip">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-289" class="dev-jira-link" target="_blank">PRODF-289 ↗</a><span class="dev-note">FE & design on hold</span></div>
+  
   <div class="card-collapsible">
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">💢 WHAT. Core pain point this feature solves</div>Users can't self-serve basic things like changing a password or seeing their own role — every account task needs admin involvement.<div class="who-inner"><div class="who-label">💢 <a href="https://drive.google.com/file/d/1BkotOmm5ZxoeK8D7wpxlo_lAPi44RKSf/view" target="_blank">WHO</a>. Personas this feature serves</div><div class="who-persona"><span class="who-world-label">1st party</span><span class="who-role">All 1st party roles (R1, R2, R0)</span> — every user needs to self-manage their account — password, profile, see their own role. Currently requires admin involvement for every small task.</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">All 3rd party roles (R1, R2, R3)</span> — same need — platform-wide feature that removes the admin bottleneck for routine account tasks.</div></div></div></div>
   <div class="change-banner">
@@ -1263,7 +1196,7 @@
           Loom walkthrough
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Apr 29, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">82%</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ Core thread UI designed</span>
@@ -1273,7 +1206,7 @@
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
-  <div class="dev-strip"><span class="dev-strip-label">Dev</span><span class="dev-status-pill on-track">✓ On Track</span><span class="dev-strip-sep">·</span><span class="dev-due">📅 Apr 29, 2026</span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">⚙️ BE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:75%"></span></span><span class="dev-progress-pct">6/8</span></span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">🖥️ FE</span><span class="dev-progress-bar"><span class="dev-progress-fill done" style="width:100%"></span></span><span class="dev-progress-pct">2/2</span></span><span class="dev-label-chip">TPRM</span><span class="dev-label-chip">PB2</span><span class="dev-label-chip">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-114" class="dev-jira-link" target="_blank">PRODF-114 ↗</a></div>
+  
   <div class="card-collapsible">
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">💢 WHAT. Core pain point this feature solves</div>Vendor communication happens entirely outside the platform — in email inboxes with no shared visibility. VRMs have no way to see the full history of exchanges with a vendor in one place.<div class="who-inner"><div class="who-label">💢 <a href="https://drive.google.com/file/d/1BkotOmm5ZxoeK8D7wpxlo_lAPi44RKSf/view" target="_blank">WHO</a>. Personas this feature serves</div><div class="who-persona"><span class="who-world-label">1st party</span><span class="who-role">R1 Compliance Operator</span> — primary user. Exchange hub is explicitly in their JTBD — respond to customer questionnaires, share evidence, maintain communication history that unblocks sales.</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">R1 TPRM / Vendor Risk Manager</span> — initiates and tracks all vendor communications. Needs full exchange history in one place — currently scattered across email inboxes with no shared visibility.</div></div></div></div>
   <div class="change-banner">
@@ -1358,7 +1291,7 @@
           Confluence v1 · Apr 24 🆕
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">20%</span></span></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ 10 sections designed</span>
@@ -1367,7 +1300,7 @@
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
-  <div class="dev-strip"><span class="dev-strip-label">Dev</span><span class="dev-status-pill blocked">🚫 Blocked</span><span class="dev-strip-sep">·</span><span class="dev-due">📅 Jun 24, 2026</span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">⚙️ BE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:0%"></span></span><span class="dev-progress-pct">0/5</span></span><span class="dev-strip-sep">·</span><span class="dev-progress"><span class="dev-progress-label">🖥️ FE</span><span class="dev-progress-bar"><span class="dev-progress-fill behind" style="width:0%"></span></span><span class="dev-progress-pct">0/1</span></span><span class="dev-label-chip">PB1</span><span class="dev-label-chip">Pub Beta</span><a href="https://zitenote.atlassian.net/browse/PRODF-306" class="dev-jira-link" target="_blank">PRODF-306 ↗</a></div>
+  
   <div class="card-collapsible">
   <div class="pain-point"><span class="pp-icon">💢</span><div><div class="pp-label">💢 WHAT. Core pain point this feature solves</div>Evidence files are shared ad hoc outside the platform — no structured, traceable place to store or reference them.<div class="who-inner"><div class="who-label">💢 <a href="https://drive.google.com/file/d/1BkotOmm5ZxoeK8D7wpxlo_lAPi44RKSf/view" target="_blank">WHO</a>. Personas this feature serves</div><div class="who-persona"><span class="who-world-label">1st party</span><span class="who-role">R1 Compliance Operator</span> — uploads and manages SOC 2, ISO, trust evidence files. Shares them to respond to customer requests and unblock sales cycles.</div><div class="who-persona"><span class="who-world-label">3rd party</span><span class="who-role">R1 TPRM / Vendor Risk Manager</span> — collects and reviews vendor-submitted evidence as part of assessments and continuous monitoring. Needs a structured, traceable place — not ad-hoc file sharing.</div></div></div></div>
   <div class="change-banner">
