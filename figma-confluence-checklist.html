@@ -391,6 +391,53 @@
 /* Dev meta in feature header */
 .feature-header .meta-val.meta-dev-pct { color: #D3D1C7; }
 
+
+/* Refresh buttons */
+.refresh-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 5px 12px;
+  background: #F0EEE9;
+  border: 1px solid #D4D2CC;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #5F5E5A;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.refresh-all-btn:hover { background: #E8E6E0; color: #2C2C2A; }
+.refresh-all-btn:disabled { opacity: .5; cursor: default; }
+.refresh-all-btn.loading { color: #534AB7; border-color: #AFA9EC; background: #F0EFFC; }
+.refresh-all-btn.done    { color: #0F6E56; border-color: #1D9E75; background: #E6F7F2; }
+
+.card-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  font-size: 11px;
+  color: #B0AEA8;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .15s, color .15s;
+  margin-left: 4px;
+}
+.card-refresh-btn:hover   { background: rgba(255,255,255,.2); color: #F1EFE8; }
+.card-refresh-btn:disabled { opacity: .4; cursor: default; }
+.card-refresh-btn.loading  { color: #CECBF6; }
+.card-refresh-btn.done     { color: #9FE1CB; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinning { display: inline-block; animation: spin .7s linear infinite; }
+
 </style>
 </head>
 <body>
@@ -405,6 +452,7 @@
     <span>Features with Confluence: <strong>6</strong></span>
     <span>Features with both: <strong>6</strong></span>
   </div>
+  <button class="refresh-all-btn" id="refresh-all-btn" onclick="refreshAll()">↻ Refresh all</button>
 </div>
 
 <!-- WHAT'S NEW -->
@@ -628,7 +676,7 @@
           Confluence v19 · May 5 🆕
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Claudio</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Mar 31, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">60%</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Claudio</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Mar 31, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">60%</span></span><button class="card-refresh-btn" title="Refresh dev progress & design %" onclick="refreshCard('feat-1')" data-refresh="feat-1">↻</button></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ All 7 widgets designed</span>
@@ -738,7 +786,7 @@
           Prototype — Permissions (for review)
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">25%</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">25%</span></span><button class="card-refresh-btn" title="Refresh dev progress & design %" onclick="refreshCard('feat-2')" data-refresh="feat-2">↻</button></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ v1 table &amp; role assignment</span>
@@ -877,7 +925,7 @@
           Confluence v50 · May 6 🆕
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 30, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">35%</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Ilya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 30, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">35%</span></span><button class="card-refresh-btn" title="Refresh dev progress & design %" onclick="refreshCard('feat-3')" data-refresh="feat-3">↻</button></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ Core CRUD screens</span>
@@ -992,7 +1040,7 @@
         </a>
         <a href="https://zitenote.atlassian.net/browse/PRODF-113" class="link-pill jira" target="_blank">PRODF-113 · 🔁 Scoping</a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Leya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">May 13, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">20%</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Leya</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">May 13, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">20%</span></span><button class="card-refresh-btn" title="Refresh dev progress & design %" onclick="refreshCard('feat-4')" data-refresh="feat-4">↻</button></div>
     </div>
     <div class="badge-row">
       <span class="badge blue">🆕 Conf v12 · May 1</span>
@@ -1086,7 +1134,7 @@
           Confluence v6 · Mar 30
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">25%</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">25%</span></span><button class="card-refresh-btn" title="Refresh dev progress & design %" onclick="refreshCard('feat-5')" data-refresh="feat-5">↻</button></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ Profile &amp; org fields done</span>
@@ -1196,7 +1244,7 @@
           Loom walkthrough
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Apr 29, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">82%</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Apr 29, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">82%</span></span><button class="card-refresh-btn" title="Refresh dev progress & design %" onclick="refreshCard('feat-6')" data-refresh="feat-6">↻</button></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ Core thread UI designed</span>
@@ -1291,7 +1339,7 @@
           Confluence v1 · Apr 24 🆕
         </a>
       </div>
-      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">20%</span></span></div>
+      <div class="feat-meta-row"><span class="feat-meta-item"><span class="meta-lbl">Design</span><span class="meta-val">Vinay</span></span><span class="feat-meta-item"><span class="meta-lbl">PM</span><span class="meta-val">Anna</span></span><span class="feat-meta-item"><span class="meta-lbl">Due</span><span class="meta-val">Jun 24, 2026</span></span><span class="feat-meta-item"><span class="meta-lbl">Dev</span><span class="meta-val meta-dev-pct">20%</span></span><button class="card-refresh-btn" title="Refresh dev progress & design %" onclick="refreshCard('feat-7')" data-refresh="feat-7">↻</button></div>
     </div>
     <div class="badge-row">
       <span class="badge green">✓ 10 sections designed</span>
@@ -1608,5 +1656,174 @@
     });
   })();
 </script>
+
+<script>
+(function() {
+  /* ── Feature config ─────────────────────────────────────── */
+  var FEATURES = {
+    'feat-1': { name: 'Risk Dashboard',   maxPct: 80 },
+    'feat-2': { name: 'User Management',  maxPct: 50 },
+    'feat-3': { name: 'Rules Management', maxPct: 80 },
+    'feat-4': { name: 'Notifications',    maxPct: 80 },
+    'feat-5': { name: 'Account Settings', maxPct: 80 },
+    'feat-6': { name: 'Exchange Hub',     maxPct: 99 },
+    'feat-7': { name: 'File Vault',       maxPct: 50 },
+  };
+
+  var _roadmapCache = null;
+
+  /* ── Fetch + cache roadmap page ─────────────────────────── */
+  function getRoadmapText() {
+    if (_roadmapCache) return Promise.resolve(_roadmapCache);
+    return fetch('https://asukharnyk.github.io/tp-mngm/sprint-to-roadmap.html')
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, 'text/html');
+        _roadmapCache = doc.body ? doc.body.textContent : html;
+        return _roadmapCache;
+      });
+  }
+
+  /* ── Parse one feature from roadmap text ────────────────── */
+  function parseRoadmap(text, name, maxPct) {
+    var escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // Match feature name → % → optional date nearby
+    var re = new RegExp(escaped + '[\\s\\S]{0,20}?(\\d{1,3})%[\\s\\S]{0,300}?📅\\s*([A-Z][a-z]+ \\d{1,2},?\\s*\\d{4})', 'i');
+    var m = text.match(re);
+    if (!m) return null;
+    var pct = parseInt(m[1], 10);
+    if (maxPct && pct > maxPct) {
+      // Try finding a second occurrence (skip the 100% Done entry)
+      var rest = text.slice(text.indexOf(m[0]) + m[0].length);
+      var m2 = rest.match(re);
+      if (m2) { pct = parseInt(m2[1], 10); m[2] = m2[2]; }
+      else return null;
+    }
+    return {
+      pct: pct,
+      due: m[2].replace(',', '').replace(/\s+/, ' ')
+    };
+  }
+
+  /* ── Calc design progress from DOM ──────────────────────── */
+  function calcDesignPct(card) {
+    var items = card.querySelectorAll('.check-list li');
+    var done  = card.querySelectorAll('.check-list li .ic-chk');
+    if (!items.length) return null;
+    return {
+      done: done.length,
+      total: items.length,
+      pct: Math.round(done.length / items.length * 100)
+    };
+  }
+
+  /* ── Update one card's meta values ──────────────────────── */
+  function applyToCard(card, roadmapData, designData) {
+    card.querySelectorAll('.feat-meta-item').forEach(function(el) {
+      var lbl = el.querySelector('.meta-lbl');
+      var val = el.querySelector('.meta-val');
+      if (!lbl || !val) return;
+      if (lbl.textContent.trim() === 'Due' && roadmapData && roadmapData.due) {
+        val.textContent = roadmapData.due;
+      }
+      if (lbl.textContent.trim() === 'Dev' && roadmapData && roadmapData.pct !== undefined) {
+        val.textContent = roadmapData.pct + '%';
+      }
+    });
+
+    if (designData) {
+      // Update prog-pct text (in badge row)
+      var progPct = card.querySelector('.prog-pct');
+      if (progPct) progPct.textContent = designData.pct + '%';
+
+      // Update pct-badge in header
+      var badge = card.querySelector('.pct-badge');
+      if (badge) {
+        badge.textContent = designData.pct + '%';
+        badge.className = 'pct-badge ' +
+          (designData.pct >= 70 ? 'pct-high' : designData.pct >= 35 ? 'pct-mid' : 'pct-low');
+      }
+    }
+  }
+
+  /* ── Refresh single card ─────────────────────────────────── */
+  function refreshCard(featId) {
+    var card = document.getElementById(featId);
+    var btn  = card ? card.querySelector('.card-refresh-btn') : null;
+
+    if (btn) {
+      btn.disabled = true;
+      btn.classList.add('loading');
+      btn.innerHTML = '<span class="spinning">↻</span>';
+    }
+
+    var cfg = FEATURES[featId];
+    _roadmapCache = null; // force fresh fetch per-card
+
+    return getRoadmapText().then(function(text) {
+      var roadmapData = cfg ? parseRoadmap(text, cfg.name, cfg.maxPct) : null;
+      var designData  = card ? calcDesignPct(card) : null;
+      if (card) applyToCard(card, roadmapData, designData);
+
+      if (btn) {
+        btn.innerHTML = '✓';
+        btn.classList.remove('loading');
+        btn.classList.add('done');
+        setTimeout(function() {
+          btn.innerHTML = '↻';
+          btn.classList.remove('done');
+          btn.disabled = false;
+        }, 2000);
+      }
+    }).catch(function(e) {
+      console.error('Refresh error:', e);
+      if (btn) { btn.innerHTML = '!'; btn.disabled = false; btn.classList.remove('loading'); }
+    });
+  }
+
+  /* ── Refresh all cards ───────────────────────────────────── */
+  function refreshAll() {
+    var btn = document.getElementById('refresh-all-btn');
+    if (btn) {
+      btn.disabled = true;
+      btn.classList.add('loading');
+      btn.innerHTML = '<span class="spinning">↻</span> Refreshing…';
+    }
+
+    _roadmapCache = null;
+
+    getRoadmapText().then(function(text) {
+      Object.keys(FEATURES).forEach(function(featId) {
+        var card = document.getElementById(featId);
+        if (!card) return;
+        var cfg = FEATURES[featId];
+        var roadmapData = parseRoadmap(text, cfg.name, cfg.maxPct);
+        var designData  = calcDesignPct(card);
+        applyToCard(card, roadmapData, designData);
+      });
+
+      if (btn) {
+        btn.innerHTML = '✓ Updated';
+        btn.classList.remove('loading');
+        btn.classList.add('done');
+        setTimeout(function() {
+          btn.innerHTML = '↻ Refresh all';
+          btn.classList.remove('done');
+          btn.disabled = false;
+        }, 2500);
+      }
+    }).catch(function(e) {
+      console.error('Refresh all error:', e);
+      if (btn) { btn.innerHTML = '↻ Refresh all'; btn.disabled = false; btn.classList.remove('loading'); }
+    });
+  }
+
+  /* ── Expose globally ──────────────────────────────────────── */
+  window.refreshCard = refreshCard;
+  window.refreshAll  = refreshAll;
+})();
+</script>
+
 </body>
 </html>
