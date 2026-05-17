@@ -392,26 +392,38 @@
 .feature-header .meta-val.meta-dev-pct { color: #D3D1C7; }
 
 
+/* Page header top row */
+.page-header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.page-header-top h1 { margin-bottom: 0; }
+
 /* Refresh buttons */
 .refresh-all-btn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-top: 8px;
-  padding: 5px 12px;
-  background: #F0EEE9;
-  border: 1px solid #D4D2CC;
+  flex-shrink: 0;
+  align-self: center;
+  padding: 5px 13px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
   border-radius: 16px;
   font-size: 11px;
   font-weight: 500;
-  color: #5F5E5A;
+  color: #C8C5F0;
   cursor: pointer;
   transition: background .15s, color .15s;
+  white-space: nowrap;
 }
-.refresh-all-btn:hover { background: #E8E6E0; color: #2C2C2A; }
+.refresh-all-btn:hover   { background: rgba(255,255,255,.18); color: #fff; }
 .refresh-all-btn:disabled { opacity: .5; cursor: default; }
-.refresh-all-btn.loading { color: #534AB7; border-color: #AFA9EC; background: #F0EFFC; }
-.refresh-all-btn.done    { color: #0F6E56; border-color: #1D9E75; background: #E6F7F2; }
+.refresh-all-btn.loading  { color: #CECBF6; border-color: rgba(206,203,246,.5); }
+.refresh-all-btn.done     { color: #9FE1CB; border-color: rgba(29,158,117,.5); background: rgba(29,158,117,.15); }
 
 .card-refresh-btn {
   display: inline-flex;
@@ -444,15 +456,17 @@
 
 <!-- HEADER -->
 <div class="page-header">
-  <h1>Figma vs Confluence — Design Checklist</h1>
+  <div class="page-header-top">
+    <h1>Figma vs Confluence — Design Checklist</h1>
+    <button class="refresh-all-btn" id="refresh-all-btn" onclick="refreshAll()">↻ Refresh all</button>
+  </div>
   <p>Per-feature review: what's done, what's missing, what's extra, and when things last changed.</p>
   <div class="meta-row">
-    <span>Updated: <strong>May 8, 2026</strong></span>
+    <span>Updated: <strong id="updated-date">May 8, 2026</strong></span>
     <span>Features with Figma: <strong>7</strong></span>
     <span>Features with Confluence: <strong>6</strong></span>
     <span>Features with both: <strong>6</strong></span>
   </div>
-  <button class="refresh-all-btn" id="refresh-all-btn" onclick="refreshAll()">↻ Refresh all</button>
 </div>
 
 <!-- WHAT'S NEW -->
@@ -1802,6 +1816,13 @@
         var designData  = calcDesignPct(card);
         applyToCard(card, roadmapData, designData);
       });
+
+      // Stamp today's date
+      var dateEl = document.getElementById('updated-date');
+      if (dateEl) {
+        var now = new Date();
+        dateEl.textContent = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
 
       if (btn) {
         btn.innerHTML = '✓ Updated';
