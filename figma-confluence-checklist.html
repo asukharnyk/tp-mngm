@@ -467,7 +467,7 @@
   </div>
   <p>Per-feature review: what's done, what's missing, what's extra, and when things last changed.</p>
   <div class="meta-row">
-    <span>Updated: <strong id="updated-date">June 23, 2026</strong></span>
+    <span>Updated: <strong id="updated-date">July 9, 2026</strong></span>
     <span>Features with Figma: <strong>7</strong></span>
     <span>Features with Confluence: <strong>6</strong></span>
     <span>Features with both: <strong>6</strong></span>
@@ -479,27 +479,29 @@
   <div class="wn-header">
     <span>🆕</span>
     <h3>What Changed Today</h3>
-    <span class="wn-date">June 23, 2026 · 1 Confluence update · Figma unchanged</span>
+    <span class="wn-date">July 9, 2026 · 4 Confluence updates · Figma unchanged</span>
   </div>
   <div class="wn-body">
     <div class="wn-item">
       <div class="wn-title">
         <a href="#feat-1">VRM Dashboard</a>
-        <span class="wn-badge">Conf v23 · May 29</span>
+        <span class="wn-badge">Conf v24 · Jun 25</span>
       </div>
       <ul class="wn-list">
         <li>Requirements significantly expanded from v15; hover states, drill-down UX, and export questions added</li>
+        <li>v24: Known Constraints added (resolved_at dependency, drill-down accuracy limits, fixed 30-day window); PRD merge with Anna's version flagged as open question</li>
       </ul>
     </div>
     <div class="wn-item">
       <div class="wn-title">
         <a href="#feat-2">User Management</a>
-        <span class="wn-badge">Conf v28 · Jun 20</span>
+        <span class="wn-badge">Conf v33 · Jul 8</span>
       </div>
       <ul class="wn-list">
         <li>Origin column (PV1/PV2) added as explicit requirement; PV1 users = role-assign only</li>
         <li>Deleted users must stay visible in table with "Deleted" status (soft delete)</li>
         <li>7 new missing items: off-canvas roles panel, sidebar grouping, status labels, icons, team flag</li>
+        <li>v33: Onboarding &amp; Role Assignment Logic added — PV1 sync + freemium role decision still open (Option A vs B); Extended Actions List v1.2 and Account Lifecycle diagram added</li>
       </ul>
     </div>
     <div class="wn-item">
@@ -514,10 +516,11 @@
     <div class="wn-item">
       <div class="wn-title">
         <a href="#feat-3">Rule Management</a>
-        <span class="wn-badge">Conf v74 · Jun 21</span>
+        <span class="wn-badge">Conf v75 · Jul 7</span>
       </div>
       <ul class="wn-list">
         <li>Alert Email Templates (Immediate Alert + Daily Digest) fully specified; Error States complete; Unsubscribe flow refined</li>
+        <li>v75: RBAC matrix and error/edge-case lists finalized; notification throughput/memory risk notes expanded in Risks section</li>
       </ul>
     </div>
     <div class="wn-item">
@@ -536,6 +539,15 @@
       </div>
       <ul class="wn-list">
         <li>ABAC access table, delivery status spec, and Topic Link/ID requirement added — all currently missing from Figma</li>
+      </ul>
+    </div>
+    <div class="wn-item">
+      <div class="wn-title">
+        <a href="#feat-7">File Vault</a>
+        <span class="wn-badge">Conf v2 · Jul 8</span>
+      </div>
+      <ul class="wn-list">
+        <li>v2: Auto-grant view-only file access to all monitoring orgs on Observation attachment; audit trail, bulk action, and revoke-on-delete/detach requirements defined</li>
       </ul>
     </div>
   
@@ -570,7 +582,7 @@
         <td><a href="https://zitenote.atlassian.net/browse/XD-123" target="_blank">XD-123 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
         <td>Mar 2, 2026</td>
         <td style="color:#7A6020;font-weight:600">53 days</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" target="_blank" style="color:#2D7A50">v23 May 29 🆕 ↗</a></td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5897846847" target="_blank" style="color:#2D7A50">v24 Jun 25 🆕 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:62%"></div></div><span class="mini-label">10/16 · 62%</span></div></td>
         <td>✓ All 7 widgets</td>
         <td>✕ Drill-down, CSV</td>
@@ -583,7 +595,7 @@
         <td><a href="https://zitenote.atlassian.net/browse/XD-81" target="_blank">XD-81 ↗</a> <span class="jira-status ready-for-dev">Ready for Dev</span></td>
         <td>No date</td>
         <td style="color:#8A84AA">—</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management" target="_blank" style="color:#2D7A50">v32 Jun 22 🆕 ↗</a></td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5836668931/Roles+RBAC+and+User+Management" target="_blank" style="color:#2D7A50">v33 Jul 8 🆕 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:26%"></div></div><span class="mini-label">7/27 · 26%</span></div></td>
         <td>✓ v1 table &amp; role</td>
         <td>✕ All v1.2 flows</td>
@@ -596,7 +608,7 @@
         <td><a href="https://zitenote.atlassian.net/browse/XD-104" target="_blank">XD-104 ↗</a> <span class="jira-status needs-refine">Needs Refinement</span></td>
         <td>Mar 24, 2026</td>
         <td style="color:#7A6020;font-weight:600">31 days</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" target="_blank" style="color:#2D7A50">v74 Jun 21 🆕 ↗</a></td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5540151349" target="_blank" style="color:#2D7A50">v75 Jul 7 🆕 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-red" style="width:41%"></div></div><span class="mini-label">9/22 · 41%</span></div></td>
         <td>✓ 6 screens</td>
         <td>✕ Nesting, dry run, emails</td>
@@ -648,7 +660,7 @@
         <td><a href="https://zitenote.atlassian.net/browse/XD-149" target="_blank">XD-149 ↗</a> <span class="jira-status in-progress">In Progress</span></td>
         <td>Jan 26, 2026</td>
         <td style="color:#B85450;font-weight:600">88 days</td>
-        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5960499220/Publicly+Available+Files" target="_blank" style="color:#2D7A50">v1 Apr 24 🆕 ↗</a></td>
+        <td><a href="https://zitenote.atlassian.net/wiki/spaces/pv2/pages/5960499220/Publicly+Available+Files" target="_blank" style="color:#2D7A50">v2 Jul 8 🆕 ↗</a></td>
         <td><div class="mini-prog"><div class="mini-track"><div class="mini-fill pct-yellow" style="width:50%"></div></div><span class="mini-label">4/11 · 50%</span></div></td>
         <td>✓ 10 sections</td>
         <td>✕ Permission / audit flows</td>
@@ -709,7 +721,7 @@
     <div class="badge-row">
       <span class="badge green">✓ All 7 widgets designed</span>
       <span class="badge yellow">⚠️ Interactions incomplete</span>
-      <span class="badge blue">🆕 Conf v23 · May 29</span>
+      <span class="badge blue">🆕 Conf v24 · Jun 25</span>
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
@@ -720,7 +732,7 @@
     <strong>⚠️ Node ID mismatch:</strong> Feature table links to <code>1155-4605</code> (page cover), not actual design. Use Confluence PRD node <code>1316-3818</code> for reviews.
   </div>
   <div class="change-banner">
-    <span class="change-date">Latest Figma: March 2, 2026</span> — Frame "Dashboard- 30 Day Filter- 030226". Confluence v23 (May 29) — requirements significantly expanded; new open questions on drill-down UX, CSV/PDF export, and hover states.
+    <span class="change-date">Latest Figma: March 2, 2026</span> — Frame "Dashboard- 30 Day Filter- 030226". Confluence v24 (Jun 25) — Known Constraints section added (resolved_at field dependency, drill-down accuracy limits, fixed 30-day window); PRD merge with Anna's PRD flagged in Open Questions.
     <ul><li data-iid="259a6e8b">Confluence open question: Reporting Center CSV/PDF export — handled by frontend or Reporting Center?</li></ul>
   </div>
   <div class="progress-section">
@@ -819,7 +831,7 @@
     <div class="badge-row">
       <span class="badge green">✓ v1 table &amp; role assignment</span>
       <span class="badge red">✕ v1.2 actions missing</span>
-      <span class="badge blue">🆕 Conf v28 · Jun 20</span>
+      <span class="badge blue">🆕 Conf v33 · Jul 8</span>
     </div>
   
     <button class="card-toggle" title="Collapse / expand"><span class="chevron">▾</span></button></div>
