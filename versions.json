@@ -6,9 +6,9 @@
     "label": "VRM Dashboard"
   },
   "5836668931": {
-    "v": 34,
-    "date": "Jul 13",
-    "modified": "2026-07-13",
+    "v": 35,
+    "date": "Jul 14",
+    "modified": "2026-07-14",
     "label": "User Management"
   },
   "5540151349": {
@@ -18,9 +18,9 @@
     "label": "Rule Management"
   },
   "5970591801": {
-    "v": 20,
-    "date": "May 19",
-    "modified": "2026-05-19",
+    "v": 21,
+    "date": "Jul 14",
+    "modified": "2026-07-14",
     "label": "Notification Settings"
   },
   "5856100353": {
@@ -30,15 +30,15 @@
     "label": "Own Account"
   },
   "5489229889": {
-    "v": 13,
-    "date": "May 5",
-    "modified": "2026-05-05",
+    "v": 14,
+    "date": "Jul 14",
+    "modified": "2026-07-14",
     "label": "Exchange Hub"
   },
   "5960499220": {
-    "v": 3,
-    "date": "Jul 13",
-    "modified": "2026-07-13",
+    "v": 4,
+    "date": "Jul 14",
+    "modified": "2026-07-14",
     "label": "File Vault"
   }
 }
