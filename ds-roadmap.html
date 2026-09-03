@@ -182,8 +182,24 @@ table.h-c12 .c12{display:none}
 .cols{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:10px;font-size:10.5px;color:var(--mut)}
 .cols .cl{font-weight:700;text-transform:uppercase;font-size:9px;letter-spacing:.05em}
 .cols label{display:inline-flex;align-items:center;gap:4px;cursor:pointer;user-select:none}
-</style></head><body>
-<h1>Titan Design System — Roadmap &amp; Timeline</h1>
+</style><script>
+(function(){
+  var shown=false;
+  function paint(what,msg){
+    if(shown) return; shown=true;
+    var d=document.createElement("div");
+    d.style.cssText="margin:12px 0;padding:10px 12px;border:1px solid #FFA1A1;background:#FFECEB;"
+      +"border-radius:6px;font:13px/1.5 sans-serif;color:#AE2E24";
+    d.textContent=what+": "+msg+"  \u2014  build 4 03 Sep 21:59";
+    (document.body||document.documentElement).insertBefore(d,(document.body||document.documentElement).firstChild);
+  }
+  window.addEventListener("error",function(e){paint("Script error",(e.message||"")+" @line "+(e.lineno||"?"))});
+  window.addEventListener("unhandledrejection",function(e){
+    var r=e.reason; paint("Unhandled rejection",(r&&(r.message||r))||"unknown");});
+})();
+</script>
+</head><body>
+<h1>Titan Design System — Roadmap &amp; Timeline<span id="bstamp" style="margin-left:10px;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:400;color:#626F86;background:#F1F2F4;border:1px solid #DFE1E6;border-radius:10px;padding:2px 8px;vertical-align:middle">build 4 &middot; 03 Sep 21:59</span></h1>
 <div class="sub">Feature → Epic → Ticket, timeline on the right · <b>Design Review counts as done</b> ·
 estimates in hours from the team scale, converted at <b>8 h per working day</b> · <span id="snap"></span><br><a class="xl" href="https://zitenote.atlassian.net/jira/plans/8759/scenarios/8926/timeline?vid=10381" target="_blank">Jira plan — Titan DS Engineering timeline →</a> · <a class="xl" href="https://zitenote.atlassian.net/jira/software/c/projects/UX/boards/9707" target="_blank">Kanban board</a> · <a class="xl" href="https://asukharnyk.github.io/tp-mngm/figma-confluence-checklist.html" target="_blank">Figma / Confluence checklist</a></div>
 
@@ -675,6 +691,7 @@ async function refresh(){
 }
 /* ---------- controls ---------- */
 window.__BOOT__=function(){
+  DATA=window.__SNAP__;
   renderAll();
   const T=()=>document.querySelector("#tbl");
   document.querySelectorAll(".tb").forEach(b=>b.onclick=function(){
@@ -795,10 +812,15 @@ document.body.classList.add("locked");
       document.getElementById("tab-sum").innerHTML=sumTxt;
       document.body.classList.remove("locked");
       document.getElementById("gate").remove();
-      window.__BOOT__();
+      try{ window.__BOOT__(); }
+      catch(be){ console.error("[boot]",be);
+        document.body.insertAdjacentHTML("afterbegin",
+          '<div style="margin:12px 0;padding:10px 12px;border:1px solid #FFA1A1;background:#FFECEB;border-radius:6px;font:13px sans-serif;color:#AE2E24">'
+          +'Unlocked, but rendering failed: '+String(be.message||be)+'</div>'); }
+      return;
     }catch(e){
       err.textContent="Wrong passphrase."; btn.disabled=false; btn.textContent="Unlock";
-      document.getElementById("gpw").select();
+      const f=document.getElementById("gpw"); if(f) f.select();
     }
   }
   document.getElementById("gbtn").onclick=unlock;
